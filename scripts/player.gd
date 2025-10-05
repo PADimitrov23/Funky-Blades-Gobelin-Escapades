@@ -4,7 +4,10 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 3
 var sensitivity = 0.001
+var onCooldown = false
 @onready var camera = $FirstPerson
+@onready var animationPlayer = $SwordAnimations
+@onready var attackCooldown = $AttackCooldown
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -16,9 +19,15 @@ func _ready():
 	$FirstPerson.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func attack():
+	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
+		animationPlayer.play("SwordSwing")
+		attackCooldown.start()
+
 func _process(delta):
+	attack()
 	_switch_view()
-	if Input.is_action_just_pressed("escape"):
+	if Input.is_action_just_pressed("escape"): 
 		get_tree().quit()
 
 func _switch_view():
@@ -51,3 +60,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_attack_cooldown_timeout() -> void:
+	pass
