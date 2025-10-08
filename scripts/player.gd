@@ -3,11 +3,18 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 3
-var sensitivity = 0.001
+var sensitivity = 0.0005
 var onCooldown = false
 @onready var camera = $FirstPerson
 @onready var animationPlayer = $SwordAnimations
 @onready var attackCooldown = $AttackCooldown
+@onready var inspectCooldown = $InspectCooldown
+@onready var healthBar = $HUD/HealthBar
+@onready var goldCounter = $HUD/GoldCounter
+
+var gold = 0;
+var health = 100;
+var maxHealth = 100;
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -16,6 +23,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
 
 func _ready():
+	healthBar.max_value = 100;
 	$FirstPerson.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -24,9 +32,20 @@ func attack():
 		animationPlayer.play("SwordSwing")
 		attackCooldown.start()
 
+func inspect():
+	if Input.is_action_just_pressed("inspect") and inspectCooldown.is_stopped():
+		animationPlayer.play("SwordInspect")
+		inspectCooldown.start()
+
+func update_HUD():
+	healthBar.value = health
+	goldCounter.text = str(gold);
+
 func _process(delta):
 	attack()
+	inspect()
 	_switch_view()
+	update_HUD()
 	if Input.is_action_just_pressed("escape"): 
 		get_tree().quit()
 
@@ -61,6 +80,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_attack_cooldown_timeout() -> void:
 	pass
+
+func _on_inspect_cooldown_timeout() -> void:
+	pass 
