@@ -40,34 +40,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ykyjo"]
-resource_name = "SwordSwing"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPerson/SwordPoint:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.262524, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.163853, -0.018356, -0.218849), Vector3(-0.0619083, -0.473393, 0.0143169)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPerson/SwordPoint:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.262524, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.71212, -0.318209, 0.293714), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_nmc1l"]
 resource_name = "SwordInspect"
 length = 3.0
@@ -94,6 +66,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0159543, -0.0300986, -0.0615232), Vector3(-0.0319086, -0.0601972, -0.123046), Vector3(-0.0478629, -0.0902958, -0.18457), Vector3(-0.0638173, -0.120394, -0.246093), Vector3(-0.0797716, -0.150493, -0.307616), Vector3(-0.0957259, -0.180592, -0.369139), Vector3(-0.11168, -0.21069, -0.430662), Vector3(-0.127635, -0.240789, -0.492185), Vector3(-0.143589, -0.270887, -0.553709), Vector3(-0.159543, -0.300986, -0.615232), Vector3(-0.175497, -0.331084, -0.676755), Vector3(-0.191452, -0.361183, -0.738278), Vector3(-0.207406, -0.391282, -0.799801), Vector3(-0.22336, -0.42138, -0.861324), Vector3(-0.239315, -0.451479, -0.922848), Vector3(-0.255269, -0.481577, -0.984371), Vector3(-0.271223, -0.511676, -1.04589), Vector3(-0.287178, -0.541775, -1.10742), Vector3(-0.303132, -0.571873, -1.16894), Vector3(-0.319086, -0.601972, -1.23046), Vector3(-0.335041, -0.63207, -1.29199), Vector3(-0.350995, -0.662169, -1.35351), Vector3(-0.33857, -0.658839, -1.32638), Vector3(-0.326146, -0.655509, -1.29926), Vector3(-0.313721, -0.652179, -1.27213), Vector3(-0.301297, -0.648849, -1.24501), Vector3(-0.288872, -0.645519, -1.21788), Vector3(-0.276447, -0.642189, -1.19076), Vector3(-0.264023, -0.638859, -1.16363), Vector3(-0.251598, -0.63553, -1.13651), Vector3(-0.239174, -0.6322, -1.10938), Vector3(-0.226749, -0.62887, -1.08226), Vector3(-0.214324, -0.62554, -1.05513), Vector3(-0.2019, -0.62221, -1.02801), Vector3(-0.189475, -0.61888, -1.00088), Vector3(-0.177051, -0.61555, -0.973758), Vector3(-0.164626, -0.61222, -0.946633), Vector3(-0.152202, -0.60889, -0.919508), Vector3(-0.139777, -0.60556, -0.892382), Vector3(-0.127352, -0.60223, -0.865257), Vector3(-0.114928, -0.5989, -0.838132), Vector3(-0.102503, -0.59557, -0.811007), Vector3(-0.0900786, -0.592241, -0.783882), Vector3(-0.0825604, -0.566806, -0.763104), Vector3(-0.0811701, -0.513762, -0.750254), Vector3(-0.0797799, -0.460718, -0.737404), Vector3(-0.0783896, -0.407674, -0.724554), Vector3(-0.0769994, -0.354631, -0.711704), Vector3(-0.0756091, -0.301587, -0.698854), Vector3(-0.0742189, -0.248543, -0.686004), Vector3(-0.0728286, -0.195499, -0.673154), Vector3(-0.0714384, -0.142455, -0.660304), Vector3(-0.0700481, -0.0894114, -0.647453), Vector3(-0.0686579, -0.0363677, -0.634603), Vector3(-0.0672676, 0.0166762, -0.621753), Vector3(-0.0658774, 0.06972, -0.608903), Vector3(-0.0644871, 0.122764, -0.596053), Vector3(-0.0630969, 0.175808, -0.583203), Vector3(-0.0617066, 0.228851, -0.570353), Vector3(-0.0603164, 0.281895, -0.557503), Vector3(-0.0589261, 0.334939, -0.544653), Vector3(-0.0575359, 0.387983, -0.531803), Vector3(-0.0561456, 0.441027, -0.518953), Vector3(-0.0547554, 0.49407, -0.506103), Vector3(-0.0533651, 0.547114, -0.493253), Vector3(-0.0519749, 0.600158, -0.480403), Vector3(-0.0505846, 0.653202, -0.467553), Vector3(-0.0491944, 0.706246, -0.454703), Vector3(-0.0478041, 0.759289, -0.441853), Vector3(-0.0455277, 0.723133, -0.420812), Vector3(-0.0432514, 0.686976, -0.399771), Vector3(-0.040975, 0.65082, -0.378731), Vector3(-0.0386986, 0.614663, -0.35769), Vector3(-0.0364222, 0.578506, -0.33665), Vector3(-0.0341458, 0.54235, -0.315609), Vector3(-0.0318694, 0.506193, -0.294568), Vector3(-0.029593, 0.470036, -0.273528), Vector3(-0.0273166, 0.43388, -0.252487), Vector3(-0.0250403, 0.397723, -0.231447), Vector3(-0.0227639, 0.361566, -0.210406), Vector3(-0.0204875, 0.32541, -0.189365), Vector3(-0.0182111, 0.289253, -0.168325), Vector3(-0.0159347, 0.253096, -0.147284), Vector3(-0.0136583, 0.21694, -0.126244), Vector3(-0.0113819, 0.180783, -0.105203), Vector3(-0.00910555, 0.144627, -0.0841624), Vector3(-0.00682916, 0.10847, -0.0631218), Vector3(-0.00455277, 0.0723133, -0.0420812), Vector3(-0.00227639, 0.0361567, -0.0210406), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ykyjo"]
+resource_name = "SwordSwing"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FirstPerson/SwordPoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.262524, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.163853, -0.018356, -0.218849), Vector3(-0.0619083, -0.473393, 0.0143169)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FirstPerson/SwordPoint:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.262524, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.71212, -0.318209, 0.293714), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nmc1l"]

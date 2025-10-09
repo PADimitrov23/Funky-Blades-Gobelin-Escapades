@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://4q7dgugwxbeg"
-path="res://.godot/imported/GobelinExport.blend-ddfd68389349c379d096d7fe7da10c9a.scn"
+path="res://.godot/imported/GobelinExport.blend-69d97e19fca2cb5dd2951f7a0a60b2c3.scn"
 
 [deps]
 
-source_file="res://objects/Assets Pack/enemy/GobelinExport.blend"
-dest_files=["res://.godot/imported/GobelinExport.blend-ddfd68389349c379d096d7fe7da10c9a.scn"]
+source_file="res://models/enemy/GobelinExport.blend"
+dest_files=["res://.godot/imported/GobelinExport.blend-69d97e19fca2cb5dd2951f7a0a60b2c3.scn"]
 
 [params]
 

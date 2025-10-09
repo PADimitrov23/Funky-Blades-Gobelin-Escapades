@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnj0qsyq0pmwv"]
+
+[ext_resource type="PackedScene" uid="uid://4q7dgugwxbeg" path="res://models/enemy/GobelinExport.blend" id="1_7p1mj"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="GobelinExport" parent="." instance=ExtResource("1_7p1mj")]
