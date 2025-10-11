@@ -27,6 +27,9 @@ func _ready():
 	$FirstPerson.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func player():
+	pass
+
 func attack():
 	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
 		animationPlayer.play("SwordSwing")
