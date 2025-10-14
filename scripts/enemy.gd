@@ -9,9 +9,10 @@ var speed = 2
 var acceleration = 5
 var gravity = 10
 var target = null
+var is_player_in_chase_area = false
 
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
-@export var  animationPlayer : AnimationPlayer
+@export var animationPlayer : AnimationPlayer
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -25,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		
 	elif state == States.chase:
 		
+		print("chase")
 		look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP, true)
 		navAgent.target_position = target.global_position
 		
@@ -36,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		
 	elif state == States.attack:
 		
+		print("punch")
 		velocity = Vector3.ZERO
 		look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP, true)
 		animationPlayer.play("Punch")
@@ -50,12 +53,15 @@ func _physics_process(delta: float) -> void:
 func _on_chase_area_body_entered(body: Node3D) -> void:
 	if body.has_method("player"):
 		target = body
+		is_player_in_chase_area = true
 		state = States.chase
 
 func _on_chase_area_body_exited(body: Node3D) -> void:
 	if body.has_method("player"):
 		target = null
-		state = States.idle
+		is_player_in_chase_area = false
+		if state != States.attack:
+			state = States.idle
 
 func _on_attack_area_body_entered(body: Node3D) -> void:
 	if body.has_method("player"):
@@ -63,4 +69,7 @@ func _on_attack_area_body_entered(body: Node3D) -> void:
 
 func _on_attack_area_body_exited(body: Node3D) -> void:
 	if body.has_method("player"):
-		state = States.idle
+		if is_player_in_chase_area:
+			state = States.chase
+		else:
+			state = States.idle
