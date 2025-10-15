@@ -15,6 +15,8 @@ var onCooldown = false
 var gold = 0;
 var health = 100;
 var maxHealth = 100;
+var damage = 10;
+var target = [];
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -34,6 +36,11 @@ func attack():
 	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
 		animationPlayer.play("SwordSwing")
 		attackCooldown.start()
+
+func deal_damage():
+	for enemies in target:
+		if enemies and enemies.is_inside_tree():
+			enemies.health -= damage
 
 func inspect():
 	if Input.is_action_just_pressed("inspect") and inspectCooldown.is_stopped():
@@ -88,3 +95,14 @@ func _on_attack_cooldown_timeout() -> void:
 
 func _on_inspect_cooldown_timeout() -> void:
 	pass 
+
+
+func _on_attack_zone_body_entered(body: Node3D) -> void:
+	if body.has_method("enemy") and body != self:
+		print("Enemy entered: ", body.name)
+		target.append(body)
+
+
+func _on_attack_zone_body_exited(body: Node3D) -> void:
+	if body.has_method("enemy"):
+		target.erase(body)
