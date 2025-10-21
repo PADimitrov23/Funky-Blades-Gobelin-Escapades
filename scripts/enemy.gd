@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 	if state == States.idle:
 		
-		velocity = Vector3.ZERO
+		velocity = Vector3(0, velocity.y, 0)
 		animationPlayer.play("Idle")
 		
 	elif state == States.chase:
