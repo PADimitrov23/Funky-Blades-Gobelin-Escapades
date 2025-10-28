@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4hutehnmhb0b"]
+
+[ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
+[ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
+[ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern-floor-textures.jpg" id="3_0c8vp"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_4wyf3"]
+albedo = Color(0.894118, 0.929412, 0.988235, 1)
+edge_fade = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ganqx"]
+next_pass = SubResource("FogMaterial_4wyf3")
+albedo_color = Color(0.47058824, 0.32156864, 0.11372549, 1)
+albedo_texture = ExtResource("3_0c8vp")
+normal_enabled = true
+normal_scale = 1.5
+ao_enabled = true
+uv1_scale = Vector3(3.915, 3.915, 3.915)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0c8vp"]
+size = Vector2(50, 50)
+orientation = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ganqx"]
+size = Vector3(1, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c8vp"]
+size = Vector3(50, 1, 50)
+
+[node name="Tavern-inside" type="Node3D"]
+
+[node name="InteriorPack" parent="." instance=ExtResource("1_2kygj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.989388)
+
+[node name="Player" parent="." instance=ExtResource("2_ganqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6704717, 1.2184215, 0.36485076)
+
+[node name="borders" type="StaticBody3D" parent="."]
+
+[node name="floor-colour" type="MeshInstance3D" parent="borders"]
+transform = Transform3D(0.23292157, 0, 0, 0, 1.0494527, 0, 0, 0, 0.3218296, -1.1275463, 0.07980871, -3.216085)
+material_override = SubResource("StandardMaterial3D_ganqx")
+mesh = SubResource("QuadMesh_0c8vp")
+skeleton = NodePath("../..")
+
+[node name="world-border-4" type="CollisionShape3D" parent="borders"]
+transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.739334, 0, -2.9409127)
+shape = SubResource("BoxShape3D_ganqx")
+debug_color = Color(0.97148913, 0, 0.4508493, 0.41960785)
+
+[node name="wall-border-3" type="CollisionShape3D" parent="borders"]
+transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, 5.14349, 0, -2.9409127)
+shape = SubResource("BoxShape3D_ganqx")
+debug_color = Color(0.97148913, 0, 0.4508493, 0.41960785)
+
+[node name="wall-border-2" type="CollisionShape3D" parent="borders"]
+transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, -11.36631)
+shape = SubResource("BoxShape3D_ganqx")
+debug_color = Color(0.97148913, 0, 0.4508493, 0.41960785)
+
+[node name="wall-border-1" type="CollisionShape3D" parent="borders"]
+transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, 4.6411853)
+shape = SubResource("BoxShape3D_ganqx")
+debug_color = Color(0.97148913, 0, 0.4508493, 0.41960785)
+
+[node name="floor-border" type="CollisionShape3D" parent="borders"]
+transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.739334, -0.27161285, -2.9409127)
+shape = SubResource("BoxShape3D_0c8vp")
+debug_color = Color(0.838867, 0.00118036, 0.925717, 0.42)
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.041630883, 0.99657923, 0.07139285, -0.66254205, -0.08102064, 0.74462986, 0.7478669, -0.016301163, 0.66364855, 3.9251, 7.656847, 15.272886)
+light_color = Color(0.7396902, 0.32721886, 0, 1)
+light_energy = 7.565
+light_indirect_energy = 1.162
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
