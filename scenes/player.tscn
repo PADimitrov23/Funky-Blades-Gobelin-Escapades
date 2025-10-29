@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bg8hil3lj2w2e"]
+[gd_scene load_steps=14 format=3 uid="uid://bg8hil3lj2w2e"]
 
 [ext_resource type="Script" uid="uid://d35xf42qc3vpk" path="res://scripts/player.gd" id="1_eqqp1"]
 [ext_resource type="PackedScene" uid="uid://dhhpda127is2p" path="res://models/Sword.glb" id="2_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://s7pk44jmiv6p" path="res://sprites/knight-health-bar-under.png" id="3_nmc1l"]
 [ext_resource type="Texture2D" uid="uid://h2mufjr5p0ld" path="res://sprites/knight-health-bar-over.png" id="4_f46kd"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_qlg0r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bxedw"]
 radius = 0.4
@@ -50,10 +51,10 @@ tracks/0/path = NodePath("FirstPerson/SwordPoint:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1333333, 1.1662682, 3),
-"transitions": PackedFloat32Array(1, 1.4142146, 1, 1),
+"times": PackedFloat32Array(0, 1.13333, 1.16627, 3),
+"transitions": PackedFloat32Array(1, 1.41421, 1, 1),
 "update": 0,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.40600258, -0.14836243, 0.0925052), Vector3(-0.40486237, -0.14943945, 0.092246115), Vector3(-0.0619083, -0.473393, 0.0143169)]
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.406003, -0.148362, 0.0925052), Vector3(-0.404862, -0.149439, 0.0922461), Vector3(-0.0619083, -0.473393, 0.0143169)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -62,10 +63,10 @@ tracks/1/path = NodePath("FirstPerson/SwordPoint:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1333333, 1.1662682, 3),
-"transitions": PackedFloat32Array(1, 1.4142146, 1, 1),
+"times": PackedFloat32Array(0, 1.13333, 1.16627, 3),
+"transitions": PackedFloat32Array(1, 1.41421, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.36159393, -2.1628194, 1.4516729), Vector3(-0.36039576, -2.1556528, 1.4468626), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.361594, -2.16282, 1.45167), Vector3(-0.360396, -2.15565, 1.44686), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ykyjo"]
@@ -120,7 +121,7 @@ _data = {
 [sub_resource type="Theme" id="Theme_3rerk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dqkch"]
-size = Vector3(1, 1, 0.892395)
+size = Vector3(1, 1, 1.16184)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_eqqp1")
@@ -136,10 +137,10 @@ debug_color = Color(0.907197, 0.000122252, 0.74084, 0.42)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0619083, 0.473393, -0.0143169)
 
 [node name="SwordPoint" type="Node3D" parent="FirstPerson"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
 
 [node name="Sword" parent="FirstPerson/SwordPoint" instance=ExtResource("2_ykyjo")]
-transform = Transform3D(0.055136688, -0.034999035, -0.1569554, -0.120083965, -0.11931964, -0.015577373, -0.1069569, 0.1159219, -0.063421845, 0.16164437, 0.46078825, -0.14850128)
+transform = Transform3D(0.0551367, -0.034999, -0.156955, -0.120084, -0.11932, -0.0155774, -0.106957, 0.115922, -0.0634218, 0.161644, 0.460788, -0.148501)
 
 [node name="Head" type="Node3D" parent="."]
 
@@ -166,13 +167,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -123.0
-offset_top = -185.0
-offset_right = 48.0
-offset_bottom = 100.0
+offset_left = -171.0
+offset_top = -285.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.715208, 0.651762)
+scale = Vector2(0.875213, 0.811767)
 min_value = 0.14
 value = 64.14
 rounded = true
@@ -185,19 +184,20 @@ tint_progress = Color(1, 0, 0, 1)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = -55.0
-offset_right = 56.0
-offset_bottom = -1.0
+offset_left = 48.0
+offset_top = -211.0
+offset_right = 121.0
+offset_bottom = -44.0
 grow_vertical = 0
 theme = SubResource("Theme_3rerk")
-theme_override_font_sizes/font_size = 36
+theme_override_fonts/font = ExtResource("5_qlg0r")
+theme_override_font_sizes/font_size = 166
 text = "0"
 
 [node name="AttackZone" type="Area3D" parent="."]
 
 [node name="AttackArea" type="CollisionShape3D" parent="AttackZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.914882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04961)
 shape = SubResource("BoxShape3D_dqkch")
 debug_color = Color(0.89997, 1.2514e-06, 0.450303, 0.42)
 
