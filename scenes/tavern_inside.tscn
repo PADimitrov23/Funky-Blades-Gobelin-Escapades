@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
 [ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern-floor-textures.jpg" id="3_0c8vp"]
-[ext_resource type="PackedScene" uid="uid://dm4ichryg442s" path="res://models/tavernprops/door.glb" id="4_7hqvb"]
 [ext_resource type="PackedScene" uid="uid://bwwc8e3mcnr47" path="res://models/tavernprops/storage.glb" id="5_a8aui"]
+[ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_4wyf3"]
 albedo = Color(0.894118, 0.929412, 0.988235, 1)
@@ -37,7 +37,7 @@ size = Vector3(50, 1, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.98939)
 
 [node name="Player" parent="." instance=ExtResource("2_ganqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.93699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.01205)
 
 [node name="borders" type="StaticBody3D" parent="."]
 
@@ -91,7 +91,7 @@ shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
 [node name="wall-border-1" type="CollisionShape3D" parent="borders"]
-transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, 4.64119)
+transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, 5.05302)
 shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
@@ -99,9 +99,6 @@ debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.73933, -0.271613, -2.94091)
 shape = SubResource("BoxShape3D_0c8vp")
 debug_color = Color(0.838867, 0.00118036, 0.925717, 0.42)
-
-[node name="door" parent="borders" instance=ExtResource("4_7hqvb")]
-transform = Transform3D(-0.99991, 0, -0.0134387, 0, 1, 0, 0.0134387, 0, -0.99991, -0.996385, 0.193208, 4.74277)
 
 [node name="shop-counter" type="CollisionShape3D" parent="borders"]
 transform = Transform3D(4.64326, 0, 0, 0, 2.53413, 0, 0, 0, 2.10295, -0.966479, 0.944334, -3.39898)
@@ -160,3 +157,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.599
 
 [node name="storage3" parent="Decoration" instance=ExtResource("5_a8aui")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.33563, 0.0397549, -8.94921)
+
+[node name="TavernDoorWorkability" parent="." instance=ExtResource("5_jb1df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183247, -0.0970824, 4.65128)
