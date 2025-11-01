@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Enemy
 
 enum States {attack, idle, chase, die}
 
@@ -15,9 +15,6 @@ var value = 1
 
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
 @export var animationPlayer : AnimationPlayer
-
-func enemy():
-	pass
 
 func _process(delta):
 	if health <= 0:
@@ -63,24 +60,24 @@ func drop_loot():
 	target.gold += value
 
 func _on_chase_area_body_entered(body: Node3D) -> void:
-	if body.has_method("player") and state != States.die:
+	if body is Player and state != States.die:
 		target = body
 		is_player_in_chase_area = true
 		state = States.chase
 
 func _on_chase_area_body_exited(body: Node3D) -> void:
-	if body.has_method("player") and state != States.die:
+	if body is Player and state != States.die:
 		target = null
 		is_player_in_chase_area = false
 		if state != States.attack:
 			state = States.idle
 
 func _on_attack_area_body_entered(body: Node3D) -> void:
-	if body.has_method("player") and state != States.die:
+	if body is Player and state != States.die:
 		state = States.attack
 
 func _on_attack_area_body_exited(body: Node3D) -> void:
-	if body.has_method("player") and state != States.die:
+	if body is Player and state != States.die:
 		if is_player_in_chase_area:
 			state = States.chase
 		else:

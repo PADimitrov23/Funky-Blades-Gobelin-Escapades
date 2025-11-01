@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 3
@@ -28,9 +28,6 @@ func _ready():
 	healthBar.max_value = 100;
 	$FirstPerson.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-func player():
-	pass
 
 func attack():
 	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
@@ -98,11 +95,11 @@ func _on_inspect_cooldown_timeout() -> void:
 
 
 func _on_attack_zone_body_entered(body: Node3D) -> void:
-	if body.has_method("enemy") and body != self:
+	if body is Enemy and body != self:
 		print("Enemy entered: ", body.name)
 		target.append(body)
 
 
 func _on_attack_zone_body_exited(body: Node3D) -> void:
-	if body.has_method("enemy"):
+	if body is Enemy:
 		target.erase(body)
