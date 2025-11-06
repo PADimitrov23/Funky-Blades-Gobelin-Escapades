@@ -15,10 +15,10 @@ script = ExtResource("2_h8lme")
 transform = Transform3D(-0.99991, 0, -0.0134387, 0, 1, 0, 0.0134387, 0, -0.99991, -0.996385, 0.193208, 0.164401)
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(-0.99991, 0, -0.013438701, 0, 1, 0, 0.013438701, 0, -0.99991, -0.996385, 0.193208, 0.164401)
+transform = Transform3D(-0.99991, 0, -0.0134387, 0, 1, 0, 0.0134387, 0, -0.99991, -0.996385, 0.193208, 0.164401)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 3.5676127e-08, 0, 1, 0, -3.5676127e-08, 0, 1, 0.03244084, 1.0205988, 0.27519023)
+transform = Transform3D(1, 0, 3.56761e-08, 0, 1, 0, -3.56761e-08, 0, 1, 0.0324408, 1.0206, 0.27519)
 shape = SubResource("BoxShape3D_0b1ta")
 debug_color = Color(0.854408, 0.000793387, 0.889426, 0.42)
 

@@ -30,6 +30,7 @@ size = Vector3(1, 50, 50)
 size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a8aui"]
+size = Vector3(1.10156, 1, 1)
 
 [node name="Tavern-inside" type="Node3D"]
 
@@ -106,7 +107,7 @@ shape = SubResource("BoxShape3D_a8aui")
 debug_color = Color(0.295901, 0.628964, 3.85046e-07, 0.42)
 
 [node name="shop-boxes-cupboard" type="CollisionShape3D" parent="borders"]
-transform = Transform3D(5.10015, 0, 0, 0, 2.53413, 0, 0, 0, 1.30846, -0.4566, 0.944334, -6.08619)
+transform = Transform3D(5.10015, 0, 0, 0, 2.53413, 0, 0, 0, 1.30846, -0.197608, 0.944334, -6.08619)
 shape = SubResource("BoxShape3D_a8aui")
 debug_color = Color(0.295901, 0.628964, 3.85046e-07, 0.42)
 
