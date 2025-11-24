@@ -1,35 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://diwtxvf3gnp7v"]
+[gd_scene load_steps=8 format=3 uid="uid://diwtxvf3gnp7v"]
 
 [ext_resource type="Shader" uid="uid://b7uwkdv38sx63" path="res://shaders/simple-shader.tres" id="1_si4ve"]
 [ext_resource type="Texture2D" uid="uid://8udeaj0c1nuy" path="res://sprites/particle-textures/PNG (Black background)/T_flare81.png" id="2_l506i"]
+[ext_resource type="Curve" uid="uid://tmj6edmabrn" path="res://shaders/hit-marker-1-curve.tres" id="3_l506i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plx70"]
 render_priority = 0
 shader = ExtResource("1_si4ve")
 shader_parameter/Hit_texture = ExtResource("2_l506i")
 
-[sub_resource type="Curve" id="Curve_si4ve"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="CurveTexture" id="CurveTexture_l506i"]
-curve = SubResource("Curve_si4ve")
+curve = ExtResource("3_l506i")
 
-[sub_resource type="Curve" id="Curve_plx70"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.96969694, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_py8pg"]
-curve = SubResource("Curve_plx70")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jef71"]
-angle_min = -179.99998
-angle_max = 180.00002
-angle_curve = SubResource("CurveTexture_l506i")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_plx70"]
+angle_min = -180.0
+angle_max = 180.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.79999995
+scale_min = 0.8
 scale_max = 1.5
-scale_curve = SubResource("CurveTexture_py8pg")
+scale_curve = SubResource("CurveTexture_l506i")
 
 [sub_resource type="QuadMesh" id="QuadMesh_6qis3"]
 
@@ -38,5 +27,7 @@ scale_curve = SubResource("CurveTexture_py8pg")
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_plx70")
 amount = 1
-process_material = SubResource("ParticleProcessMaterial_jef71")
+process_material = SubResource("ParticleProcessMaterial_plx70")
 draw_pass_1 = SubResource("QuadMesh_6qis3")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
