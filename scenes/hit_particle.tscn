@@ -1,33 +1,85 @@
-[gd_scene load_steps=8 format=3 uid="uid://diwtxvf3gnp7v"]
+[gd_scene load_steps=18 format=3 uid="uid://diwtxvf3gnp7v"]
 
 [ext_resource type="Shader" uid="uid://b7uwkdv38sx63" path="res://shaders/simple-shader.tres" id="1_si4ve"]
-[ext_resource type="Texture2D" uid="uid://8udeaj0c1nuy" path="res://sprites/particle-textures/PNG (Black background)/T_flare81.png" id="2_l506i"]
+[ext_resource type="Texture2D" uid="uid://dbd4sc3k55ro4" path="res://sprites/particle-textures/PNG (Black background)/trace_02.png" id="2_l506i"]
 [ext_resource type="Curve" uid="uid://tmj6edmabrn" path="res://shaders/hit-marker-1-curve.tres" id="3_l506i"]
+[ext_resource type="Shader" uid="uid://h6gyg87savwf" path="res://shaders/simple-shader-sparks.tres" id="4_plx70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plx70"]
 render_priority = 0
 shader = ExtResource("1_si4ve")
 shader_parameter/Hit_texture = ExtResource("2_l506i")
 
+[sub_resource type="Curve" id="Curve_py8pg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.3660714, 0.46280986), 0.0, 0.0, 0, 0, Vector2(0.49404758, 1), -24.495844, -24.495844, 0, 0, Vector2(0.63095236, 0.95395505), 0.0, 0.0, 0, 0, Vector2(0.9166666, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_udiyj"]
+curve = SubResource("Curve_py8pg")
+
+[sub_resource type="Gradient" id="Gradient_jef71"]
+colors = PackedColorArray(4.882238, 0.40835074, 0, 1, 0.75351036, 0.4157702, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6qis3"]
+gradient = SubResource("Gradient_jef71")
+use_hdr = true
+
 [sub_resource type="CurveTexture" id="CurveTexture_l506i"]
 curve = ExtResource("3_l506i")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_plx70"]
-angle_min = -180.0
-angle_max = 180.0
+angle_min = -466.6
+angle_max = -466.6
 gravity = Vector3(0, 0, 0)
 scale_min = 0.8
 scale_max = 1.5
 scale_curve = SubResource("CurveTexture_l506i")
+color_ramp = SubResource("GradientTexture1D_6qis3")
+alpha_curve = SubResource("CurveTexture_udiyj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_6qis3"]
 
+[sub_resource type="Gradient" id="Gradient_py8pg"]
+colors = PackedColorArray(10.163862, 11.426616, 0.0007885742, 1, 1.0569379, 0.8544104, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_udiyj"]
+gradient = SubResource("Gradient_py8pg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3ewm2"]
+particle_flag_align_y = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 8.0
+initial_velocity_max = 12.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_udiyj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jef71"]
+render_priority = 0
+shader = ExtResource("4_plx70")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vss4o"]
+lightmap_size_hint = Vector2i(5, 4)
+material = SubResource("ShaderMaterial_jef71")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.01
+
 [node name="HitParticle" type="Node"]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="hitMarker" type="GPUParticles3D" parent="Node3D"]
 material_override = SubResource("ShaderMaterial_plx70")
 amount = 1
+lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_plx70")
 draw_pass_1 = SubResource("QuadMesh_6qis3")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+[node name="coinSparks" type="GPUParticles3D" parent="Node3D"]
+amount = 14
+lifetime = 0.25
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3ewm2")
+draw_pass_1 = SubResource("CylinderMesh_vss4o")

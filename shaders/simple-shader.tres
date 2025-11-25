@@ -16,12 +16,13 @@ source = 5
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_o4w2q"]
 operator = 2
 
-[sub_resource type="VisualShaderNodeBillboard" id="VisualShaderNodeBillboard_morls"]
+[sub_resource type="VisualShaderNodeBillboard" id="VisualShaderNodeBillboard_33ebo"]
 billboard_type = 3
+keep_scale = true
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded;
 
 uniform sampler2D Hit_texture : source_color;
 
@@ -33,6 +34,7 @@ void vertex() {
 	{
 		mat4 __wm = mat4(normalize(INV_VIEW_MATRIX[0]), normalize(INV_VIEW_MATRIX[1]), normalize(INV_VIEW_MATRIX[2]), MODEL_MATRIX[3]);
 		__wm = __wm * mat4(vec4(cos(INSTANCE_CUSTOM.x), -sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(0.0, 0.0, 1.0, 0.0), vec4(0.0, 0.0, 0.0, 1.0));
+		__wm = __wm * mat4(vec4(length(MODEL_MATRIX[0].xyz), 0.0, 0.0, 0.0), vec4(0.0, length(MODEL_MATRIX[1].xyz), 0.0, 0.0), vec4(0.0, 0.0, length(MODEL_MATRIX[2].xyz), 0.0), vec4(0.0, 0.0, 0.0, 1.0));
 		n_out2p0 = VIEW_MATRIX * __wm;
 	}
 
@@ -66,17 +68,18 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-136.024, -34.7604)
+modes/cull = 2
 flags/unshaded = true
-nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_morls")
-nodes/vertex/2/position = Vector2(-220, 420)
+preview_params/Hit_texture = "null"
+nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_33ebo")
+nodes/vertex/2/position = Vector2(-20, 460)
 nodes/vertex/connections = PackedInt32Array(2, 0, 0, 10)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_33ebo")
-nodes/fragment/2/position = Vector2(-160, 160)
+nodes/fragment/2/position = Vector2(780, 520)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_crhy8")
 nodes/fragment/3/position = Vector2(-560, 480)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_efmf8")
-nodes/fragment/4/position = Vector2(-180, 460)
+nodes/fragment/4/position = Vector2(-180, 520)
 nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_o4w2q")
-nodes/fragment/5/position = Vector2(160, 460)
-nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 4, 2, 4, 1, 5, 0, 2, 4, 5, 1, 5, 0, 0, 1)
+nodes/fragment/5/position = Vector2(80, 240)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 2, 4, 5, 1, 5, 0, 0, 1, 4, 1, 5, 0, 3, 0, 4, 2)
