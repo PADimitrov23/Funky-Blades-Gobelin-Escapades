@@ -83,7 +83,7 @@ func update_HUD():
 	healthBar.value = health
 	goldCounter.text = str(gold)
 
-func _process(delta):
+func _process(_delta):
 	attack()
 	inspect()
 	_switch_view()
