@@ -10,13 +10,12 @@ var speed = 2
 var acceleration = 5
 var gravity = 10
 var target = null
-var is_player_in_chase_area = false
-var value = 1
+var gold = 1
 
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
-@export var animationPlayer : AnimationPlayer
+@export var animationPlayer: AnimationPlayer
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	if health <= 0:
 		state = States.die
 
@@ -35,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		navAgent.target_position = target.global_position
 		
 		var direction = navAgent.get_next_path_position() - global_position
-		direction= direction.normalized()
+		direction = direction.normalized()
 		
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
 		animationPlayer.play("Walk")
@@ -57,20 +56,17 @@ func attack():
 	target.health -= damage
 
 func drop_loot():
-	target.gold += value
+	target.gold += gold
 
 func _on_chase_area_body_entered(body: Node3D) -> void:
 	if body is Player and state != States.die:
 		target = body
-		is_player_in_chase_area = true
 		state = States.chase
 
 func _on_chase_area_body_exited(body: Node3D) -> void:
 	if body is Player and state != States.die:
 		target = null
-		is_player_in_chase_area = false
-		if state != States.attack:
-			state = States.idle
+		state = States.idle
 
 func _on_attack_area_body_entered(body: Node3D) -> void:
 	if body is Player and state != States.die:
@@ -78,7 +74,4 @@ func _on_attack_area_body_entered(body: Node3D) -> void:
 
 func _on_attack_area_body_exited(body: Node3D) -> void:
 	if body is Player and state != States.die:
-		if is_player_in_chase_area:
-			state = States.chase
-		else:
-			state = States.idle
+		state = States.chase
