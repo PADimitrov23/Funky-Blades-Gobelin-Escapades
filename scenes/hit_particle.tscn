@@ -66,18 +66,16 @@ top_radius = 0.03
 bottom_radius = 0.03
 height = 0.01
 
-[node name="HitParticle" type="Node"]
+[node name="HitParticle" type="Node3D"]
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="hitMarker" type="GPUParticles3D" parent="Node3D"]
+[node name="hitMarker" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_plx70")
 amount = 1
 lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_plx70")
 draw_pass_1 = SubResource("QuadMesh_6qis3")
 
-[node name="coinSparks" type="GPUParticles3D" parent="Node3D"]
+[node name="coinSparks" type="GPUParticles3D" parent="."]
 amount = 14
 lifetime = 0.25
 explosiveness = 1.0
