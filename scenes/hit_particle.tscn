@@ -11,14 +11,14 @@ shader = ExtResource("1_si4ve")
 shader_parameter/Hit_texture = ExtResource("2_l506i")
 
 [sub_resource type="Curve" id="Curve_py8pg"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.3660714, 0.46280986), 0.0, 0.0, 0, 0, Vector2(0.49404758, 1), -24.495844, -24.495844, 0, 0, Vector2(0.63095236, 0.95395505), 0.0, 0.0, 0, 0, Vector2(0.9166666, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.366071, 0.46281), 0.0, 0.0, 0, 0, Vector2(0.494048, 1), -24.4958, -24.4958, 0, 0, Vector2(0.630952, 0.953955), 0.0, 0.0, 0, 0, Vector2(0.916667, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="CurveTexture" id="CurveTexture_udiyj"]
 curve = SubResource("Curve_py8pg")
 
 [sub_resource type="Gradient" id="Gradient_jef71"]
-colors = PackedColorArray(4.882238, 0.40835074, 0, 1, 0.75351036, 0.4157702, 0, 1)
+colors = PackedColorArray(4.88224, 0.408351, 0, 1, 0.75351, 0.41577, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6qis3"]
 gradient = SubResource("Gradient_jef71")
@@ -40,7 +40,7 @@ alpha_curve = SubResource("CurveTexture_udiyj")
 [sub_resource type="QuadMesh" id="QuadMesh_6qis3"]
 
 [sub_resource type="Gradient" id="Gradient_py8pg"]
-colors = PackedColorArray(10.163862, 11.426616, 0.0007885742, 1, 1.0569379, 0.8544104, 0, 1)
+colors = PackedColorArray(10.1639, 11.4266, 0.000788574, 1, 1.05694, 0.85441, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_udiyj"]
 gradient = SubResource("Gradient_py8pg")
