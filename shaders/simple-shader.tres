@@ -68,6 +68,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-88.4686, 104.787)
 modes/cull = 2
 flags/unshaded = true
 preview_params/Hit_texture = "null"
