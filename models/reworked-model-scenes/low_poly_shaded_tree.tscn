@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://boloxt7brvhtr"]
+
+[ext_resource type="PackedScene" uid="uid://dxj71eqmxysak" path="res://models/tree.fbx" id="1_4jf1k"]
+[ext_resource type="Material" uid="uid://bje6vgrexux1p" path="res://shaders/custom-materials/door-frames.tres" id="2_lx6en"]
+[ext_resource type="Material" uid="uid://d4ebyl48tn7t6" path="res://shaders/custom-materials/grass-follicles.tres" id="3_6j1yo"]
+
+[node name="low-poly-shaded-tree" instance=ExtResource("1_4jf1k")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_lx6en")
+
+[node name="Icosphere" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_6j1yo")

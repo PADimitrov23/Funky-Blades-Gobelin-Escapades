@@ -2,11 +2,18 @@ extends Node3D
 
 @export var world_scene_path: String = "res://scenes/world.tscn"
 
+var locked: bool = false
 var player_in_area: bool = false
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
 
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
+
+func unlock():
+	locked = false
+
+func lock():
+	locked = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
@@ -25,7 +32,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _process(delta):
-	if not player_in_area:
+	if not player_in_area or locked:
 		return
 	
 	if Input.is_action_pressed("interact"):
