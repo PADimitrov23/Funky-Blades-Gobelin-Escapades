@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6n2a5xm2jxxf"]
+[gd_scene load_steps=7 format=3 uid="uid://c6n2a5xm2jxxf"]
 
 [ext_resource type="PackedScene" uid="uid://dm4ichryg442s" path="res://models/tavernprops/door.glb" id="1_e6622"]
 [ext_resource type="Script" uid="uid://cppemet18eirh" path="res://scripts/tavern-door.gd" id="2_h8lme"]
 [ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold-e-progress-bar-under.png" id="3_srshb"]
 [ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold-e-progress-bar-over.png" id="4_lpd20"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_h8lme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b1ta"]
 size = Vector3(1.716, 2.34, 1)
@@ -57,6 +58,25 @@ scale = Vector2(0.253149, 0.255302)
 fill_mode = 5
 texture_under = ExtResource("3_srshb")
 texture_progress = ExtResource("4_lpd20")
+
+[node name="Label" type="Label" parent="CanvasLayer/HoldPrompt"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -85.625
+offset_right = 210.5
+offset_bottom = -33.625
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_h8lme")
+theme_override_font_sizes/font_size = 51
+text = "THE DOOR IS LOCKED"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

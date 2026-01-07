@@ -2,12 +2,13 @@ extends Node3D
 
 @export var world_scene_path: String = "res://scenes/world.tscn"
 
-var locked: bool = false
+var locked: bool = true
 var player_in_area: bool = false
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
 
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
+@onready var door_is_locked_text: Label = $CanvasLayer/HoldPrompt/Label
 
 func unlock():
 	locked = false
@@ -20,15 +21,20 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		player_in_area = true
 		if ui_progress_bar:
 			ui_progress_bar.visible = true
+		if locked:
+			door_is_locked_text.visible = true
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is Player:
 		player_in_area = false
 		hold_time = 0.0
+		door_is_locked_text.visible = false
+		
 		if ui_progress_bar:
 			ui_progress_bar.value = 0.0
 			ui_progress_bar.visible = false
+
 
 
 func _process(delta):
