@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://b70fe5ffl4pf7"]
+
+[ext_resource type="PackedScene" uid="uid://chlm1w1h5ei34" path="res://models/tavern.glb" id="1_rfwdh"]
+[ext_resource type="Material" uid="uid://bje6vgrexux1p" path="res://shaders/custom-materials/door-frames.tres" id="2_wdx83"]
+[ext_resource type="Material" uid="uid://ciraphubfxiqi" path="res://shaders/custom-materials/walls.tres" id="3_i63bu"]
+[ext_resource type="Material" uid="uid://bbay6f4o626e2" path="res://shaders/custom-materials/stairs.tres" id="4_rm5do"]
+
+[node name="tavern" instance=ExtResource("1_rfwdh")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="body" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_i63bu")
+surface_material_override/2 = ExtResource("4_rm5do")
+
+[node name="Fenetre_004" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_021" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_022" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Fenetre_005" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Vitre_004" parent="." index="7"]
+transform = Transform3D(1.07777e-07, 0.00263718, 0.372898, -0.602732, 3.85071e-08, 6.65875e-08, -3.59256e-08, -0.638131, 0.00154106, 0.862654, 2.73025, 2.0429)
+
+[node name="Fenetre_006" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_036" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_037" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Fenetre_007" parent="." index="12"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_013" parent="." index="13"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_014" parent="." index="14"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Fenetre_001" parent="." index="16"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_015" parent="." index="17"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_016" parent="." index="18"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Fenetre_002" parent="." index="20"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_017" parent="." index="21"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_018" parent="." index="22"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Fenetre_003" parent="." index="24"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_019" parent="." index="25"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_020" parent="." index="26"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_001" parent="." index="27"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_002" parent="." index="28"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_003" parent="." index="29"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_004" parent="." index="30"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_005" parent="." index="31"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_006" parent="." index="32"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_007" parent="." index="33"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_008" parent="." index="34"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_009" parent="." index="35"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_010" parent="." index="36"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_011" parent="." index="37"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_012" parent="." index="38"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_023" parent="." index="39"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_024" parent="." index="40"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_025" parent="." index="41"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_026" parent="." index="42"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_027" parent="." index="43"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_028" parent="." index="44"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_029" parent="." index="45"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_030" parent="." index="46"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_031" parent="." index="47"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_033" parent="." index="48"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_032" parent="." index="49"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_034" parent="." index="50"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_035" parent="." index="51"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Cube_039" parent="." index="52"]
+surface_material_override/0 = ExtResource("2_wdx83")
+
+[node name="Stairs" parent="." index="53"]
+surface_material_override/0 = ExtResource("4_rm5do")

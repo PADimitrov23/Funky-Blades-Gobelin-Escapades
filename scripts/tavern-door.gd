@@ -2,7 +2,7 @@ extends Node3D
 
 @export var world_scene_path: String = "res://scenes/world.tscn"
 
-var locked: bool = true
+var locked: bool = false
 var player_in_area: bool = false
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
