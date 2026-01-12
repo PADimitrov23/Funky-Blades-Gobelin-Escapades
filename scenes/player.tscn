@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bg8hil3lj2w2e"]
 
 [ext_resource type="Script" uid="uid://d35xf42qc3vpk" path="res://scripts/player.gd" id="1_eqqp1"]
-[ext_resource type="Material" uid="uid://cukfj221ghxk4" path="res://shaders/custom-materials/player.tres" id="2_tuyoq"]
+[ext_resource type="Material" uid="uid://cukfj221ghxk4" path="res://shaders/custom_materials/player.tres" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://dhhpda127is2p" path="res://models/Sword.glb" id="2_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://s7pk44jmiv6p" path="res://sprites/knight-health-bar-under.png" id="3_nmc1l"]
 [ext_resource type="Texture2D" uid="uid://h2mufjr5p0ld" path="res://sprites/knight-health-bar-over.png" id="4_f46kd"]

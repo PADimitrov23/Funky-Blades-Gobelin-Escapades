@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://mv8k08v22klj"]
+
+[ext_resource type="PackedScene" uid="uid://bf8mc0x3ux23q" path="res://models/surrounding-stones.glb" id="1_qdetu"]
+[ext_resource type="Material" uid="uid://c83h6sr4qw8m3" path="res://shaders/custom_materials/rocks.tres" id="2_75hmt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qdetu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75hmt"]
+size = Vector3(0.803284, 5.74016, 0.53842)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdetu"]
+size = Vector3(0.27063, 1.38994, 0.275146)
+
+[node name="surrounding-stones" instance=ExtResource("1_qdetu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33361, 0, -19.6358)
+
+[node name="Cube_004" parent="cliffProps5" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_0042" parent="cliffProps6" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_001" parent="cliffProps2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00106978, -0.00495291, -0.0014267)
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_002" parent="cliffProps3" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_0043" parent="cliffProps7" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_0044" parent="cliffProps8" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_0012" parent="cliffProps4" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="Cube_0022" parent="cliffProps10" index="0"]
+material_override = ExtResource("2_75hmt")
+material_overlay = ExtResource("2_75hmt")
+surface_material_override/0 = ExtResource("2_75hmt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8"]
+transform = Transform3D(-0.70902, -1.57633, 0.0637711, -0.104834, 0.0211427, 7.86265, -3.84169, 0.290344, -0.226338, -2.77475, 3.27604, -0.166319)
+physics_material_override = SubResource("PhysicsMaterial_qdetu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.67066, 0.0388847, 0.000412066, -0.126045, 0.2069, 0.00137168, 0.000182403, 0.000528197, -0.567657, -2.39015, 15.181, -0.378063)
+shape = SubResource("BoxShape3D_75hmt")
+debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.980867, 0.194728, -0.000776701, -0.194732, 0.980861, -0.00254325, 0.000268418, 0.00264781, 1, -5.26146, 12.6002, -0.516253)
+shape = SubResource("BoxShape3D_qdetu")
