@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://bnj0qsyq0pmwv"]
+[gd_scene load_steps=26 format=4 uid="uid://bnj0qsyq0pmwv"]
 
 [ext_resource type="Texture2D" uid="uid://5il8786syp5v" path="res://models/enemy/GobelinCavity.png" id="1_4ra3w"]
 [ext_resource type="Script" uid="uid://cjw1vkfst0nd7" path="res://scripts/enemy.gd" id="1_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://ccbsqxlx5bic8" path="res://models/enemy/GobelinNormals.png" id="2_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://bjfbfhgnqypli" path="res://models/enemy/GobelinColors.png" id="3_c4w8v"]
+[ext_resource type="PackedScene" uid="uid://diwtxvf3gnp7v" path="res://scenes/hit_particle.tscn" id="5_c4w8v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wggpu"]
 resource_name = "Material.003"
@@ -1122,6 +1123,9 @@ skin = SubResource("Skin_abe7i")
 libraries = {
 &"": SubResource("AnimationLibrary_hag5i")
 }
+
+[node name="hitMarker" parent="Gobelin" instance=ExtResource("5_c4w8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.562428, 0)
 
 [node name="GobelinCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00519741, 0.615422, 0.115344)

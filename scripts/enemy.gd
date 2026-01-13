@@ -12,12 +12,12 @@ var gravity = 10
 var target = null
 var gold = 1
 
+@onready var hit_particles: Node3D = $Gobelin/hitMarker
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
 @export var animationPlayer: AnimationPlayer
 
 func _process(_delta: float) -> void:
-	if health <= 0:
-		state = States.die
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -51,6 +51,18 @@ func _physics_process(delta: float) -> void:
 		animationPlayer.play("Die")
 		
 	move_and_slide()
+
+func play_hit_particles():
+	for child in hit_particles.get_children():
+		if child is GPUParticles3D:
+			child.restart()
+
+func take_damage(amount):
+	health -= amount
+	play_hit_particles()
+	
+	if health <= 0:
+		state = States.die
 
 func attack():
 	target.health -= damage

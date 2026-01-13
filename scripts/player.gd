@@ -70,7 +70,7 @@ func attack():
 func deal_damage():
 	for enemy in target:
 		if enemy and enemy.is_inside_tree():
-			enemy.health -= damage
+			enemy.take_damage(damage)
 
 # === Cosmetic Weapon Handling ===
 func inspect():

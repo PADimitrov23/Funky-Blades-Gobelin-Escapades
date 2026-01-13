@@ -14,17 +14,17 @@ shader_parameter/Hit_texture = ExtResource("2_l506i")
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.366071, 0.46281), 0.0, 0.0, 0, 0, Vector2(0.494048, 1), -24.4958, -24.4958, 0, 0, Vector2(0.630952, 0.953955), 0.0, 0.0, 0, 0, Vector2(0.916667, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[sub_resource type="CurveTexture" id="CurveTexture_udiyj"]
+[sub_resource type="CurveTexture" id="CurveTexture_plx70"]
 curve = SubResource("Curve_py8pg")
 
 [sub_resource type="Gradient" id="Gradient_jef71"]
 colors = PackedColorArray(4.88224, 0.408351, 0, 1, 0.75351, 0.41577, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6qis3"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_py8pg"]
 gradient = SubResource("Gradient_jef71")
 use_hdr = true
 
-[sub_resource type="CurveTexture" id="CurveTexture_l506i"]
+[sub_resource type="CurveTexture" id="CurveTexture_udiyj"]
 curve = ExtResource("3_l506i")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_plx70"]
@@ -33,16 +33,16 @@ angle_max = -466.6
 gravity = Vector3(0, 0, 0)
 scale_min = 0.8
 scale_max = 1.5
-scale_curve = SubResource("CurveTexture_l506i")
-color_ramp = SubResource("GradientTexture1D_6qis3")
-alpha_curve = SubResource("CurveTexture_udiyj")
+scale_curve = SubResource("CurveTexture_udiyj")
+color_ramp = SubResource("GradientTexture1D_py8pg")
+alpha_curve = SubResource("CurveTexture_plx70")
 
 [sub_resource type="QuadMesh" id="QuadMesh_6qis3"]
 
 [sub_resource type="Gradient" id="Gradient_py8pg"]
 colors = PackedColorArray(10.1639, 11.4266, 0.000788574, 1, 1.05694, 0.85441, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_udiyj"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jef71"]
 gradient = SubResource("Gradient_py8pg")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3ewm2"]
@@ -53,15 +53,15 @@ spread = 180.0
 initial_velocity_min = 8.0
 initial_velocity_max = 12.0
 gravity = Vector3(0, 0, 0)
-color_ramp = SubResource("GradientTexture1D_udiyj")
+color_ramp = SubResource("GradientTexture1D_jef71")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jef71"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qis3"]
 render_priority = 0
 shader = ExtResource("4_plx70")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vss4o"]
 lightmap_size_hint = Vector2i(5, 4)
-material = SubResource("ShaderMaterial_jef71")
+material = SubResource("ShaderMaterial_6qis3")
 top_radius = 0.03
 bottom_radius = 0.03
 height = 0.01
@@ -70,14 +70,18 @@ height = 0.01
 
 [node name="hitMarker" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_plx70")
+emitting = false
 amount = 1
 lifetime = 0.25
+one_shot = true
 process_material = SubResource("ParticleProcessMaterial_plx70")
 draw_pass_1 = SubResource("QuadMesh_6qis3")
 
 [node name="coinSparks" type="GPUParticles3D" parent="."]
+emitting = false
 amount = 14
 lifetime = 0.25
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_3ewm2")
 draw_pass_1 = SubResource("CylinderMesh_vss4o")
