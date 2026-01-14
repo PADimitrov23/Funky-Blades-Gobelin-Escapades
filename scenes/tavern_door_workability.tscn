@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6n2a5xm2jxxf"]
 
 [ext_resource type="PackedScene" uid="uid://dm4ichryg442s" path="res://models/tavernprops/door.glb" id="1_e6622"]
-[ext_resource type="Script" uid="uid://cppemet18eirh" path="res://scripts/tavern-door.gd" id="2_h8lme"]
-[ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold-e-progress-bar-under.png" id="3_srshb"]
-[ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold-e-progress-bar-over.png" id="4_lpd20"]
+[ext_resource type="Script" uid="uid://cppemet18eirh" path="res://scripts/tavern_door.gd" id="2_h8lme"]
+[ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold_e_progress_bar_under.png" id="3_srshb"]
+[ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold_e_progress_bar_over.png" id="4_lpd20"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_h8lme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b1ta"]

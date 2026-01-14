@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
-[ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern-floor-textures.jpg" id="3_0c8vp"]
+[ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern_floor_textures.jpg" id="3_0c8vp"]
 [ext_resource type="PackedScene" uid="uid://bwwc8e3mcnr47" path="res://models/tavernprops/storage.glb" id="5_a8aui"]
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
 

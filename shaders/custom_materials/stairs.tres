@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bbay6f4o626e2"]
 
 [ext_resource type="Material" uid="uid://cjrswus17wxfl" path="res://shaders/custom_materials/material-with-outline.tres" id="1_q801d"]
-[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel-shader-base.gdshader" id="2_3t1a0"]
+[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="2_3t1a0"]
 
 [resource]
 render_priority = 1

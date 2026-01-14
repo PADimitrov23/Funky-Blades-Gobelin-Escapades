@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0ovq4t8rvouw"]
+
+[ext_resource type="PackedScene" uid="uid://c3qmclvo0duhl" path="res://models/reworked_model_scenes/cave_model.glb" id="1_yawlb"]
+[ext_resource type="Material" uid="uid://c83h6sr4qw8m3" path="res://shaders/custom_materials/rocks.tres" id="2_n4n8k"]
+[ext_resource type="Material" uid="uid://cjrswus17wxfl" path="res://shaders/custom_materials/material-with-outline.tres" id="3_n2t54"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_shxmn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0371t"]
+size = Vector3(1, 9.79077, 1.4696)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kq4a"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmseu"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+shadow_to_opacity = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b7xyd"]
+
+[node name="cave_model" instance=ExtResource("1_yawlb")]
+
+[node name="Cube2" parent="Cave-1/cliffProps1" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_0012" parent="Cave-1/cliffProps11" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_001" parent="Cave-1/cliffProps12" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube3" parent="Cave-1/cliffProps2" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_0013" parent="Cave-1/cliffProps3" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_0014" parent="Cave-1/cliffProps4" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_004" parent="Cave-1/cliffProps5" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_0042" parent="Cave-1/cliffProps6" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_003" parent="Cave-1/cliffProps7" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube_0015" parent="Cave-1/cliffProps8" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="Cube4" parent="Cave-1/cliffProps9" index="0"]
+surface_material_override/0 = ExtResource("2_n4n8k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cave-1" index="11"]
+transform = Transform3D(-0.70902, -1.57633, 0.0637711, -0.104834, 0.0211427, 7.86265, -3.84169, 0.290344, -0.226338, -2.77475, 3.27604, -0.166319)
+physics_material_override = SubResource("PhysicsMaterial_shxmn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cave-1/StaticBody3D" index="0"]
+transform = Transform3D(1, -1.49012e-08, -7.45058e-09, -3.57628e-07, 1, -1.49012e-08, 9.31323e-10, 0, 1, 0.0893248, 0.185432, 0.000692427)
+shape = SubResource("BoxShape3D_0371t")
+debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-1.98372, -1.33766, -0.514805, -0.00931578, 0.490253, -2.46971, 2.30164, -1.1509, -0.453691, 2.92847, 1.3247, -2.11943)
+material_override = SubResource("StandardMaterial3D_2kq4a")
+material_overlay = SubResource("StandardMaterial3D_tmseu")
+mesh = SubResource("PlaneMesh_b7xyd")
+surface_material_override/0 = ExtResource("3_n2t54")

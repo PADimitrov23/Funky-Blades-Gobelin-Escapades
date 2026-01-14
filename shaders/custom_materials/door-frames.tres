@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bje6vgrexux1p"]
 
-[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel-shader-base.gdshader" id="1_2dc6h"]
+[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="1_2dc6h"]
 [ext_resource type="Material" uid="uid://cjrswus17wxfl" path="res://shaders/custom_materials/material-with-outline.tres" id="1_ieetc"]
 
 [resource]

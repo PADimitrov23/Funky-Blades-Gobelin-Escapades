@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cukfj221ghxk4"]
 
-[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel-shader-base.gdshader" id="1_a867y"]
+[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="1_a867y"]
 
 [resource]
 render_priority = 1

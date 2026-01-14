@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://diwtxvf3gnp7v"]
 
-[ext_resource type="Shader" uid="uid://b7uwkdv38sx63" path="res://shaders/simple-shader.tres" id="1_si4ve"]
-[ext_resource type="Texture2D" uid="uid://dbd4sc3k55ro4" path="res://sprites/particle-textures/PNG (Black background)/trace_02.png" id="2_l506i"]
-[ext_resource type="Curve" uid="uid://tmj6edmabrn" path="res://shaders/hit-marker-1-curve.tres" id="3_l506i"]
-[ext_resource type="Shader" uid="uid://h6gyg87savwf" path="res://shaders/simple-shader-sparks.tres" id="4_plx70"]
+[ext_resource type="Shader" uid="uid://b7uwkdv38sx63" path="res://shaders/simple_shader.tres" id="1_si4ve"]
+[ext_resource type="Texture2D" uid="uid://dbd4sc3k55ro4" path="res://sprites/particle_textures/PNG (Black background)/trace_02.png" id="2_l506i"]
+[ext_resource type="Curve" uid="uid://tmj6edmabrn" path="res://shaders/hit_marker_1_curve.tres" id="3_l506i"]
+[ext_resource type="Shader" uid="uid://h6gyg87savwf" path="res://shaders/simple_shader_sparks.tres" id="4_plx70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plx70"]
 render_priority = 0
