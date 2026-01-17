@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctjby5dybir61"]
+
+[ext_resource type="PackedScene" uid="uid://do162fk4wlwdi" path="res://models/reworked_model_scenes/cliff-wall-duped.glb" id="1_4oyd8"]
+[ext_resource type="Material" uid="uid://c83h6sr4qw8m3" path="res://shaders/custom_materials/rocks.tres" id="2_gnwmj"]
+
+[node name="cliff-wall-duped" instance=ExtResource("1_4oyd8")]
+
+[node name="Cube_001" parent="cliff_wall/cliffProps1" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0024" parent="cliff_wall/cliffProps10" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube3" parent="cliff_wall/cliffProps11" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0025" parent="cliff_wall/cliffProps12" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0013" parent="cliff_wall/cliffProps13" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0043" parent="cliff_wall/cliffProps14" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0026" parent="cliff_wall/cliffProps15" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube4" parent="cliff_wall/cliffProps16" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0027" parent="cliff_wall/cliffProps17" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0014" parent="cliff_wall/cliffProps18" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0044" parent="cliff_wall/cliffProps19" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0012" parent="cliff_wall/cliffProps2" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0028" parent="cliff_wall/cliffProps20" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube5" parent="cliff_wall/cliffProps21" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0029" parent="cliff_wall/cliffProps22" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0015" parent="cliff_wall/cliffProps23" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0045" parent="cliff_wall/cliffProps24" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_00210" parent="cliff_wall/cliffProps25" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube6" parent="cliff_wall/cliffProps26" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_00211" parent="cliff_wall/cliffProps27" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0016" parent="cliff_wall/cliffProps28" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0046" parent="cliff_wall/cliffProps29" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_002" parent="cliff_wall/cliffProps3" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_00212" parent="cliff_wall/cliffProps30" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0022" parent="cliff_wall/cliffProps4" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_004" parent="cliff_wall/cliffProps5" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube2" parent="cliff_wall/cliffProps6" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0023" parent="cliff_wall/cliffProps7" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_00122" parent="cliff_wall/cliffProps8" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
+
+[node name="Cube_0042" parent="cliff_wall/cliffProps9" index="0"]
+surface_material_override/0 = ExtResource("2_gnwmj")
