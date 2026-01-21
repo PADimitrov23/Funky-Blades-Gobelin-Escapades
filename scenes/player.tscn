@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg8hil3lj2w2e"]
+[gd_scene load_steps=19 format=3 uid="uid://bg8hil3lj2w2e"]
 
 [ext_resource type="Script" uid="uid://d35xf42qc3vpk" path="res://scripts/player.gd" id="1_eqqp1"]
 [ext_resource type="Material" uid="uid://cukfj221ghxk4" path="res://shaders/custom_materials/player.tres" id="2_tuyoq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://s7pk44jmiv6p" path="res://sprites/knight_health_bar_under.png" id="3_nmc1l"]
 [ext_resource type="Texture2D" uid="uid://h2mufjr5p0ld" path="res://sprites/knight_health_bar_over.png" id="4_f46kd"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_qlg0r"]
+[ext_resource type="Shader" uid="uid://caftvn1ebrn2a" path="res://speedlines.gdshader" id="7_fjrip"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bxedw"]
 lightmap_size_hint = Vector2i(14, 13)
@@ -126,6 +127,27 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_dqkch"]
 size = Vector3(1, 1, 1.16184)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_smehm"]
+noise_type = 5
+frequency = 1.0
+fractal_lacunarity = 0.5
+domain_warp_amplitude = 25.675
+domain_warp_frequency = -7.5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ur7pv"]
+noise = SubResource("FastNoiseLite_smehm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4r1p"]
+shader = ExtResource("7_fjrip")
+shader_parameter/noise = SubResource("NoiseTexture2D_ur7pv")
+shader_parameter/line_color = Color(1, 1, 1, 0.282353)
+shader_parameter/line_count = 0.5
+shader_parameter/line_density = 0.556
+shader_parameter/line_faloff = 0.0
+shader_parameter/mask_size = 0.28
+shader_parameter/mask_edge = 0.792
+shader_parameter/animation_speed = 20.0
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_eqqp1")
 
@@ -203,6 +225,15 @@ text = "0"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04961)
 shape = SubResource("BoxShape3D_dqkch")
 debug_color = Color(0.89997, 1.2514e-06, 0.450303, 0.42)
+
+[node name="Speedlines" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_y4r1p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="InspectCooldown" to="." method="_on_inspect_cooldown_timeout"]

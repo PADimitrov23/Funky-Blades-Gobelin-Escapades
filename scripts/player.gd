@@ -93,6 +93,23 @@ func _process(_delta):
 
 # === Movement ===
 func _physics_process(delta):
+	
+	var speed := velocity.length()
+	var density := 0.0
+
+	if speed >= 10:
+		density = 1.0
+	elif speed >= 8:
+		density = 0.8
+	elif speed >= 6:
+		density = 0.6
+	elif speed >= 4:
+		density = 0.4
+	elif speed >= 2:
+		density = 0.2
+
+	$Speedlines.material.set_shader_parameter("line_density", density)
+	
 	floor_snap_length = 0.3
 	
 	var input_vec := Input.get_vector("left", "right", "up", "down")
