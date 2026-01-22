@@ -41,3 +41,11 @@
 - **Le Lu**  
   Particle assets and particle system tutorials used in this project.
   - YouTube: https://www.youtube.com/@Le_x_Lu
+
+---
+
+### 💾 Godot Add-onn's
+
+- **Proton-Scatter**  
+  For easier environment design.
+  - Godot Asset Library: https://godotengine.org/asset-library/asset/1866

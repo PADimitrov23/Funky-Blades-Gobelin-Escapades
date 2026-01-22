@@ -3,14 +3,16 @@ extends Node3D
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
 var player_in_area: bool = false
-var is_day := false
+var is_day := true
 
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var switch_time: Label = $CanvasLayer/HoldPrompt/Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	pass
+	anim_player.play("cycle_day_to_night")
+	anim_player.seek(anim_player.current_animation_length, true)
+	anim_player.stop()
 
 func _process(delta: float) -> void:
 	if not player_in_area:
@@ -35,7 +37,6 @@ func _process(delta: float) -> void:
 
 			hold_time = 0.0
 	else:
-		# Reset ONLY when not holding
 		hold_time = 0.0
 		if ui_progress_bar:
 			ui_progress_bar.value = 0.0

@@ -1,13 +1,11 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d4ebyl48tn7t6"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d4ebyl48tn7t6"]
 
-[ext_resource type="Material" uid="uid://cjrswus17wxfl" path="res://shaders/custom_materials/material-with-outline.tres" id="1_n0iu0"]
 [ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="1_vamwa"]
 
 [resource]
 render_priority = 0
-next_pass = ExtResource("1_n0iu0")
 shader = ExtResource("1_vamwa")
-shader_parameter/color = Color(0.604547, 0.85899, 0.554356, 1)
+shader_parameter/color = Color(0.2365745, 0.3900482, 0.20590794, 1)
 shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
 shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
 shader_parameter/uv_scale = Vector2(1, 1)

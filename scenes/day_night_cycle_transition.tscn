@@ -1,79 +1,95 @@
-[gd_scene load_steps=24 format=3 uid="uid://dn2scvgxa0ewb"]
+[gd_scene load_steps=26 format=3 uid="uid://dn2scvgxa0ewb"]
 
 [ext_resource type="Shader" uid="uid://bswlksfsbd2lt" path="res://shaders/stilyzed_sky.gdshader" id="1_1t6ka"]
 [ext_resource type="Script" uid="uid://c3g527my3ouux" path="res://scenes/day_night_cycle_transition.gd" id="1_fshqf"]
+[ext_resource type="PackedScene" uid="uid://d36s2kc2wpf3w" path="res://models/tavernprops/bottleRed.glb" id="3_37c28"]
 [ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold_e_progress_bar_under.png" id="3_vpd4k"]
 [ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold_e_progress_bar_over.png" id="4_37c28"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_tetbe"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_65ui8"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vpd4k"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_37c28"]
+noise = SubResource("FastNoiseLite_vpd4k")
+seamless = true
+in_3d_space = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vpd4k"]
 load_path = "res://.godot/imported/circle_05.png-0fb8239d423a0df59e18a9451537fab8.s3tc.ctex"
 
-[sub_resource type="Curve" id="Curve_8ttje"]
+[sub_resource type="Curve" id="Curve_37c28"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10241, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.74156), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_qhjao"]
-curve = SubResource("Curve_8ttje")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_fshqf"]
-noise_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vpd4k"]
-seamless = true
-noise = SubResource("FastNoiseLite_fshqf")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_37c28"]
-noise_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tetbe"]
-seamless = true
-noise = SubResource("FastNoiseLite_37c28")
+[sub_resource type="CurveTexture" id="CurveTexture_tetbe"]
+curve = SubResource("Curve_37c28")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2ijgt"]
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fsek1"]
-seamless = true
 noise = SubResource("FastNoiseLite_2ijgt")
+seamless = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mrnbc"]
-load_path = "res://.godot/imported/trace_05.png-79da3138d850fe95f74add0fb48792c8.s3tc.ctex"
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mrnbc"]
+noise_type = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gv545"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gv545"]
+noise = SubResource("FastNoiseLite_mrnbc")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x7tyk"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6vo45"]
+noise = SubResource("FastNoiseLite_x7tyk")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf7ub"]
 shader = ExtResource("1_1t6ka")
-shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_tetbe")
-shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_vpd4k")
-shader_parameter/cloud_curves = SubResource("CurveTexture_qhjao")
+shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_gv545")
+shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_fsek1")
+shader_parameter/cloud_curves = SubResource("CurveTexture_tetbe")
 shader_parameter/clouds_samples = 32
 shader_parameter/shadow_sample = 4
 shader_parameter/clouds_density = 0.4
 shader_parameter/clouds_scale = 1.0
-shader_parameter/clouds_smoothness = 0.05
+shader_parameter/clouds_smoothness = 0.03
 shader_parameter/clouds_light_color = Color(0.227451, 0.447059, 1, 1)
 shader_parameter/clouds_shadow_intensity = 8.0
-shader_parameter/high_clouds_sampler = SubResource("NoiseTexture2D_fsek1")
-shader_parameter/high_clouds_density = 0.15
+shader_parameter/high_clouds_sampler = SubResource("NoiseTexture2D_6vo45")
+shader_parameter/high_clouds_density = 0.2
 shader_parameter/top_color = Color(0.027451, 0.101961, 0.25098, 1)
 shader_parameter/bottom_color = Color(0.027451, 0.101961, 0.25098, 1)
 shader_parameter/sun_scatter = Color(0.12549, 0.0862745, 0.372549, 1)
 shader_parameter/astro_tint = Color(1, 1, 1, 1)
-shader_parameter/astro_sampler = SubResource("CompressedTexture2D_65ui8")
-shader_parameter/astro_scale = 6.0
+shader_parameter/astro_sampler = SubResource("CompressedTexture2D_vpd4k")
+shader_parameter/astro_scale = 3.0
 shader_parameter/astro_intensity = 1.2
 shader_parameter/stars_intensity = 5.0
 shader_parameter/shooting_stars_intensity = 4.9
-shader_parameter/shooting_star_sampler = SubResource("CompressedTexture2D_mrnbc")
-shader_parameter/shooting_star_tint = Color(0.513726, 0.905882, 0.843137, 1)
+shader_parameter/shooting_star_tint = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_x7tyk"]
-sky_material = SubResource("ShaderMaterial_gv545")
+[sub_resource type="Sky" id="Sky_72581"]
+sky_material = SubResource("ShaderMaterial_yf7ub")
 
 [sub_resource type="Environment" id="Environment_6vo45"]
 background_mode = 2
-sky = SubResource("Sky_x7tyk")
-fog_light_color = Color(0.806647, 0.831788, 0.741605, 1)
+sky = SubResource("Sky_72581")
+glow_levels/1 = 32.95
+glow_levels/2 = 26.5
+glow_levels/3 = 11.4
+glow_levels/4 = 67.3
+glow_map = SubResource("NoiseTexture2D_37c28")
+fog_light_color = Color(0.0009943222, 0.0018835067, 0.0012784145, 1)
+fog_light_energy = 0.84
+fog_sun_scatter = 0.06
+fog_aerial_perspective = 0.361
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0109
 adjustment_enabled = true
+adjustment_contrast = 1.08
 adjustment_saturation = 1.5
 
 [sub_resource type="Animation" id="Animation_72581"]
@@ -197,6 +213,54 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-3.10494, 1.6249, 3.0456)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0109]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("sun:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.617]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("WorldEnvironment:environment:adjustment_brightness")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_1t6ka"]
@@ -322,6 +386,54 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector3(-1.29154, 1.62665, 3.04211), Vector3(3.04385, 1.6249, 3.0456)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0258, 0.001]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("sun:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.617, 1.141]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("WorldEnvironment:environment:adjustment_brightness")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.45]
+}
 
 [sub_resource type="Animation" id="Animation_yf7ub"]
 resource_name = "cycle_night_to_day"
@@ -446,6 +558,54 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector3(-3.10494, 1.6249, 3.0456), Vector3(-1.29154, 1.62665, 3.04211)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("sun:light_energy")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.14, 2.6]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.001, 0.0258]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("WorldEnvironment:environment:adjustment_brightness")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.45, 1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k3fpp"]
 _data = {
@@ -464,7 +624,7 @@ script = ExtResource("1_fshqf")
 environment = SubResource("Environment_6vo45")
 
 [node name="sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0503213, 0.0416055, -0.997866, -0.095781, 0.994728, 0.0366445, 0.99413, 0.0937326, 0.0540409, 3.9251, 26.2359, -0.796383)
+transform = Transform3D(0.05032126, 0.04160551, -0.997866, -0.09578103, 0.9947281, 0.036644507, 0.9941301, 0.09373264, 0.05404094, 3.9251, 26.2359, -0.796383)
 light_color = Color(0.971072, 0.437407, 2.40654e-05, 1)
 light_energy = 2.617
 light_indirect_energy = 1.162
@@ -477,12 +637,15 @@ libraries = {
 }
 
 [node name="day_night_buttons_area" type="Area3D" parent="."]
-transform = Transform3D(0.1089, 0, 0, 0, 0.472362, 0, 0, 0, 0.000613002, -19.1053, 1.56278, 20.0199)
+transform = Transform3D(0.1089, 0, 0, 0, 0.472362, 0, 0, 0, 0.000613002, -19.1053, 1.56278, 20.261591)
 
 [node name="day_night_buttons" type="CollisionShape3D" parent="day_night_buttons_area"]
 transform = Transform3D(0.97399, 0, 0, 0, 0.97399, 0, 0, 0, 32.3603, -4.16991, -1.28407, 609.593)
 shape = SubResource("BoxShape3D_2ijgt")
 debug_color = Color(1, 0.441485, 0.577963, 0.42)
+
+[node name="bottleRed" parent="day_night_buttons_area" instance=ExtResource("3_37c28")]
+transform = Transform3D(69.536674, 0, 0, 0, 8.555834, 0, 0, 0, 1, -4.6229706, -1.7817433, 595.5332)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
