@@ -11,7 +11,6 @@ func spawnGobelins(waveCounter):
 	#insert the weighted picker
 	
 
-
 func _on_timer_timeout() -> void:
 	var instance = enemy.instantiate()
 	add_child(instance)

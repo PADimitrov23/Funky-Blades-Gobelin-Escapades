@@ -432,7 +432,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0, 0.45]
+"values": [1.0, 0.9400000000000001]
 }
 
 [sub_resource type="Animation" id="Animation_yf7ub"]
@@ -604,7 +604,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.45, 1.0]
+"values": [0.9400000000000001, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k3fpp"]
