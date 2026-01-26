@@ -3,6 +3,7 @@ class_name Enemy
 
 enum States {attack, idle, chase, die}
 
+#region Enemy properties
 var state = States.idle
 var damage = 10
 var health = 15
@@ -11,10 +12,13 @@ var acceleration = 5
 var gravity = 10
 var target = null
 var gold = 1
+#endregion
 
+#region Node connects
 @onready var hit_particles: Node3D = $Gobelin/hitMarker
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
 @export var animationPlayer: AnimationPlayer
+#endregion
 
 func _process(_delta: float) -> void:
 	pass

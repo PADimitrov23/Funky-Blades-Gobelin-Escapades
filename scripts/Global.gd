@@ -1,4 +1,9 @@
 extends Node
+
+#region World control variables
+var is_day := true
+#endregion
+
 #region Player Stats
 static var gold = 0
 static var health = 100

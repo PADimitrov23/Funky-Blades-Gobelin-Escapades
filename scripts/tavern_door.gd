@@ -24,7 +24,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		if locked:
 			door_is_locked_text.visible = true
 
-
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is Player:
 		player_in_area = false
@@ -34,7 +33,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		if ui_progress_bar:
 			ui_progress_bar.value = 0.0
 			ui_progress_bar.visible = false
-
 
 func _process(delta):
 	if not player_in_area or locked:
@@ -51,7 +49,6 @@ func _process(delta):
 		hold_time = 0.0
 		if ui_progress_bar:
 			ui_progress_bar.value = 0.0
-
 
 func _exit():
 	var world_scene = load(world_scene_path)

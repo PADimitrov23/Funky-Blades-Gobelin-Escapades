@@ -1,4 +1,4 @@
-[gd_resource type="Sky" load_steps=13 format=3 uid="uid://iji0mpp66k4b"]
+[gd_resource type="Sky" format=3 uid="uid://iji0mpp66k4b"]
 
 [ext_resource type="Shader" uid="uid://bswlksfsbd2lt" path="res://shaders/stilyzed_sky.gdshader" id="1_7cfnq"]
 [ext_resource type="Texture2D" uid="uid://wtnl17a3c12a" path="res://sprites/particle_textures/PNG (Transparent)/trace_05.png" id="2_lu7sm"]

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-# === Movement Vars ===
+#region Movement variables
 @export var move_speed := 5.0
 @export var sprint_speed := 11.0
 @export var acceleration := 12.0
@@ -12,23 +12,26 @@ class_name Player
 @export var slide_speed := 22.0
 @export var slide_decay := 1.0
 @export var camera_tilt := 5.0
+#endregion
 
-# === Player Stats ===
+#region Player stats
 var gold := 0
 var health := 100
 var max_health := 100
 var damage := 10
 var target := []
+#endregion
 
-# === States ===
+#region Player states
 var velocity_y := 0.0
 var move_dir := Vector3.ZERO
 var input_dir := Vector3.ZERO
 var sliding := false
 var current_speed := 0.0
 var rotation_x := 0.0
+#endregion
 
-# === Nodes ===
+#region Node connects
 @onready var first_person_camera: Camera3D = $FirstPerson
 @onready var third_person_camera: Camera3D = $Head/ThirdPerson
 @onready var camera: Camera3D = first_person_camera
@@ -37,13 +40,14 @@ var rotation_x := 0.0
 @onready var inspectCooldown = $InspectCooldown
 @onready var healthBar = $HUD/HealthBar
 @onready var goldCounter = $HUD/GoldCounter
+#endregion
 
 func _ready():
 	healthBar.max_value = max_health
 	camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-# === Input & Camera Handling ===
+#Input and camera handling
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sensitivity)
@@ -61,7 +65,6 @@ func _switch_view():
 			first_person_camera.current = true
 			camera = first_person_camera
 
-# === Combat Handling ===
 func attack():
 	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
 		animationPlayer.play("SwordSwing")
@@ -72,13 +75,11 @@ func deal_damage():
 		if enemy and enemy.is_inside_tree():
 			enemy.take_damage(damage)
 
-# === Cosmetic Weapon Handling ===
 func inspect():
 	if Input.is_action_just_pressed("inspect") and inspectCooldown.is_stopped():
 		animationPlayer.play("SwordInspect")
 		inspectCooldown.start()
 
-# === HUD + General ===
 func update_HUD():
 	healthBar.value = health
 	goldCounter.text = str(gold)
@@ -91,7 +92,6 @@ func _process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
-# === Movement ===
 func _physics_process(delta):
 	
 	var speed := velocity.length()
@@ -163,7 +163,6 @@ func _physics_process(delta):
 		var target_fov = 90.0 if sliding else 75.0
 		camera.fov = lerp(camera.fov, target_fov, 5 * delta)
 
-# === Sliding helpers ===
 func _start_slide():
 	sliding = true
 	move_dir = move_dir.normalized() * slide_speed
@@ -172,7 +171,6 @@ func _start_slide():
 func _end_slide():
 	sliding = false
 
-# === Signal Callbacks ===
 func _on_attack_cooldown_timeout() -> void:
 	pass
 
