@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://c4mot1fo3siox"]
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://c4mot1fo3siox"]
 
 [ext_resource type="Shader" uid="uid://cg28nenm84gve" path="res://addons/proton_scatter/demos/assets/materials/grass.gdshader" id="1_fntgl"]
 [ext_resource type="Texture2D" uid="uid://d23p13yi7asw0" path="res://addons/proton_scatter/demos/assets/textures/t_grass_2.png" id="2_1odx0"]
@@ -15,10 +15,10 @@ seed = 1
 frequency = 0.002
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7l0n1"]
-noise = SubResource("FastNoiseLite_eeqpx")
-seamless = true
 in_3d_space = true
+seamless = true
 seamless_blend_skirt = 0.65
+noise = SubResource("FastNoiseLite_eeqpx")
 
 [resource]
 render_priority = 0

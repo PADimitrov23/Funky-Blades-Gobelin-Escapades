@@ -5,7 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_vamwa")
-shader_parameter/color = Color(0.2365745, 0.3900482, 0.20590794, 1)
+shader_parameter/color = Color(0.236575, 0.390048, 0.205908, 1)
 shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
 shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
 shader_parameter/uv_scale = Vector2(1, 1)

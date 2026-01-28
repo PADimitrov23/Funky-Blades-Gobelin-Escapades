@@ -1,7 +1,7 @@
 extends Node
 
 #region World control variables
-var is_day := true
+var is_day: bool = true
 #endregion
 
 #region Player Stats

@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://dn2scvgxa0ewb"]
 
 [ext_resource type="Shader" uid="uid://bswlksfsbd2lt" path="res://shaders/stilyzed_sky.gdshader" id="1_1t6ka"]
-[ext_resource type="Script" uid="uid://c3g527my3ouux" path="res://scenes/day_night_cycle_transition.gd" id="1_fshqf"]
+[ext_resource type="Script" uid="uid://c3g527my3ouux" path="res://scripts/day_night_cycle_transition.gd" id="1_fshqf"]
 [ext_resource type="PackedScene" uid="uid://d36s2kc2wpf3w" path="res://models/tavernprops/bottleRed.glb" id="3_37c28"]
 [ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold_e_progress_bar_under.png" id="3_vpd4k"]
 [ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold_e_progress_bar_over.png" id="4_37c28"]
@@ -11,9 +11,9 @@
 frequency = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_37c28"]
-noise = SubResource("FastNoiseLite_vpd4k")
-seamless = true
 in_3d_space = true
+seamless = true
+noise = SubResource("FastNoiseLite_vpd4k")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vpd4k"]
 load_path = "res://.godot/imported/circle_05.png-0fb8239d423a0df59e18a9451537fab8.s3tc.ctex"
@@ -29,22 +29,22 @@ curve = SubResource("Curve_37c28")
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fsek1"]
-noise = SubResource("FastNoiseLite_2ijgt")
 seamless = true
+noise = SubResource("FastNoiseLite_2ijgt")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mrnbc"]
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gv545"]
-noise = SubResource("FastNoiseLite_mrnbc")
 seamless = true
+noise = SubResource("FastNoiseLite_mrnbc")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_x7tyk"]
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6vo45"]
-noise = SubResource("FastNoiseLite_x7tyk")
 seamless = true
+noise = SubResource("FastNoiseLite_x7tyk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf7ub"]
 shader = ExtResource("1_1t6ka")
@@ -82,7 +82,7 @@ glow_levels/2 = 26.5
 glow_levels/3 = 11.4
 glow_levels/4 = 67.3
 glow_map = SubResource("NoiseTexture2D_37c28")
-fog_light_color = Color(0.0009943222, 0.0018835067, 0.0012784145, 1)
+fog_light_color = Color(0.000994322, 0.00188351, 0.00127841, 1)
 fog_light_energy = 0.84
 fog_sun_scatter = 0.06
 fog_aerial_perspective = 0.361
@@ -432,7 +432,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0, 0.9400000000000001]
+"values": [1.0, 0.94]
 }
 
 [sub_resource type="Animation" id="Animation_yf7ub"]
@@ -604,7 +604,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.9400000000000001, 1.0]
+"values": [0.94, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k3fpp"]
@@ -624,7 +624,7 @@ script = ExtResource("1_fshqf")
 environment = SubResource("Environment_6vo45")
 
 [node name="sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.05032126, 0.04160551, -0.997866, -0.09578103, 0.9947281, 0.036644507, 0.9941301, 0.09373264, 0.05404094, 3.9251, 26.2359, -0.796383)
+transform = Transform3D(0.0503213, 0.0416055, -0.997866, -0.095781, 0.994728, 0.0366445, 0.99413, 0.0937326, 0.0540409, 3.9251, 26.2359, -0.796383)
 light_color = Color(0.971072, 0.437407, 2.40654e-05, 1)
 light_energy = 2.617
 light_indirect_energy = 1.162
@@ -637,7 +637,7 @@ libraries = {
 }
 
 [node name="day_night_buttons_area" type="Area3D" parent="."]
-transform = Transform3D(0.1089, 0, 0, 0, 0.472362, 0, 0, 0, 0.000613002, -19.1053, 1.56278, 20.261591)
+transform = Transform3D(0.1089, 0, 0, 0, 0.472362, 0, 0, 0, 0.000613002, -19.1053, 1.56278, 20.2616)
 
 [node name="day_night_buttons" type="CollisionShape3D" parent="day_night_buttons_area"]
 transform = Transform3D(0.97399, 0, 0, 0, 0.97399, 0, 0, 0, 32.3603, -4.16991, -1.28407, 609.593)
@@ -645,7 +645,7 @@ shape = SubResource("BoxShape3D_2ijgt")
 debug_color = Color(1, 0.441485, 0.577963, 0.42)
 
 [node name="bottleRed" parent="day_night_buttons_area" instance=ExtResource("3_37c28")]
-transform = Transform3D(69.536674, 0, 0, 0, 8.555834, 0, 0, 0, 1, -4.6229706, -1.7817433, 595.5332)
+transform = Transform3D(69.5367, 0, 0, 0, 8.55583, 0, 0, 0, 1, -4.62297, -1.78174, 595.533)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
