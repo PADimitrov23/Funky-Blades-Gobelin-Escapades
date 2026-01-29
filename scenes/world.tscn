@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://by3jq5065ow1f"]
+[gd_scene format=3 uid="uid://by3jq5065ow1f"]
 
 [ext_resource type="ArrayMesh" uid="uid://bmvf8ua5f6dty" path="res://models/grass.res" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -46,9 +46,6 @@ size = Vector3(1, 50, 50)
 [sub_resource type="Resource" id="Resource_ctatt"]
 script = ExtResource("16_munwf")
 amount = 325
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
@@ -57,39 +54,19 @@ script = ExtResource("17_ts3gi")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_munwf"]
 script = ExtResource("18_0nbtd")
-iterations = 3
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_ts3gi"]
 script = ExtResource("19_37qwj")
-ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_0nbtd"]
 script = ExtResource("14_ctatt")
@@ -102,60 +79,31 @@ radius = 26.0793
 [sub_resource type="Resource" id="Resource_navra"]
 script = ExtResource("16_munwf")
 amount = 150
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
 [sub_resource type="Resource" id="Resource_luhhm"]
 script = ExtResource("17_ts3gi")
 position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(0, 0, 0)
 scale = Vector3(2, 3, 2)
-enabled = true
 override_global_seed = true
-custom_seed = 0
-restrict_height = false
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_fh13f"]
 script = ExtResource("18_0nbtd")
-iterations = 3
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_rup4s"]
 script = ExtResource("19_37qwj")
-ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_f17e3"]
 script = ExtResource("17_ts3gi")
-position = Vector3(0, 0, 0)
-rotation = Vector3(0, 0, 0)
-scale = Vector3(0, 0, 0)
-enabled = true
 override_global_seed = true
-custom_seed = 0
-restrict_height = false
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_x2olw"]
@@ -169,9 +117,6 @@ radius = 26.7755
 [sub_resource type="Resource" id="Resource_817gm"]
 script = ExtResource("16_munwf")
 amount = 10000
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
@@ -180,39 +125,19 @@ script = ExtResource("17_ts3gi")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
 reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_e75v4"]
 script = ExtResource("18_0nbtd")
-iterations = 3
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
 restrict_height = true
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_8u370"]
 script = ExtResource("19_37qwj")
-ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
 
 [sub_resource type="Resource" id="Resource_rga7q"]
 script = ExtResource("14_ctatt")
@@ -222,103 +147,103 @@ stack = Array[ExtResource("15_xgqkh")]([SubResource("Resource_817gm"), SubResour
 script = ExtResource("23_rup4s")
 radius = 26.2843
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=984343613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0311289, 0.068924, -0.0910225)
 
-[node name="floor" type="StaticBody3D" parent="."]
+[node name="floor" type="StaticBody3D" parent="." unique_id=1212927574]
 
-[node name="floor-border" type="CollisionShape3D" parent="floor"]
+[node name="floor-border" type="CollisionShape3D" parent="floor" unique_id=224698459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211914, -0.5, -0.785645)
 shape = SubResource("BoxShape3D_rwgxs")
 debug_color = Color(0.838867, 0.00118036, 0.925717, 0.42)
 
-[node name="grass" type="MultiMeshInstance3D" parent="floor"]
+[node name="grass" type="MultiMeshInstance3D" parent="floor" unique_id=1621480439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0472024, 0)
 material_override = ExtResource("5_q5onr")
 transparency = 0.4
 cast_shadow = 2
 multimesh = SubResource("MultiMesh_k0juu")
 
-[node name="EnemyNavPath" type="NavigationRegion3D" parent="floor"]
+[node name="EnemyNavPath" type="NavigationRegion3D" parent="floor" unique_id=1250182460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00988108, 0.408859, 0.000664592)
 navigation_mesh = SubResource("NavigationMesh_71j4m")
 
-[node name="floor-colour" type="MeshInstance3D" parent="floor/EnemyNavPath"]
+[node name="floor-colour" type="MeshInstance3D" parent="floor/EnemyNavPath" unique_id=282685320]
 transform = Transform3D(1.18687, 0, 0, 0, 1, 0, 0, 0, 1.09716, 0, -0.408859, 0)
 material_override = ExtResource("7_jhx03")
 mesh = SubResource("QuadMesh_k0juu")
 skeleton = NodePath("../..")
 
-[node name="tavern" parent="floor/EnemyNavPath" instance=ExtResource("12_jhx03")]
+[node name="tavern" parent="floor/EnemyNavPath" unique_id=1373063518 instance=ExtResource("12_jhx03")]
 transform = Transform3D(-0.999704, 0, 0.024345, 0, 1, 0, -0.024345, 0, -0.999704, -20.6453, -0.400276, 22.622)
 
-[node name="TavernDoorWorkability" parent="floor/EnemyNavPath/tavern" instance=ExtResource("6_i7141")]
+[node name="TavernDoorWorkability" parent="floor/EnemyNavPath/tavern" unique_id=62194487 instance=ExtResource("6_i7141")]
 transform = Transform3D(-0.0243449, 0, 0.999704, 0, 1, 0, -0.999704, 0, -0.0243449, 1.74865, 0.647465, 1.87856)
 world_scene_path = "res://scenes/tavern_inside.tscn"
 
-[node name="surrounding-stones" parent="floor/EnemyNavPath" instance=ExtResource("10_w7kh3")]
+[node name="surrounding-stones" parent="floor/EnemyNavPath" unique_id=1023404589 instance=ExtResource("10_w7kh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.432044, -0.408859, 0.0426359)
 
-[node name="cliff" type="StaticBody3D" parent="floor/EnemyNavPath"]
+[node name="cliff" type="StaticBody3D" parent="floor/EnemyNavPath" unique_id=706834273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.408859, 0)
 
-[node name="world-border-1" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff"]
+[node name="world-border-1" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff" unique_id=1202993910]
 transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, 0, 0, 24.9726)
 shape = SubResource("BoxShape3D_4wyf3")
 
-[node name="world-border-2" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff"]
+[node name="world-border-2" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff" unique_id=95021765]
 transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, 0, 0, -24.8577)
 shape = SubResource("BoxShape3D_4wyf3")
 
-[node name="world-border-3" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff"]
+[node name="world-border-3" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff" unique_id=1699813411]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, 24.9702, 0, 0.0484753)
 shape = SubResource("BoxShape3D_4wyf3")
 
-[node name="world-border-4" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff"]
+[node name="world-border-4" type="CollisionShape3D" parent="floor/EnemyNavPath/cliff" unique_id=289302537]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -25.0246, 0, 0.0484753)
 shape = SubResource("BoxShape3D_4wyf3")
 
-[node name="cliff_walls" type="Node3D" parent="floor/EnemyNavPath"]
+[node name="cliff_walls" type="Node3D" parent="floor/EnemyNavPath" unique_id=1603554157]
 
-[node name="cliff-wall-duped" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("7_e3hyu")]
+[node name="cliff-wall-duped" parent="floor/EnemyNavPath/cliff_walls" unique_id=1013122281 instance=ExtResource("7_e3hyu")]
 
-[node name="cliff-wall-duped2" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("7_e3hyu")]
+[node name="cliff-wall-duped2" parent="floor/EnemyNavPath/cliff_walls" unique_id=57944415 instance=ExtResource("7_e3hyu")]
 transform = Transform3D(0.00687652, 0, -0.999976, 0, 1, 0, 0.999976, 0, 0.00687652, 0, 0, -1.17213)
 
-[node name="cliff-wall-duped3" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("7_e3hyu")]
+[node name="cliff-wall-duped3" parent="floor/EnemyNavPath/cliff_walls" unique_id=1333318340 instance=ExtResource("7_e3hyu")]
 transform = Transform3D(-0.99988, 0, 0.0155154, 0, 1, 0, -0.0155154, 0, -0.99988, 0.801742, 0, -1.17213)
 
-[node name="cliff-wall-duped4" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("7_e3hyu")]
+[node name="cliff-wall-duped4" parent="floor/EnemyNavPath/cliff_walls" unique_id=1811485170 instance=ExtResource("7_e3hyu")]
 transform = Transform3D(0.0129326, 0, 0.999916, 0, 1, 0, -0.999916, 0, 0.0129326, -0.094883, 0, -3.15892)
 
-[node name="cave_model" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("12_q5onr")]
+[node name="cave_model" parent="floor/EnemyNavPath/cliff_walls" unique_id=892284902 instance=ExtResource("12_q5onr")]
 transform = Transform3D(-0.995587, 0, 0.0938478, 0, 1, 0, -0.0938478, 0, -0.995587, -19.942, -0.470267, -24.4681)
 
-[node name="cave_model2" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("12_q5onr")]
+[node name="cave_model2" parent="floor/EnemyNavPath/cliff_walls" unique_id=846045465 instance=ExtResource("12_q5onr")]
 transform = Transform3D(0.274698, 0, 0.961531, 0, 1, 0, -0.961531, 0, 0.274698, 24.8242, -0.470267, -18.7133)
 
-[node name="cave_model3" parent="floor/EnemyNavPath/cliff_walls" instance=ExtResource("12_q5onr")]
+[node name="cave_model3" parent="floor/EnemyNavPath/cliff_walls" unique_id=1116886451 instance=ExtResource("12_q5onr")]
 transform = Transform3D(1, 0, -0.000715747, 0, 1, 0, 0.000715747, 0, 1, 20.8525, -0.470267, 25.1773)
 
-[node name="caves" type="Node3D" parent="floor/EnemyNavPath"]
+[node name="caves" type="Node3D" parent="floor/EnemyNavPath" unique_id=1202888514]
 
-[node name="player" parent="." instance=ExtResource("1_nnsk1")]
+[node name="player" parent="." unique_id=897072216 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(0.309033, 0, -0.951051, 0, 1, 0, 0.951051, 0, 0.309033, -20.7755, 1.11027, 19.2756)
 
-[node name="respawn-operator" type="Node3D" parent="."]
+[node name="respawn-operator" type="Node3D" parent="." unique_id=510710321]
 
-[node name="Respawner" parent="respawn-operator" instance=ExtResource("6_qfnet")]
+[node name="Respawner" parent="respawn-operator" unique_id=908282986 instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9958, 0, -21.0336)
 
-[node name="Respawner2" parent="respawn-operator" instance=ExtResource("6_qfnet")]
+[node name="Respawner2" parent="respawn-operator" unique_id=1008819541 instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3391, 0, -22.2841)
 
-[node name="Respawner3" parent="respawn-operator" instance=ExtResource("6_qfnet")]
+[node name="Respawner3" parent="respawn-operator" unique_id=345781502 instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)
 
-[node name="day_night_cycle_transition" parent="." instance=ExtResource("14_dss4m")]
+[node name="day_night_cycle_transition" parent="." unique_id=520476501 instance=ExtResource("14_dss4m")]
 
-[node name="bushes_proton" type="Node3D" parent="."]
+[node name="bushes_proton" type="Node3D" parent="." unique_id=1136187482]
 transform = Transform3D(0.133986, 0, -0.990983, 0, 1, 0, 0.990983, 0, 0.133986, 0, 0, 0)
 script = ExtResource("13_kpybi")
 modifier_stack = SubResource("Resource_0nbtd")
@@ -326,45 +251,45 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://b7y1bm73yan4t"
 
-[node name="ScatterItem" type="Node3D" parent="bushes_proton"]
+[node name="ScatterItem" type="Node3D" parent="bushes_proton" unique_id=35959261]
 script = ExtResource("20_navra")
 override_process_material = ExtResource("21_luhhm")
 path = "uid://b8abs8me7ckgo"
 
-[node name="ScatterShape" type="Node3D" parent="bushes_proton"]
+[node name="ScatterShape" type="Node3D" parent="bushes_proton" unique_id=1019339407]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_g8bsm")
 
-[node name="trees_proton" type="Node3D" parent="."]
+[node name="trees_proton" type="Node3D" parent="." unique_id=221110163]
 script = ExtResource("13_kpybi")
 modifier_stack = SubResource("Resource_x2olw")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://b7y1bm73yan4t"
 
-[node name="ScatterItem" type="Node3D" parent="trees_proton"]
+[node name="ScatterItem" type="Node3D" parent="trees_proton" unique_id=739926303]
 script = ExtResource("20_navra")
 override_process_material = ExtResource("21_luhhm")
 path = "uid://caqxfqurbp3ku"
 
-[node name="ScatterShape" type="Node3D" parent="trees_proton"]
+[node name="ScatterShape" type="Node3D" parent="trees_proton" unique_id=1428432579]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_4kbfs")
 
-[node name="grass_proton" type="Node3D" parent="."]
+[node name="grass_proton" type="Node3D" parent="." unique_id=345739218]
 script = ExtResource("13_kpybi")
 modifier_stack = SubResource("Resource_rga7q")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://b7y1bm73yan4t"
 
-[node name="ScatterItem" type="Node3D" parent="grass_proton"]
+[node name="ScatterItem" type="Node3D" parent="grass_proton" unique_id=1151135672]
 script = ExtResource("20_navra")
 path = "uid://cia3jakp3wj1d"
 
-[node name="ScatterShape" type="Node3D" parent="grass_proton"]
+[node name="ScatterShape" type="Node3D" parent="grass_proton" unique_id=143119537]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_l8ah6")
