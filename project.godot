@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Funky-Blades-Gobelin-Escapades"
 config/version="1"
-run/main_scene="uid://by3jq5065ow1f"
+run/main_scene="uid://dddg2hdyqkbrx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/image="uid://cvrb7ac1d33ei"

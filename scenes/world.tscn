@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://by3jq5065ow1f"]
+[gd_scene format=3 uid="uid://dddg2hdyqkbrx"]
 
 [ext_resource type="ArrayMesh" uid="uid://bmvf8ua5f6dty" path="res://models/grass.res" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -78,7 +78,7 @@ radius = 26.0793
 
 [sub_resource type="Resource" id="Resource_navra"]
 script = ExtResource("16_munwf")
-amount = 150
+amount = 175
 restrict_height = true
 reference_frame = 1
 

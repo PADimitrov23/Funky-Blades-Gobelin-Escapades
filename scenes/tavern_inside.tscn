@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4hutehnmhb0b"]
+[gd_scene format=3 uid="uid://d4hutehnmhb0b"]
 
 [ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
@@ -32,94 +32,94 @@ size = Vector3(50, 1, 50)
 [sub_resource type="BoxShape3D" id="BoxShape3D_a8aui"]
 size = Vector3(1.10156, 1, 1)
 
-[node name="Tavern-inside" type="Node3D"]
+[node name="Tavern-inside" type="Node3D" unique_id=1709625740]
 
-[node name="InteriorPack" parent="." instance=ExtResource("1_2kygj")]
+[node name="InteriorPack" parent="." unique_id=234716848 instance=ExtResource("1_2kygj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.98939)
 
-[node name="Player" parent="." instance=ExtResource("2_ganqx")]
+[node name="Player" parent="." unique_id=1414413506 instance=ExtResource("2_ganqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.01205)
 
-[node name="borders" type="StaticBody3D" parent="."]
+[node name="borders" type="StaticBody3D" parent="." unique_id=1652311169]
 
-[node name="wall-colour" type="MeshInstance3D" parent="borders"]
+[node name="wall-colour" type="MeshInstance3D" parent="borders" unique_id=1670644735]
 transform = Transform3D(-0.00462929, -1.05318, 0, 0.123828, -0.0393729, 0, 0, 0, 0.358542, 4.88411, 0.982303, -3.2403)
 material_override = SubResource("StandardMaterial3D_ganqx")
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_0c8vp")
 
-[node name="wall-colour2" type="MeshInstance3D" parent="borders"]
+[node name="wall-colour2" type="MeshInstance3D" parent="borders" unique_id=838034034]
 transform = Transform3D(0.00462908, 1.05313, -0.003473, 0.123828, -0.0393729, 0, -4.48414e-05, -0.0102015, -0.358526, -6.60893, 0.982303, -3.2403)
 material_override = SubResource("StandardMaterial3D_ganqx")
 mesh = SubResource("QuadMesh_0c8vp")
 
-[node name="wall-colour3" type="MeshInstance3D" parent="borders"]
+[node name="wall-colour3" type="MeshInstance3D" parent="borders" unique_id=1303069452]
 transform = Transform3D(9.68666e-06, 0.00249631, 0.358541, 0.123828, -0.0392839, 3.647e-06, 0.00461882, 1.05318, -0.000849705, 0.169567, 0.982303, -11.1018)
 material_override = SubResource("StandardMaterial3D_ganqx")
 mesh = SubResource("QuadMesh_0c8vp")
 
-[node name="wall-colour4" type="MeshInstance3D" parent="borders"]
+[node name="wall-colour4" type="MeshInstance3D" parent="borders" unique_id=733316207]
 transform = Transform3D(-1.14163e-06, -0.000547889, -0.358542, 0.123828, -0.0392839, 3.647e-06, -0.00461883, -1.05318, 0.000186388, 0.169567, 0.982303, 4.82188)
 material_override = SubResource("StandardMaterial3D_ganqx")
 mesh = SubResource("QuadMesh_0c8vp")
 
-[node name="floor-colour" type="MeshInstance3D" parent="borders"]
+[node name="floor-colour" type="MeshInstance3D" parent="borders" unique_id=1991396911]
 transform = Transform3D(0.232922, 0, 0, 0, 1.04945, 0, 0, 0, 0.32183, -0.929107, 0.0798087, -3.21608)
 material_override = SubResource("StandardMaterial3D_ganqx")
 mesh = SubResource("QuadMesh_0c8vp")
 skeleton = NodePath("../..")
 
-[node name="ceiling-colour" type="MeshInstance3D" parent="borders"]
+[node name="ceiling-colour" type="MeshInstance3D" parent="borders" unique_id=980213774]
 transform = Transform3D(-0.232886, -0.0184332, 2.16205e-05, 0.00409121, -1.04929, 0.000265529, 1.22722e-05, 0.000866962, 0.32183, -0.911607, 3.97945, -3.19905)
 material_override = SubResource("StandardMaterial3D_ganqx")
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_0c8vp")
 skeleton = NodePath("../..")
 
-[node name="world-border-4" type="CollisionShape3D" parent="borders"]
+[node name="world-border-4" type="CollisionShape3D" parent="borders" unique_id=746090952]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.73933, 0, -2.94091)
 shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
-[node name="wall-border-3" type="CollisionShape3D" parent="borders"]
+[node name="wall-border-3" type="CollisionShape3D" parent="borders" unique_id=1177680328]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, 5.14349, 0, -2.94091)
 shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
-[node name="wall-border-2" type="CollisionShape3D" parent="borders"]
+[node name="wall-border-2" type="CollisionShape3D" parent="borders" unique_id=2022710210]
 transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, -11.3663)
 shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
-[node name="wall-border-1" type="CollisionShape3D" parent="borders"]
+[node name="wall-border-1" type="CollisionShape3D" parent="borders" unique_id=1789443192]
 transform = Transform3D(0.00493926, 0, -0.999988, 0, 1, 0, 0.999988, 0, 0.00493926, -1, 0, 5.05302)
 shape = SubResource("BoxShape3D_ganqx")
 debug_color = Color(0.971489, 0, 0.450849, 0.419608)
 
-[node name="floor-border" type="CollisionShape3D" parent="borders"]
+[node name="floor-border" type="CollisionShape3D" parent="borders" unique_id=909620298]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.73933, -0.271613, -2.94091)
 shape = SubResource("BoxShape3D_0c8vp")
 debug_color = Color(0.838867, 0.00118036, 0.925717, 0.42)
 
-[node name="shop-counter" type="CollisionShape3D" parent="borders"]
+[node name="shop-counter" type="CollisionShape3D" parent="borders" unique_id=638999970]
 transform = Transform3D(4.64326, 0, 0, 0, 2.53413, 0, 0, 0, 2.10295, -0.966479, 0.944334, -3.39898)
 shape = SubResource("BoxShape3D_a8aui")
 debug_color = Color(0.295901, 0.628964, 3.85046e-07, 0.42)
 
-[node name="shop-boxes-cupboard" type="CollisionShape3D" parent="borders"]
+[node name="shop-boxes-cupboard" type="CollisionShape3D" parent="borders" unique_id=61990101]
 transform = Transform3D(5.10015, 0, 0, 0, 2.53413, 0, 0, 0, 1.30846, -0.197608, 0.944334, -6.08619)
 shape = SubResource("BoxShape3D_a8aui")
 debug_color = Color(0.295901, 0.628964, 3.85046e-07, 0.42)
 
-[node name="shop-boxes" type="CollisionShape3D" parent="borders"]
+[node name="shop-boxes" type="CollisionShape3D" parent="borders" unique_id=1356452649]
 transform = Transform3D(2.61994, 0, 0, 0, 2.55735, 0, 0, 0, 1.70017, -3.82244, 0.944334, -6.08619)
 shape = SubResource("BoxShape3D_a8aui")
 debug_color = Color(0.295901, 0.628964, 3.85046e-07, 0.42)
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=946473693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.93699)
 
-[node name="sun2" type="DirectionalLight3D" parent="Lighting"]
+[node name="sun2" type="DirectionalLight3D" parent="Lighting" unique_id=1452301300]
 transform = Transform3D(-0.60515, -0.123396, 0.78649, 0.705245, 0.375249, 0.601512, -0.369354, 0.918674, -0.140058, 10.0187, -0.598019, -14.977)
 light_color = Color(0.73969, 0.327219, 0, 1)
 light_energy = 7.565
@@ -127,7 +127,7 @@ light_indirect_energy = 1.162
 light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 
-[node name="sun2" type="DirectionalLight3D" parent="Lighting/sun2"]
+[node name="sun2" type="DirectionalLight3D" parent="Lighting/sun2" unique_id=1948000452]
 transform = Transform3D(-0.60515, -0.123396, 0.78649, 0.705245, 0.375249, 0.601512, -0.369354, 0.918674, -0.140058, 9.039, 0.620401, -12.04)
 light_color = Color(0.73969, 0.327219, 0, 1)
 light_energy = 7.565
@@ -135,7 +135,7 @@ light_indirect_energy = 1.162
 light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 
-[node name="sun3" type="DirectionalLight3D" parent="Lighting"]
+[node name="sun3" type="DirectionalLight3D" parent="Lighting" unique_id=1868608896]
 transform = Transform3D(0.0522322, 0.171, 0.983886, 0.92782, 0.356086, -0.111144, -0.369354, 0.918674, -0.140058, 10.0187, -11.0299, -2.22999)
 light_color = Color(0.73969, 0.327219, 0, 1)
 light_energy = 7.565
@@ -143,7 +143,7 @@ light_indirect_energy = 1.162
 light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 
-[node name="sun" type="DirectionalLight3D" parent="Lighting"]
+[node name="sun" type="DirectionalLight3D" parent="Lighting" unique_id=521572461]
 transform = Transform3D(-0.0416309, 0.996579, 0.0713929, -0.662542, -0.0810207, 0.74463, 0.747867, -0.0163012, 0.663648, 4.90477, 6.43843, 12.3359)
 light_color = Color(0.73969, 0.327219, 0, 1)
 light_energy = 7.565
@@ -151,13 +151,13 @@ light_indirect_energy = 1.162
 light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 
-[node name="Decoration" type="Node3D" parent="."]
+[node name="Decoration" type="Node3D" parent="." unique_id=1864532759]
 
-[node name="storage2" parent="Decoration" instance=ExtResource("5_a8aui")]
+[node name="storage2" parent="Decoration" unique_id=454076540 instance=ExtResource("5_a8aui")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.59982, 0.0754177, 2.4685)
 
-[node name="storage3" parent="Decoration" instance=ExtResource("5_a8aui")]
+[node name="storage3" parent="Decoration" unique_id=1653013254 instance=ExtResource("5_a8aui")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.33563, 0.0397549, -8.94921)
 
-[node name="TavernDoorWorkability" parent="." instance=ExtResource("5_jb1df")]
+[node name="TavernDoorWorkability" parent="." unique_id=993958669 instance=ExtResource("5_jb1df")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183247, -0.0970824, 4.65128)
