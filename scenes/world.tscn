@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Material" uid="uid://d4ebyl48tn7t6" path="res://shaders/custom_materials/grass-follicles.tres" id="5_q5onr"]
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="6_i7141"]
-[ext_resource type="PackedScene" uid="uid://ej8yvgkft67b" path="res://scenes/respawner.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://ej8yvgkft67b" path="res://scenes/spawner.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ctjby5dybir61" path="res://models/reworked_model_scenes/cliff_wall_duped.tscn" id="7_e3hyu"]
 [ext_resource type="Material" uid="uid://c1x5804k4m0vc" path="res://shaders/custom_materials/grass-floor.tres" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://mv8k08v22klj" path="res://models/reworked_model_scenes/surrounding_stones.tscn" id="10_w7kh3"]
@@ -148,7 +148,6 @@ script = ExtResource("23_rup4s")
 radius = 26.2843
 
 [node name="World" type="Node3D" unique_id=984343613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0311289, 0.068924, -0.0910225)
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=1212927574]
 
@@ -230,17 +229,6 @@ transform = Transform3D(1, 0, -0.000715747, 0, 1, 0, 0.000715747, 0, 1, 20.8525,
 [node name="player" parent="." unique_id=897072216 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(0.309033, 0, -0.951051, 0, 1, 0, 0.951051, 0, 0.309033, -20.7755, 1.11027, 19.2756)
 
-[node name="respawn-operator" type="Node3D" parent="." unique_id=510710321]
-
-[node name="Respawner" parent="respawn-operator" unique_id=908282986 instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9958, 0, -21.0336)
-
-[node name="Respawner2" parent="respawn-operator" unique_id=1008819541 instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3391, 0, -22.2841)
-
-[node name="Respawner3" parent="respawn-operator" unique_id=345781502 instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)
-
 [node name="day_night_cycle_transition" parent="." unique_id=520476501 instance=ExtResource("14_dss4m")]
 
 [node name="bushes_proton" type="Node3D" parent="." unique_id=1136187482]
@@ -293,3 +281,12 @@ path = "uid://cia3jakp3wj1d"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_l8ah6")
+
+[node name="Respawner1" parent="." unique_id=60046749 groups=["spawners"] instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9958, 0, -21.0336)
+
+[node name="Respawner2" parent="." unique_id=1008819541 groups=["spawners"] instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3391, 0, -22.2841)
+
+[node name="Respawner3" parent="." unique_id=345781502 groups=["spawners"] instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)

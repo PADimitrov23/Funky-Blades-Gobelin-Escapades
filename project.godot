@@ -24,6 +24,7 @@ boot_splash/image="uid://cvrb7ac1d33ei"
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Spawners="*uid://cnxgub4q8s5va"
 
 [display]
 
@@ -33,6 +34,10 @@ window/size/borderless=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
+
+[global_group]
+
+spawners=""
 
 [input]
 

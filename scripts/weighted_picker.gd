@@ -14,6 +14,9 @@ class Weighted:
 var _items: Array[Weighted]
 var _weight_sum: float = 0
 
+func _init(items: Array = [], weights: Array[float] = []) -> void:
+	append(items, weights)
+
 func append(items: Array, weights: Array[float]) -> void:
 	var weight: float
 	for i: int in range(items.size()):
