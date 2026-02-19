@@ -32,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00519741, 0.615422, 0.1153
 shape = SubResource("CapsuleShape3D_nenq2")
 
 [node name="ChaseArea" type="Area3D" parent="." unique_id=1994303773]
+transform = Transform3D(2.912, 0, 0, 0, 1, 0, 0, 0, 2.7, 0, 0, 0)
 
 [node name="CylinderChaseZone" type="CollisionShape3D" parent="ChaseArea" unique_id=1102910393]
 transform = Transform3D(1, 0, 0, 0, 2.74584, 0, 0, 0, 1, 0, 1.44965, 0)

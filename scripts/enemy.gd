@@ -7,9 +7,9 @@ enum States {attack, idle, chase, die}
 var state = States.idle
 var damage = 10
 var health = 15
-var speed = 2
+var speed = 5
 var acceleration = 5
-var gravity = 10
+var gravity = 5
 var target = null
 var gold = 1
 #endregion
