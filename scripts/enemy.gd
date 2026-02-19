@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	if state == States.idle:
 		
 		velocity = Vector3(0, velocity.y, 0)
-		animationPlayer.play("Idle")
+		##animationPlayer.play("Idle")
 		
 	elif state == States.chase:
 		
@@ -41,18 +41,18 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 		
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
-		animationPlayer.play("Walk")
+		##animationPlayer.play("Walk")
 		
 	elif state == States.attack:
 		
 		velocity = Vector3.ZERO
 		look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP, true)
-		animationPlayer.play("Punch")
+		##animationPlayer.play("Punch")
 		
 	elif state == States.die:
 		
 		velocity = Vector3.ZERO
-		animationPlayer.play("Die")
+		##animationPlayer.play("Die")
 		
 	move_and_slide()
 

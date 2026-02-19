@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bg8hil3lj2w2e"]
+[gd_scene format=3 uid="uid://bg8hil3lj2w2e"]
 
 [ext_resource type="Script" uid="uid://d35xf42qc3vpk" path="res://scripts/player.gd" id="1_eqqp1"]
 [ext_resource type="Material" uid="uid://cukfj221ghxk4" path="res://shaders/custom_materials/player.tres" id="2_tuyoq"]
-[ext_resource type="PackedScene" uid="uid://dhhpda127is2p" path="res://models/Sword.glb" id="2_ykyjo"]
+[ext_resource type="PackedScene" uid="uid://dhhpda127is2p" path="res://models/sword.glb" id="2_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://s7pk44jmiv6p" path="res://sprites/knight_health_bar_under.png" id="3_nmc1l"]
 [ext_resource type="Texture2D" uid="uid://h2mufjr5p0ld" path="res://sprites/knight_health_bar_over.png" id="4_f46kd"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_qlg0r"]
@@ -148,45 +148,43 @@ shader_parameter/mask_size = 0.28
 shader_parameter/mask_edge = 0.792
 shader_parameter/animation_speed = 20.0
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1365250764]
 script = ExtResource("1_eqqp1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=100620674]
 mesh = SubResource("CapsuleMesh_bxedw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=91998758]
 shape = SubResource("CapsuleShape3D_eqqp1")
 debug_color = Color(0.907197, 0.000122252, 0.74084, 0.42)
 
-[node name="FirstPerson" type="Camera3D" parent="."]
+[node name="FirstPerson" type="Camera3D" parent="." unique_id=362398842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0619083, 0.473393, -0.0143169)
 
-[node name="SwordPoint" type="Node3D" parent="FirstPerson"]
+[node name="SwordPoint" type="Node3D" parent="FirstPerson" unique_id=2053656454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
 
-[node name="Sword" parent="FirstPerson/SwordPoint" instance=ExtResource("2_ykyjo")]
+[node name="Sword" parent="FirstPerson/SwordPoint" unique_id=450236559 instance=ExtResource("2_ykyjo")]
 transform = Transform3D(0.0551367, -0.034999, -0.156955, -0.120084, -0.11932, -0.0155774, -0.106957, 0.115922, -0.0634218, 0.161644, 0.460788, -0.148501)
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=470626692]
 
-[node name="ThirdPerson" type="Camera3D" parent="Head"]
+[node name="ThirdPerson" type="Camera3D" parent="Head" unique_id=1051655389]
 transform = Transform3D(1, 0, 0, 0, 0.914084, 0.405524, 0, -0.405524, 0.914084, -0.0148078, 1.74403, 1.60263)
 
-[node name="SwordAnimations" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_nmc1l")
-}
+[node name="SwordAnimations" type="AnimationPlayer" parent="." unique_id=477627789]
+libraries/ = SubResource("AnimationLibrary_nmc1l")
 
-[node name="AttackCooldown" type="Timer" parent="."]
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1468947141]
 wait_time = 0.06
 one_shot = true
 
-[node name="InspectCooldown" type="Timer" parent="."]
+[node name="InspectCooldown" type="Timer" parent="." unique_id=218791841]
 one_shot = true
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1229486200]
 
-[node name="HealthBar" type="TextureProgressBar" parent="HUD"]
+[node name="HealthBar" type="TextureProgressBar" parent="HUD" unique_id=142136959]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -205,7 +203,7 @@ texture_under = ExtResource("3_nmc1l")
 texture_progress = ExtResource("4_f46kd")
 tint_progress = Color(1, 0, 0, 1)
 
-[node name="GoldCounter" type="Label" parent="HUD"]
+[node name="GoldCounter" type="Label" parent="HUD" unique_id=618015048]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -219,14 +217,14 @@ theme_override_fonts/font = ExtResource("5_qlg0r")
 theme_override_font_sizes/font_size = 166
 text = "0"
 
-[node name="AttackZone" type="Area3D" parent="."]
+[node name="AttackZone" type="Area3D" parent="." unique_id=2041443103]
 
-[node name="AttackArea" type="CollisionShape3D" parent="AttackZone"]
+[node name="AttackArea" type="CollisionShape3D" parent="AttackZone" unique_id=554228914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04961)
 shape = SubResource("BoxShape3D_dqkch")
 debug_color = Color(0.89997, 1.2514e-06, 0.450303, 0.42)
 
-[node name="Speedlines" type="ColorRect" parent="."]
+[node name="Speedlines" type="ColorRect" parent="." unique_id=557386969]
 material = SubResource("ShaderMaterial_y4r1p")
 anchors_preset = 15
 anchor_right = 1.0

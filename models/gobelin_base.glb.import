@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dhhpda127is2p"
-path="res://.godot/imported/sword.glb-c64db369af165c594b3b105c45a766a6.scn"
+uid="uid://cbfhhivrtbc1b"
+path="res://.godot/imported/gobelin_base.glb-41d67c9fae2523a3ebad0c048b6c42e0.scn"
 
 [deps]
 
-source_file="res://models/sword.glb"
-dest_files=["res://.godot/imported/sword.glb-c64db369af165c594b3b105c45a766a6.scn"]
+source_file="res://models/gobelin_base.glb"
+dest_files=["res://.godot/imported/gobelin_base.glb-41d67c9fae2523a3ebad0c048b6c42e0.scn"]
 
 [params]
 
@@ -38,5 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=2
 gltf/embedded_image_handling=1
