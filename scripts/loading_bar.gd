@@ -10,7 +10,9 @@ var progress := []
 var visualProgress := 0.0
 var loadingDone := false
 var transitioning := false
-var finished = false
+var finished := false
+var world_instance
+var scatter_finished := false
 
 func _ready():
 	ResourceLoader.load_threaded_request(scenePath)

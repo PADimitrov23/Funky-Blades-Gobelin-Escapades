@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bfbqyh5dt21dv"]
+
+[ext_resource type="PackedScene" uid="uid://bwwc8e3mcnr47" path="res://models/tavernprops/storage.glb" id="1_dtas8"]
+[ext_resource type="Material" uid="uid://bje6vgrexux1p" path="res://shaders/custom_materials/door-frames.tres" id="2_5x8vq"]
+[ext_resource type="Shader" uid="uid://bacryw6imkkgg" path="res://shaders/includes/outline.gdshader" id="3_5x8vq"]
+[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="4_os8ki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g43y"]
+render_priority = 0
+shader = ExtResource("3_5x8vq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5r8h"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_1g43y")
+shader = ExtResource("4_os8ki")
+shader_parameter/color = Color(0.1884968, 0.096397616, 0.024217349, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fv7n"]
+render_priority = 0
+shader = ExtResource("3_5x8vq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kd7ns"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_5fv7n")
+shader = ExtResource("4_os8ki")
+shader_parameter/color = Color(0.13057092, 0.061732493, 0.012258325, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[node name="storage2" unique_id=351398954 instance=ExtResource("1_dtas8")]
+
+[node name="storage" parent="." index="0" unique_id=715242912]
+surface_material_override/0 = ExtResource("2_5x8vq")
+surface_material_override/1 = SubResource("ShaderMaterial_t5r8h")
+
+[node name="storage_col" parent="." index="1" unique_id=1499590058]
+surface_material_override/0 = ExtResource("2_5x8vq")
+surface_material_override/1 = SubResource("ShaderMaterial_kd7ns")
+
+[node name="CollisionShape3D" parent="storage_col/StaticBody3D" parent_id_path=PackedInt32Array(1016910736) index="0" unique_id=470099369]
+debug_fill = false

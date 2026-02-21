@@ -15,8 +15,8 @@ class_name Player
 #endregion
 
 #region Player stats
-var gold := 0
-var health := 100
+var gold = Global.gold
+var health = Global.health
 var max_health := 100
 var damage := 10
 var target := []

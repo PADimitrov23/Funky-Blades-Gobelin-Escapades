@@ -5,8 +5,8 @@ var is_day: bool = true
 #endregion
 
 #region Player Stats
-static var gold = 0
-static var health = 100
+var gold = 0
+var health = 100
 var goToScene : String
 #endregion
 

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d4hutehnmhb0b"]
 
-[ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
 [ext_resource type="Script" uid="uid://c1j0kqc6g6rgq" path="res://scripts/tavern_inside.gd" id="1_jb1df"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
 [ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern_floor_textures.jpg" id="3_0c8vp"]
-[ext_resource type="PackedScene" uid="uid://bwwc8e3mcnr47" path="res://models/tavernprops/storage.glb" id="5_a8aui"]
+[ext_resource type="PackedScene" uid="uid://bfbqyh5dt21dv" path="res://models/reworked_model_scenes/storage_2.tscn" id="5_gkj7w"]
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="7_gkj7w"]
+[ext_resource type="PackedScene" uid="uid://bttfsmau0to3b" path="res://models/reworked_model_scenes/interior.tscn" id="7_s10cc"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_4wyf3"]
 albedo = Color(0.894118, 0.929412, 0.988235, 1)
@@ -25,6 +25,28 @@ uv1_scale = Vector3(3.915, 3.915, 3.915)
 size = Vector2(50, 50)
 orientation = 1
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gkj7w"]
+load_path = "res://.godot/imported/tavern_floor_textures.jpg-8286ff82b6fe5dc67024421b866c0226.s3tc.ctex"
+
+[sub_resource type="FogMaterial" id="FogMaterial_s10cc"]
+albedo = Color(0.894118, 0.929412, 0.988235, 1)
+edge_fade = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j45vc"]
+next_pass = SubResource("FogMaterial_s10cc")
+albedo_color = Color(0.470588, 0.321569, 0.113725, 1)
+albedo_texture = SubResource("CompressedTexture2D_gkj7w")
+normal_enabled = true
+normal_scale = 1.33
+ao_enabled = true
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_flip_tangent = true
+uv1_scale = Vector3(3.915, 3.915, 3.915)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ganqx"]
 size = Vector3(1, 50, 50)
 
@@ -38,9 +60,6 @@ size = Vector3(1.10156, 1, 1)
 script = ExtResource("1_jb1df")
 
 [node name="Transition" parent="." unique_id=1619518641 instance=ExtResource("7_gkj7w")]
-
-[node name="InteriorPack" parent="." unique_id=234716848 instance=ExtResource("1_2kygj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.98939)
 
 [node name="Player" parent="." unique_id=1414413506 instance=ExtResource("2_ganqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.01205)
@@ -76,7 +95,7 @@ skeleton = NodePath("../..")
 
 [node name="ceiling-colour" type="MeshInstance3D" parent="borders" unique_id=980213774]
 transform = Transform3D(-0.232886, -0.0184332, 2.16205e-05, 0.00409121, -1.04929, 0.000265529, 1.22722e-05, 0.000866962, 0.32183, -0.911607, 3.97945, -3.19905)
-material_override = SubResource("StandardMaterial3D_ganqx")
+material_override = SubResource("StandardMaterial3D_j45vc")
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_0c8vp")
 skeleton = NodePath("../..")
@@ -158,11 +177,14 @@ shadow_enabled = true
 
 [node name="Decoration" type="Node3D" parent="." unique_id=1864532759]
 
-[node name="storage2" parent="Decoration" unique_id=454076540 instance=ExtResource("5_a8aui")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.59982, 0.0754177, 2.4685)
+[node name="storage4" parent="Decoration" unique_id=351398954 instance=ExtResource("5_gkj7w")]
+transform = Transform3D(-0.009564288, 0, 0.9999543, 0, 1, 0, -0.9999543, 0, -0.009564288, -6.3685102, 0.13041528, 2.4272184)
 
-[node name="storage3" parent="Decoration" unique_id=1653013254 instance=ExtResource("5_a8aui")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.33563, 0.0397549, -8.94921)
+[node name="storage5" parent="Decoration" unique_id=186293306 instance=ExtResource("5_gkj7w")]
+transform = Transform3D(-0.009564288, 0, 0.9999543, 0, 1, 0, -0.9999543, 0, -0.009564288, -6.3538113, 0.13041528, -8.936)
 
 [node name="TavernDoorWorkability" parent="." unique_id=993958669 instance=ExtResource("5_jb1df")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183247, -0.0970824, 4.65128)
+
+[node name="interior" parent="." unique_id=612214004 instance=ExtResource("7_s10cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8096361, 0.0049509406, -2.8319674)
