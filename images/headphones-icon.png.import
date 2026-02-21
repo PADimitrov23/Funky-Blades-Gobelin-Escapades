@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gxpct43thcvx"
-path.s3tc="res://.godot/imported/360_F_307823323_yx8pTnKwSgJB3jWfvVQ3FoMIN0Zawysk.jpg-312f1dd9ff70fdc273a56ba8b2f16dae.s3tc.ctex"
+uid="uid://dqsxgg0ojkn43"
+path="res://.godot/imported/headphones-icon.png-6af4e6fff3a0fb2432923ca6946608e5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/360_F_307823323_yx8pTnKwSgJB3jWfvVQ3FoMIN0Zawysk.jpg"
-dest_files=["res://.godot/imported/360_F_307823323_yx8pTnKwSgJB3jWfvVQ3FoMIN0Zawysk.jpg-312f1dd9ff70fdc273a56ba8b2f16dae.s3tc.ctex"]
+source_file="res://images/headphones-icon.png"
+dest_files=["res://.godot/imported/headphones-icon.png-6af4e6fff3a0fb2432923ca6946608e5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

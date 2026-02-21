@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://g8gfoxmw55a6"]
+
+[ext_resource type="Script" uid="uid://ci0k1d4uvycq2" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="4_oa1go"]
+
+[sub_resource type="Theme" id="Theme_rhts7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.89, 0.89, 0.89, 0)
+border_color = Color(0.6, 0.5949, 0.582, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MainMenu" type="Control" unique_id=141374371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu84c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=710209012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.08)
+color = Color(0, 0, 0, 1)
+
+[node name="Transition" parent="." unique_id=556477924 instance=ExtResource("4_oa1go")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="FadeTimer" type="Timer" parent="Transition" unique_id=585632888]
+wait_time = 0.5
+one_shot = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=479505714]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -106.0
+offset_right = 402.0
+offset_bottom = 106.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer2" unique_id=978697357]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Options
+"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer2" unique_id=1328498453]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Credits"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=614731850]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -106.0
+offset_right = 402.0
+offset_bottom = 106.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer3" unique_id=904382552]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Options
+"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer3" unique_id=1639887413]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Credits"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1625791753]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -106.0
+offset_bottom = 106.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=38747935]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1887655250]
+layout_mode = 2
+theme = SubResource("Theme_rhts7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Quit"
+
+[connection signal="timeout" from="Transition/FadeTimer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/CreditsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/CreditsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bj3vdwkg5qih4"]
+
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_2ckv8"]
+[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_8gwij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mah5v"]
+
+[node name="Credits" type="Control" unique_id=1932716177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Transition" parent="." unique_id=1273879350 instance=ExtResource("3_8gwij")]
+layout_mode = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=1435124090]
+layout_mode = 1
+offset_right = 228.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_2ckv8")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mah5v")
+text = "BACK"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1483779960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsLabel" type="Label" parent="ColorRect" unique_id=1186182886]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 4.0
+offset_right = 169.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2ckv8")
+theme_override_font_sizes/font_size = 101
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditorialText" type="Label" parent="ColorRect" unique_id=1707511635]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -181.0
+offset_right = 1204.0
+offset_bottom = 466.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2ckv8")
+theme_override_font_sizes/font_size = 37
+text = "Animations and art: wointrs_
+
+back-end: Mark dimitrov and Petar Dimitrov
+
+story: Petar Dimitrov and Mark Dimitrov
+
+Playtesters:
+
+SFX: CC0 pixabay TM
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
