@@ -17,7 +17,9 @@ class_name Player
 #region Player stats
 var gold = Global.gold
 var health = Global.health
-var max_health := 100
+var stamina = 100
+var maxHealth := 100
+var maxStamina := 100
 var damage := 10
 var target := []
 #endregion
@@ -37,13 +39,16 @@ var rotation_x := 0.0
 @onready var camera: Camera3D = first_person_camera
 @onready var animationPlayer = $SwordAnimations
 @onready var attackCooldown = $AttackCooldown
+@onready var slideCooldown = $SlideCooldown
 @onready var inspectCooldown = $InspectCooldown
 @onready var healthBar = $HUD/HealthBar
 @onready var goldCounter = $HUD/GoldCounter
+@onready var staminaBar = $HUD/StaminaBar
 #endregion
 
 func _ready():
-	healthBar.max_value = max_health
+	healthBar.max_value = maxHealth
+	staminaBar.max_value = maxStamina
 	camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -82,6 +87,7 @@ func inspect():
 
 func update_HUD():
 	healthBar.value = health
+	staminaBar.value = stamina
 	goldCounter.text = str(gold)
 
 func _process(_delta):
@@ -89,6 +95,7 @@ func _process(_delta):
 	inspect()
 	_switch_view()
 	update_HUD()
+	stamina += 0.1
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
@@ -117,6 +124,7 @@ func _physics_process(delta):
 
 	var target_speed = move_speed
 	if Input.is_action_pressed("sprint"):
+		stamina -= 0.2
 		target_speed = sprint_speed
 
 	# Smooth acceleration + air control
@@ -133,9 +141,11 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity_y = jump_force
 
-	# Start / stop slide
-	if Input.is_action_just_pressed("crouch") and is_on_floor() and not sliding:
+	if Input.is_action_just_pressed("crouch") and is_on_floor() and not sliding and \
+	stamina >= 10 and slideCooldown.is_stopped():
 		_start_slide()
+		slideCooldown.start()
+		stamina -= 10
 	elif Input.is_action_just_released("crouch") and sliding:
 		_end_slide()
 
@@ -154,11 +164,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# --- Camera effects ---
+	# camera
 	var target_tilt = -input_vec.x * camera_tilt
 	camera.rotation_degrees.z = lerp(camera.rotation_degrees.z, target_tilt, 10 * delta)
 
-	# FOV widen during slide
+	# FOV widen
 	if camera is Camera3D:
 		var target_fov = 90.0 if sliding else 75.0
 		camera.fov = lerp(camera.fov, target_fov, 5 * delta)
