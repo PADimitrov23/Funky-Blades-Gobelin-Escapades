@@ -1,31 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6n2a5xm2jxxf"]
+[gd_scene format=3 uid="uid://c6n2a5xm2jxxf"]
 
 [ext_resource type="PackedScene" uid="uid://dm4ichryg442s" path="res://models/tavernprops/door.glb" id="1_e6622"]
 [ext_resource type="Script" uid="uid://cppemet18eirh" path="res://scripts/tavern_door.gd" id="2_h8lme"]
 [ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://sprites/hold_e_progress_bar_under.png" id="3_srshb"]
 [ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://sprites/hold_e_progress_bar_over.png" id="4_lpd20"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_h8lme"]
+[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="6_srshb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b1ta"]
 size = Vector3(1.716, 2.34, 1)
 
-[node name="TavernDoorWorkability" type="Node3D"]
+[node name="TavernDoorWorkability" type="Node3D" unique_id=1159719114]
 script = ExtResource("2_h8lme")
 
-[node name="TavernDoor" parent="." instance=ExtResource("1_e6622")]
+[node name="TavernDoor" parent="." unique_id=37756448 instance=ExtResource("1_e6622")]
 transform = Transform3D(-0.99991, 0, -0.0134387, 0, 1, 0, 0.0134387, 0, -0.99991, -0.996385, 0.193208, 0.164401)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1459380898]
 transform = Transform3D(-0.99991, 0, -0.0134387, 0, 1, 0, 0.0134387, 0, -0.99991, -0.996385, 0.193208, 0.164401)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1545757526]
 transform = Transform3D(1, 0, 3.56761e-08, 0, 1, 0, -3.56761e-08, 0, 1, 0.0324408, 1.0206, 0.27519)
 shape = SubResource("BoxShape3D_0b1ta")
 debug_color = Color(0.854408, 0.000793387, 0.889426, 0.42)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=607456385]
 
-[node name="HoldPrompt" type="Control" parent="CanvasLayer"]
+[node name="HoldPrompt" type="Control" parent="CanvasLayer" unique_id=1599914555]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -41,7 +42,7 @@ grow_vertical = 0
 scale = Vector2(1.28, 1.28)
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/HoldPrompt"]
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/HoldPrompt" unique_id=901165461]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -60,7 +61,7 @@ fill_mode = 5
 texture_under = ExtResource("3_srshb")
 texture_progress = ExtResource("4_lpd20")
 
-[node name="Label" type="Label" parent="CanvasLayer/HoldPrompt"]
+[node name="Label" type="Label" parent="CanvasLayer/HoldPrompt" unique_id=1654135911]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -78,6 +79,9 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("5_h8lme")
 theme_override_font_sizes/font_size = 51
 text = "THE DOOR IS LOCKED"
+
+[node name="Transition" parent="." unique_id=1566445861 instance=ExtResource("6_srshb")]
+visible = false
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

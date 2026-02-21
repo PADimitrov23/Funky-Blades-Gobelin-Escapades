@@ -44,12 +44,10 @@ func _process(delta):
 			ui_progress_bar.value = clamp((hold_time / HOLD_DURATION) * 100.0, 0.0, 100.0)
 
 		if hold_time >= HOLD_DURATION:
-			_exit()
+			Global.goToScene = world_scene_path
+			$Transition/AnimationPlayer.play("fade_in")
+			get_tree().change_scene_to_packed(load("res://scenes/loading_bar.tscn"))
 	else:
 		hold_time = 0.0
 		if ui_progress_bar:
 			ui_progress_bar.value = 0.0
-
-func _exit():
-	var world_scene = load(world_scene_path)
-	get_tree().change_scene_to_packed(world_scene)

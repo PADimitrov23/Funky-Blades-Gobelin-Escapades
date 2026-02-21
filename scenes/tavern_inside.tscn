@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://d4hutehnmhb0b"]
 
 [ext_resource type="PackedScene" uid="uid://dm11yrh5xlutb" path="res://models/tavernprops/InteriorPack.glb" id="1_2kygj"]
+[ext_resource type="Script" uid="uid://c1j0kqc6g6rgq" path="res://scripts/tavern_inside.gd" id="1_jb1df"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
 [ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://sprites/tavern_floor_textures.jpg" id="3_0c8vp"]
 [ext_resource type="PackedScene" uid="uid://bwwc8e3mcnr47" path="res://models/tavernprops/storage.glb" id="5_a8aui"]
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
+[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="7_gkj7w"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_4wyf3"]
 albedo = Color(0.894118, 0.929412, 0.988235, 1)
@@ -33,6 +35,9 @@ size = Vector3(50, 1, 50)
 size = Vector3(1.10156, 1, 1)
 
 [node name="Tavern-inside" type="Node3D" unique_id=1709625740]
+script = ExtResource("1_jb1df")
+
+[node name="Transition" parent="." unique_id=1619518641 instance=ExtResource("7_gkj7w")]
 
 [node name="InteriorPack" parent="." unique_id=234716848 instance=ExtResource("1_2kygj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.98939)

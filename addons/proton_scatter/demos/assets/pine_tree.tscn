@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://caqxfqurbp3ku"]
+[gd_scene format=3 uid="uid://caqxfqurbp3ku"]
 
 [ext_resource type="PackedScene" uid="uid://bhums0j31gm5n" path="res://addons/proton_scatter/demos/assets/models/pine_tree.glb" id="1_hw1e5"]
 [ext_resource type="Material" uid="uid://d01d0h08lqqn6" path="res://addons/proton_scatter/demos/assets/materials/m_trunk.tres" id="2_cgtpc"]
@@ -6,26 +6,18 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2xqpo"]
 radius = 0.0750397
-height = 1.3553
+height = 1.6068492
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uhp33"]
-radius = 0.101768
-height = 0.489166
+[node name="pine_tree" unique_id=975302238 instance=ExtResource("1_hw1e5")]
 
-[node name="pine_tree" instance=ExtResource("1_hw1e5")]
-
-[node name="Trunk" parent="." index="0"]
+[node name="Trunk" parent="." index="0" unique_id=460605689]
 surface_material_override/0 = ExtResource("2_cgtpc")
 
-[node name="Leaves" parent="." index="1"]
+[node name="Leaves" parent="." index="1" unique_id=1242144111]
 surface_material_override/0 = ExtResource("2_xnytt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=190231192]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661681, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1869031680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5359064, 0)
 shape = SubResource("CapsuleShape3D_2xqpo")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015189, 0)
-shape = SubResource("CapsuleShape3D_uhp33")

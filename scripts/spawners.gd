@@ -7,7 +7,8 @@ var randomGobelinPicker: WeightedPicker = WeightedPicker.new(
 )
 
 func _ready() -> void:
-	startSpawning(1)
+	pass
+	#startSpawning(1)
 
 func startSpawning(wave: int) -> void:
 	var tree: SceneTree = get_tree()
