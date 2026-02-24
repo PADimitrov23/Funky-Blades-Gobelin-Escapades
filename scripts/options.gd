@@ -7,13 +7,15 @@ func _ready() -> void:
 
 func _on_back_button_pressed() -> void:
 	$Transition/AnimationPlayer.play("fade_in")
+	await $Transition/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_accept_button_pressed() -> void:
 	$Transition/AnimationPlayer.play("fade_in")
+	await $Transition/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_text_sfx_button_pressed() -> void:
-	$ColorRect/TextSfxButton/TestSfxPlayer.play()
+	$VBoxContainer/TextSfxButton/TestSfxPlayer.play()

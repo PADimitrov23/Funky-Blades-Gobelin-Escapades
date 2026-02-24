@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bj3vdwkg5qih4"]
 
+[ext_resource type="Script" uid="uid://ceb4obcbl0qo6" path="res://scripts/credits.gd" id="1_0ctdu"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_2ckv8"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_8gwij"]
 
@@ -12,18 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Transition" parent="." unique_id=1273879350 instance=ExtResource("3_8gwij")]
-layout_mode = 1
-
-[node name="BackButton" type="Button" parent="." unique_id=1435124090]
-layout_mode = 1
-offset_right = 228.0
-offset_bottom = 67.0
-theme_override_fonts/font = ExtResource("2_2ckv8")
-theme_override_font_sizes/font_size = 66
-theme_override_styles/normal = SubResource("StyleBoxEmpty_mah5v")
-text = "BACK"
+script = ExtResource("1_0ctdu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1483779960]
 layout_mode = 1
@@ -73,4 +63,16 @@ Playtesters:
 SFX: CC0 pixabay TM
 "
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="BackButton" type="Button" parent="ColorRect" unique_id=1435124090]
+layout_mode = 1
+offset_right = 228.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_2ckv8")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mah5v")
+text = "BACK"
+
+[node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_8gwij")]
+layout_mode = 1
+
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]

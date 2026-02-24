@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://da0f3rny2kr0s" path="res://scripts/options.gd" id="1_yjkok"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_2iy26"]
+[ext_resource type="Script" uid="uid://q3wwapbtddfe" path="res://scripts/volume_slider.gd" id="3_1sggn"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_2iy26"]
+[ext_resource type="AudioStream" uid="uid://c5ihrrwdoopox" path="res://audio/Sword swing.wav" id="3_kv8mn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2u1v"]
 
@@ -30,62 +32,18 @@ color = Color(0, 0, 0, 1)
 
 [node name="OptionsLabel" type="Label" parent="ColorRect" unique_id=887872701]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -311.0
-offset_right = 180.0
-offset_bottom = -209.0
+offset_left = -170.5
+offset_right = 170.5
+offset_bottom = 102.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_2iy26")
 theme_override_font_sizes/font_size = 101
 text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MasterVolumeLabel" type="Label" parent="ColorRect" unique_id=1467802675]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.1736111
-anchor_top = 0.21604939
-anchor_right = 0.113715276
-anchor_bottom = 0.2962963
-offset_left = 213.0
-offset_top = 16.0
-offset_right = 213.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_2iy26")
-theme_override_font_sizes/font_size = 51
-text = "Master Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MasterVolumeSlider" type="HSlider" parent="ColorRect" unique_id=1473145396]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.2109375
-anchor_top = 0.30092594
-anchor_right = 0.1423611
-anchor_bottom = 0.41049382
-offset_left = 262.0
-offset_top = 12.0
-offset_right = 262.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.7566566, 0.69859505)
-mouse_default_cursor_shape = 6
-theme_override_constants/center_grabber = 0
-theme_override_constants/grabber_offset = 0
-max_value = 1.0
-step = 0.001
 
 [node name="BackButton" type="Button" parent="ColorRect" unique_id=412848330]
 layout_mode = 1
@@ -99,86 +57,6 @@ theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxEmpty_c2u1v")
 text = "BACK"
 
-[node name="MusicVolumeLabel" type="Label" parent="ColorRect" unique_id=1095016253]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3949653
-anchor_top = 0.21604939
-anchor_right = 0.6822917
-anchor_bottom = 0.2962963
-offset_left = -33.0
-offset_top = 18.0
-offset_right = -33.0
-offset_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_2iy26")
-theme_override_font_sizes/font_size = 51
-text = "Music Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MusicVolumeSlider" type="HSlider" parent="ColorRect" unique_id=443131182]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.35850695
-anchor_top = 0.30092594
-anchor_right = 0.7118056
-anchor_bottom = 0.41049382
-offset_left = 6.0000305
-offset_top = 7.9999847
-offset_right = 6.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8046688, 0.7919957)
-mouse_default_cursor_shape = 6
-theme_override_constants/center_grabber = 0
-theme_override_constants/grabber_offset = 0
-max_value = 1.0
-step = 0.001
-
-[node name="SfxVolumeLabel" type="Label" parent="ColorRect" unique_id=1990474841]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.9618056
-anchor_top = 0.18827161
-anchor_right = 1.2491319
-anchor_bottom = 0.2685185
-offset_left = -302.0
-offset_top = 37.999992
-offset_right = -302.0
-offset_bottom = 38.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_2iy26")
-theme_override_font_sizes/font_size = 51
-text = "Sfx Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SfxVolumeSlider" type="HSlider" parent="ColorRect" unique_id=106578012]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.9253472
-anchor_top = 0.27314815
-anchor_right = 1.2786459
-anchor_bottom = 0.38271606
-offset_left = -263.99994
-offset_top = 23.0
-offset_right = -264.0
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8399976, 0.8399976)
-mouse_default_cursor_shape = 6
-theme_override_constants/center_grabber = 0
-theme_override_constants/grabber_offset = 0
-max_value = 1.0
-step = 0.001
-
 [node name="AcceptButton" type="Button" parent="ColorRect" unique_id=1942169263]
 layout_mode = 1
 anchors_preset = 7
@@ -187,9 +65,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -151.0
-offset_top = -171.0
+offset_top = -100.0
 offset_right = 151.0
-offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_2iy26")
@@ -197,29 +74,96 @@ theme_override_font_sizes/font_size = 91
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2iy26")
 text = "Accept"
 
-[node name="TextSfxButton" type="Button" parent="ColorRect" unique_id=374245186]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1910384715]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = -1
+anchor_top = 0.2808642
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = -84.0
-offset_right = -33.0
-offset_bottom = -20.0
-grow_horizontal = 0
+anchor_bottom = 0.7191358
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.56000245, 0.56000245)
+theme_override_constants/separation = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="MasterVolumeLabel" type="Label" parent="VBoxContainer" unique_id=1467802675]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 51
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="VBoxContainer" unique_id=1473145396]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 6
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_1sggn")
+bus_name = "Master"
+
+[node name="MusicVolumeLabel" type="Label" parent="VBoxContainer" unique_id=1095016253]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 51
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer" unique_id=443131182]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 6
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_1sggn")
+bus_name = "Music"
+
+[node name="SfxVolumeLabel" type="Label" parent="VBoxContainer" unique_id=1990474841]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 51
+text = "Sfx Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SfxVolumeSlider" type="HSlider" parent="VBoxContainer" unique_id=106578012]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 6
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_1sggn")
+bus_name = "Sfx"
+
+[node name="TextSfxButton" type="Button" parent="VBoxContainer" unique_id=374245186]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_2iy26")
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxEmpty_e6vpq")
 text = "Test sfx"
 
-[node name="TestSfxPlayer" type="AudioStreamPlayer2D" parent="ColorRect/TextSfxButton" unique_id=769326722]
+[node name="TestSfxPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/TextSfxButton" unique_id=769326722]
 position = Vector2(-6, 0)
+stream = ExtResource("3_kv8mn")
+bus = &"Sfx"
 
-[node name="Transition" parent="." unique_id=257337018 instance=ExtResource("3_2iy26")]
+[node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_2iy26")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -227,7 +171,7 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[connection signal="changed" from="ColorRect/MasterVolumeSlider" to="." method="_on_master_volume_slider_changed"]
 [connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ColorRect/AcceptButton" to="." method="_on_accept_button_pressed"]
-[connection signal="pressed" from="ColorRect/TextSfxButton" to="." method="_on_text_sfx_button_pressed"]
+[connection signal="changed" from="VBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_changed"]
+[connection signal="pressed" from="VBoxContainer/TextSfxButton" to="." method="_on_text_sfx_button_pressed"]
