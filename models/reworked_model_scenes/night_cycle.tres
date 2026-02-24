@@ -1,7 +1,7 @@
 [gd_resource type="Sky" format=3 uid="uid://iji0mpp66k4b"]
 
 [ext_resource type="Shader" uid="uid://bswlksfsbd2lt" path="res://shaders/stilyzed_sky.gdshader" id="1_7cfnq"]
-[ext_resource type="Texture2D" uid="uid://wtnl17a3c12a" path="res://sprites/particle_textures/PNG (Transparent)/trace_05.png" id="2_lu7sm"]
+[ext_resource type="Texture2D" uid="uid://wtnl17a3c12a" path="res://images/particle_textures/PNG (Transparent)/trace_05.png" id="2_lu7sm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dpaha"]
 load_path = "res://.godot/imported/circle_05.png-0fb8239d423a0df59e18a9451537fab8.s3tc.ctex"
