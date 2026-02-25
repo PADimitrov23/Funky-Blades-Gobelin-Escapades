@@ -25,28 +25,6 @@ uv1_scale = Vector3(3.915, 3.915, 3.915)
 size = Vector2(50, 50)
 orientation = 1
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gkj7w"]
-load_path = "res://.godot/imported/tavern_floor_textures.jpg-8286ff82b6fe5dc67024421b866c0226.s3tc.ctex"
-
-[sub_resource type="FogMaterial" id="FogMaterial_s10cc"]
-albedo = Color(0.894118, 0.929412, 0.988235, 1)
-edge_fade = 0.2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j45vc"]
-next_pass = SubResource("FogMaterial_s10cc")
-albedo_color = Color(0.470588, 0.321569, 0.113725, 1)
-albedo_texture = SubResource("CompressedTexture2D_gkj7w")
-normal_enabled = true
-normal_scale = 1.33
-ao_enabled = true
-heightmap_enabled = true
-heightmap_scale = 16.0
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_flip_tangent = true
-uv1_scale = Vector3(3.915, 3.915, 3.915)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ganqx"]
 size = Vector3(1, 50, 50)
 
@@ -95,7 +73,7 @@ skeleton = NodePath("../..")
 
 [node name="ceiling-colour" type="MeshInstance3D" parent="borders" unique_id=980213774]
 transform = Transform3D(-0.232886, -0.0184332, 2.16205e-05, 0.00409121, -1.04929, 0.000265529, 1.22722e-05, 0.000866962, 0.32183, -0.911607, 3.97945, -3.19905)
-material_override = SubResource("StandardMaterial3D_j45vc")
+material_override = SubResource("StandardMaterial3D_ganqx")
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_0c8vp")
 skeleton = NodePath("../..")

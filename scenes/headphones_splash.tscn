@@ -24,11 +24,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=37551033]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
-
-[node name="Transition" parent="." unique_id=832059378 instance=ExtResource("3_v4q6v")]
-layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1323842381]
 layout_mode = 1
@@ -64,5 +61,8 @@ theme_override_font_sizes/font_size = 91
 text = "Headphones recommended"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_v4q6v")]
+layout_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

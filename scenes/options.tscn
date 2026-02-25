@@ -77,8 +77,9 @@ text = "Accept"
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1910384715]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.2808642
-anchor_right = 1.0
+anchor_left = 0.065972224
+anchor_top = 0.18055555
+anchor_right = 0.9366319
 anchor_bottom = 0.7191358
 offset_top = -12.0
 offset_bottom = 12.0
@@ -164,12 +165,8 @@ stream = ExtResource("3_kv8mn")
 bus = &"Sfx"
 
 [node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_2iy26")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+visibility_layer = 0
+layout_mode = 1
 
 [connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ColorRect/AcceptButton" to="." method="_on_accept_button_pressed"]

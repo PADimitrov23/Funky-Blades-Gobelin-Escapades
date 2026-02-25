@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://clhyav78q6s8q"]
+
+[ext_resource type="Script" uid="uid://cqk424lfw32yn" path="res://scripts/objective_splash.gd" id="1_3tbcc"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_3tbcc"]
+[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_31g85"]
+
+[node name="ObjectiveSplash" type="Control" unique_id=1198094324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tbcc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=108938541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1037807560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.5
+offset_top = -249.5
+offset_right = 559.5
+offset_bottom = 249.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3tbcc")
+theme_override_font_sizes/font_size = 81
+text = "There is no save beyond this point
+
+* point of no return *"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=107783162]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_31g85")]
+layout_mode = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

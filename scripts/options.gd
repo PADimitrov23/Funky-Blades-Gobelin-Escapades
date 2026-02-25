@@ -1,5 +1,5 @@
 extends Control
-@onready var sfx_light_switch: AudioStreamPlayer2D = $ColorRect/TextSfxButton/TestSfxPlayer
+@onready var sfx_light_switch: AudioStreamPlayer2D = $VBoxContainer/TextSfxButton/TestSfxPlayer
 
 func _ready() -> void:
 	$Transition/AnimationPlayer.play("fade_out")

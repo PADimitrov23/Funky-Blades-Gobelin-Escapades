@@ -7,7 +7,7 @@ var is_day: bool = true
 #region Player Stats
 var gold = 0
 var health = 100
-var goToScene : String
+var goToScene := "res://scenes/world.tscn"
 #endregion
 
 #region Wave Logic Variables

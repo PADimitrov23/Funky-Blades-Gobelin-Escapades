@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_nkurm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkurm"]
-bg_color = Color(0.108233206, 0.06614824, 0.02416431, 1)
+bg_color = Color(0.067788735, 0.03571814, 0.011587192, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyqon"]
-bg_color = Color(1.2000235, 0.7075325, 0.30028024, 1)
+bg_color = Color(1.2, 1.0878433, 1.0119555, 1)
 
 [node name="loading_bar" type="Control" unique_id=409611658]
 layout_mode = 3
