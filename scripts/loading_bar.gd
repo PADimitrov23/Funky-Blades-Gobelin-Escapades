@@ -23,7 +23,11 @@ func _process(delta):
 	var status = ResourceLoader.load_threaded_get_status(scenePath, progress)
 	if status == ResourceLoader.THREAD_LOAD_LOADED and not loadingDone:
 		loadingDone = true
-		_spawn_world()
+		if (scenePath == "res://scenes/world.tscn"):
+			_spawn_world()
+		else:
+			scatter_finished = true
+	
 	var target = 1.0 if scatter_finished else 0.9
 	visualProgress = lerp(visualProgress, target, delta * 2.5)
 	loading_bar.value = visualProgress

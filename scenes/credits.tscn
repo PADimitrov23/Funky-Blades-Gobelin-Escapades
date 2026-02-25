@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceb4obcbl0qo6" path="res://scripts/credits.gd" id="1_0ctdu"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_2ckv8"]
+[ext_resource type="Texture2D" uid="uid://c30t662gyvb0e" path="res://images/bgr-blurred-2.png" id="3_2fbfq"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_8gwij"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mah5v"]
@@ -15,16 +16,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0ctdu")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1483779960]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1798971420]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("3_2fbfq")
+expand_mode = 3
 
-[node name="CreditsLabel" type="Label" parent="ColorRect" unique_id=1186182886]
+[node name="CreditsLabel" type="Label" parent="TextureRect" unique_id=1186182886]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -40,15 +43,18 @@ text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CreditorialText" type="Label" parent="ColorRect" unique_id=1707511635]
+[node name="CreditorialText" type="Label" parent="TextureRect" unique_id=1707511635]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -181.0
-offset_right = 1204.0
-offset_bottom = 466.0
+offset_left = -565.0
+offset_top = -182.5
+offset_right = 575.0
+offset_bottom = 291.0
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_2ckv8")
 theme_override_font_sizes/font_size = 37
@@ -62,8 +68,9 @@ Playtesters:
 
 SFX: CC0 pixabay TM
 "
+horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="ColorRect" unique_id=1435124090]
+[node name="BackButton" type="Button" parent="TextureRect" unique_id=1435124090]
 layout_mode = 1
 offset_right = 228.0
 offset_bottom = 67.0
@@ -75,4 +82,4 @@ text = "BACK"
 [node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_8gwij")]
 layout_mode = 1
 
-[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

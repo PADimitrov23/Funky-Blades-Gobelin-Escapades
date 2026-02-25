@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://q3wwapbtddfe" path="res://scripts/volume_slider.gd" id="3_1sggn"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_2iy26"]
 [ext_resource type="AudioStream" uid="uid://c5ihrrwdoopox" path="res://audio/Sword swing.wav" id="3_kv8mn"]
+[ext_resource type="Texture2D" uid="uid://c30t662gyvb0e" path="res://images/bgr-blurred-2.png" id="5_e6vpq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2u1v"]
 
@@ -21,22 +22,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yjkok")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=191094133]
+[node name="Background" type="TextureRect" parent="." unique_id=935835704]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -14.222229
+offset_right = 14.222168
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("5_e6vpq")
+expand_mode = 3
 
-[node name="OptionsLabel" type="Label" parent="ColorRect" unique_id=887872701]
+[node name="OptionsLabel" type="Label" parent="Background" unique_id=887872701]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.5
-offset_right = 170.5
+offset_left = -170.49994
+offset_right = 170.50006
 offset_bottom = 102.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_2iy26")
@@ -45,11 +50,13 @@ text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackButton" type="Button" parent="ColorRect" unique_id=412848330]
+[node name="BackButton" type="Button" parent="Background" unique_id=412848330]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.14756945
 anchor_bottom = 0.11574074
+offset_left = 14.22229
+offset_right = 14.22229
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_2iy26")
@@ -57,16 +64,17 @@ theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxEmpty_c2u1v")
 text = "BACK"
 
-[node name="AcceptButton" type="Button" parent="ColorRect" unique_id=1942169263]
+[node name="AcceptButton" type="Button" parent="Background" unique_id=1942169263]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -151.0
-offset_top = -100.0
-offset_right = 151.0
+offset_left = -150.99994
+offset_top = -116.0
+offset_right = 151.00006
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_2iy26")
@@ -166,9 +174,11 @@ bus = &"Sfx"
 
 [node name="Transition" parent="." unique_id=139235422 instance=ExtResource("3_2iy26")]
 visibility_layer = 0
+z_index = 10
 layout_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="ColorRect/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="Background/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Background/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="changed" from="VBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_changed"]
 [connection signal="pressed" from="VBoxContainer/TextSfxButton" to="." method="_on_text_sfx_button_pressed"]
