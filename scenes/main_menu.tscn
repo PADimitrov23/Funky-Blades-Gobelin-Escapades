@@ -73,8 +73,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -296.0
+offset_left = -298.0
 offset_top = -106.0
+offset_right = -2.0
 offset_bottom = 106.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -99,6 +100,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 text = "Quit"
 
 [node name="Transition" parent="." unique_id=139235422 instance=ExtResource("4_oa1go")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]

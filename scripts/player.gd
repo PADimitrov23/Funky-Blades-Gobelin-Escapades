@@ -115,7 +115,7 @@ func _physics_process(delta):
 	elif speed >= 2:
 		density = 0.2
 
-	$Speedlines.material.set_shader_parameter("line_density", density)
+	$HUD/Speedlines.material.set_shader_parameter("line_density", density)
 	
 	floor_snap_length = 0.3
 	
