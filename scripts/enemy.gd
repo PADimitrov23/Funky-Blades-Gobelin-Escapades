@@ -3,6 +3,8 @@ class_name Enemy
 
 enum States {attack, idle, chase, die}
 
+signal died
+
 #region Enemy properties
 var state = States.idle
 var damage = 10
@@ -53,8 +55,13 @@ func _physics_process(delta: float) -> void:
 		
 		velocity = Vector3.ZERO
 		##animationPlayer.play("Die")
+		die()
 		
 	move_and_slide()
+
+func die():
+	died.emit()
+	queue_free()
 
 func play_hit_particles():
 	for child in hit_particles.get_children():

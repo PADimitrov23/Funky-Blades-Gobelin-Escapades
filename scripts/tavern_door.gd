@@ -1,14 +1,17 @@
 extends Node3D
 
-@export var world_scene_path: String = "res://scenes/world.tscn"
-
+#region variables
 var locked: bool = false
 var player_in_area: bool = false
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
+#endregion
 
+#region exports
+@export var world_scene_path: String = "res://scenes/world.tscn"
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var door_is_locked_text: Label = $CanvasLayer/HoldPrompt/Label
+#endregion
 
 func unlock():
 	locked = false
