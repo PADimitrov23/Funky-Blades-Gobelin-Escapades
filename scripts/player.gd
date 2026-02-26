@@ -2,11 +2,11 @@ extends CharacterBody3D
 class_name Player
 
 #region Movement variables
-@export var move_speed := 5.0
-@export var sprint_speed := 11.0
-@export var acceleration := 12.0
+@export var move_speed := Global.move_speed 
+@export var sprint_speed = Global.sprint_speed
+@export var acceleration = 12.0
 @export var air_control := 0.6
-@export var jump_force := 8.0
+@export var jump_force = Global.jump_force
 @export var gravity := 24.0
 @export var sensitivity := 0.001
 @export var slide_speed := 22.0
@@ -20,7 +20,7 @@ var health = Global.health
 var stamina = 100
 var maxHealth := 100
 var maxStamina := 100
-var damage := 10
+var damage = Global.damage
 var target := []
 #endregion
 
@@ -78,7 +78,7 @@ func attack():
 func deal_damage():
 	for enemy in target:
 		if enemy and enemy.is_inside_tree():
-			enemy.take_damage(damage)
+			enemy.take_damage(Global.damage)
 
 func inspect():
 	if Input.is_action_just_pressed("inspect") and inspectCooldown.is_stopped():
@@ -88,7 +88,7 @@ func inspect():
 func update_HUD():
 	healthBar.value = health
 	staminaBar.value = stamina
-	goldCounter.text = str(gold)
+	goldCounter.text = str(Global.gold)
 
 func _process(_delta):
 	attack()
@@ -122,10 +122,10 @@ func _physics_process(delta):
 	var input_vec := Input.get_vector("left", "right", "up", "down")
 	input_dir = (transform.basis * Vector3(input_vec.x, 0, input_vec.y)).normalized()
 
-	var target_speed = move_speed
+	var target_speed = Global.move_speed
 	if Input.is_action_pressed("sprint"):
 		stamina -= 0.2
-		target_speed = sprint_speed
+		target_speed = Global.sprint_speed
 
 	# Smooth acceleration + air control
 	var control := 1.0 if is_on_floor() else air_control
@@ -139,7 +139,7 @@ func _physics_process(delta):
 		velocity_y -= gravity * delta
 	elif not sliding:
 		if Input.is_action_just_pressed("jump"):
-			velocity_y = jump_force
+			velocity_y = Global.jump_force
 
 	if Input.is_action_just_pressed("crouch") and is_on_floor() and not sliding and \
 	stamina >= 10 and slideCooldown.is_stopped():
@@ -153,7 +153,7 @@ func _physics_process(delta):
 	if sliding:
 		move_dir = move_dir.lerp(Vector3.ZERO, slide_decay * delta)
 		velocity_y = -3.0  # keeps player pushed into the ground
-		if move_dir.length() < move_speed:
+		if move_dir.length() < Global.move_speed:
 			_end_slide()
 
 	# Combine

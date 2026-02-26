@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d4hutehnmhb0b"]
+[gd_scene format=3 uid="uid://cyuqyqumugoc1"]
 
 [ext_resource type="Script" uid="uid://c1j0kqc6g6rgq" path="res://scripts/tavern_inside.gd" id="1_jb1df"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
 [ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="7_gkj7w"]
 [ext_resource type="PackedScene" uid="uid://bttfsmau0to3b" path="res://models/reworked_model_scenes/interior.tscn" id="7_s10cc"]
+[ext_resource type="PackedScene" uid="uid://dsm2soe8xg4e6" path="res://scenes/shop.tscn" id="8_shop"]
+[ext_resource type="PackedScene" uid="uid://d36s2kc2wpf3w" path="res://models/tavernprops/bottleRed.glb" id="9_pena1"]
+[ext_resource type="Material" uid="uid://b5tu8yml2yky3" path="res://shaders/custom_materials/glass.tres" id="10_7g0ww"]
+[ext_resource type="Material" uid="uid://cxlx801s4ahle" path="res://shaders/custom_materials/potion-inside-red.tres" id="11_nvm3n"]
+[ext_resource type="Material" uid="uid://b0c57xbxcmgms" path="res://shaders/custom_materials/glow-eyes.tres" id="12_y73ak"]
+[ext_resource type="Material" uid="uid://cwieusskx3men" path="res://shaders/custom_materials/potion-inside-purple.tres" id="13_tjfn8"]
+[ext_resource type="Shader" uid="uid://bacryw6imkkgg" path="res://shaders/includes/outline.gdshader" id="14_bntra"]
+[ext_resource type="Shader" uid="uid://cymcfy0u88au1" path="res://shaders/cel_shader_base.gdshader" id="15_d8qo7"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_4wyf3"]
 albedo = Color(0.894118, 0.929412, 0.988235, 1)
@@ -25,6 +33,9 @@ uv1_scale = Vector3(3.915, 3.915, 3.915)
 size = Vector2(50, 50)
 orientation = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pena1"]
+size = Vector3(1, 0.5488281, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ganqx"]
 size = Vector3(1, 50, 50)
 
@@ -33,6 +44,37 @@ size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a8aui"]
 size = Vector3(1.10156, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shop_area"]
+size = Vector3(5, 3, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2l72l"]
+render_priority = 0
+shader = ExtResource("14_bntra")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13r8s"]
+render_priority = 1
+next_pass = SubResource("ShaderMaterial_2l72l")
+shader = ExtResource("15_d8qo7")
+shader_parameter/color = Color(4.168466, 3.7282245, 3.0107934, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8r442"]
+render_priority = 0
+shader = ExtResource("14_bntra")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk4m5"]
+render_priority = 1
+next_pass = SubResource("ShaderMaterial_8r442")
+shader = ExtResource("15_d8qo7")
+shader_parameter/color = Color(2.8180718, 2.5185914, 2.030549, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="Tavern-inside" type="Node3D" unique_id=1709625740]
 script = ExtResource("1_jb1df")
@@ -77,6 +119,13 @@ material_override = SubResource("StandardMaterial3D_ganqx")
 lod_bias = 0.001
 mesh = SubResource("QuadMesh_0c8vp")
 skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="borders/ceiling-colour" unique_id=108787410]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/ceiling-colour/Area3D" unique_id=1926876133]
+transform = Transform3D(49.754932, 3.3823963e-07, -6.519258e-09, -1.4518707e-07, 0.39510614, -6.519258e-09, 2.0372681e-08, 0, 61.152435, -0.012313366, -0.06999779, -0.00041866302)
+shape = SubResource("BoxShape3D_pena1")
+debug_color = Color(3.9794886, 0.9167384, 1.5143481, 0.41960785)
 
 [node name="world-border-4" type="CollisionShape3D" parent="borders" unique_id=746090952]
 transform = Transform3D(-0.999996, 0, 0.0028623, 0, 1, 0, -0.0028623, 0, -0.999996, -6.73933, 0, -2.94091)
@@ -166,3 +215,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183247, -0.0970824, 4.65128
 
 [node name="interior" parent="." unique_id=612214004 instance=ExtResource("7_s10cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8096361, 0.0049509406, -2.8319674)
+
+[node name="Shop" parent="." unique_id=1284560737 instance=ExtResource("8_shop")]
+
+[node name="ShopArea" type="Area3D" parent="." unique_id=31758769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.966479, 1, -2)
+
+[node name="ShopAreaShape" type="CollisionShape3D" parent="ShopArea" unique_id=686421651]
+shape = SubResource("BoxShape3D_shop_area")
+
+[node name="PotionModels" type="Node3D" parent="." unique_id=932482000]
+
+[node name="bottleRed" parent="PotionModels" unique_id=859738571 instance=ExtResource("9_pena1")]
+transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -0.04035586, 1.3536375, -2.39676)
+
+[node name="Bottle1" parent="PotionModels/bottleRed" index="0" unique_id=145081953]
+surface_material_override/0 = ExtResource("10_7g0ww")
+surface_material_override/1 = ExtResource("11_nvm3n")
+surface_material_override/2 = ExtResource("11_nvm3n")
+
+[node name="bottleRed3" parent="PotionModels" unique_id=1717187019 instance=ExtResource("9_pena1")]
+transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -0.41304177, 1.7171896, -2.39676)
+
+[node name="Bottle1" parent="PotionModels/bottleRed3" index="0" unique_id=145081953]
+surface_material_override/0 = ExtResource("10_7g0ww")
+surface_material_override/1 = ExtResource("12_y73ak")
+surface_material_override/2 = ExtResource("12_y73ak")
+
+[node name="bottleRed4" parent="PotionModels" unique_id=2076408132 instance=ExtResource("9_pena1")]
+transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -1.3688116, 1.7044652, -2.39676)
+
+[node name="Bottle1" parent="PotionModels/bottleRed4" index="0" unique_id=145081953]
+surface_material_override/0 = ExtResource("10_7g0ww")
+surface_material_override/1 = ExtResource("13_tjfn8")
+surface_material_override/2 = ExtResource("13_tjfn8")
+
+[node name="bottleRed2" parent="PotionModels" unique_id=633562088 instance=ExtResource("9_pena1")]
+transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -1.180271, 1.3536375, -2.39676)
+
+[node name="Bottle1" parent="PotionModels/bottleRed2" index="0" unique_id=145081953]
+surface_material_override/0 = ExtResource("10_7g0ww")
+surface_material_override/1 = SubResource("ShaderMaterial_13r8s")
+surface_material_override/2 = SubResource("ShaderMaterial_qk4m5")
+
+[connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
+[connection signal="body_exited" from="ShopArea" to="Shop" method="_on_shop_area_body_exited"]
+
+[editable path="PotionModels/bottleRed"]
+[editable path="PotionModels/bottleRed3"]
+[editable path="PotionModels/bottleRed4"]
+[editable path="PotionModels/bottleRed2"]

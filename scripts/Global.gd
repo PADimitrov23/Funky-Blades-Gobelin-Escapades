@@ -6,7 +6,11 @@ var is_day: bool = true
 
 #region Player Stats
 var gold = 0
-var health = 100
+var health := 100
+var damage : int
+var move_speed := 5.0
+var sprint_speed := 11.0
+var jump_force := 8.0
 var goToScene := "res://scenes/world.tscn"
 #endregion
 

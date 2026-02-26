@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dsm2soe8xg4e6"]
+
+[ext_resource type="Script" uid="uid://t3vq6hdivuel" path="res://scripts/shop.gd" id="1_shop"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="2_font"]
+
+[node name="Shop" type="Control" unique_id=301048826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_shop")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1748051301]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=728586585]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=607411192]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=280925958]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 36
+text = "Tavern Shop"
+horizontal_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=2028715446]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "Gold: 0"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=911082043]
+layout_mode = 2
+
+[node name="ItemList" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1315032082]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="HealthPotionBtn" type="Button" parent="PanelContainer/VBoxContainer/ItemList" unique_id=258826779]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = "Health Potion - 5 gold (Restores 30 HP)"
+
+[node name="StrengthPotionBtn" type="Button" parent="PanelContainer/VBoxContainer/ItemList" unique_id=1258249423]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = "Strength Potion - 10 gold (+2 Permanent Damage)"
+
+[node name="SpeedPotionBtn" type="Button" parent="PanelContainer/VBoxContainer/ItemList" unique_id=1318839347]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = "Speed Potion - 10 gold (+2 Permanent Speed)"
+
+[node name="JumpPotionBtn" type="Button" parent="PanelContainer/VBoxContainer/ItemList" unique_id=1074068133]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = "Jump Potion - 10 gold (+2 Permanent Jump Height)"
+
+[node name="FeedbackLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=305380002]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1290396037]
+layout_mode = 2
+
+[node name="CloseHint" type="Label" parent="PanelContainer/VBoxContainer" unique_id=209547555]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "Press [B] to close"
+horizontal_alignment = 1
+
+[node name="FeedbackTimer" type="Timer" parent="." unique_id=1262955743]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ItemList/HealthPotionBtn" to="." method="_on_health_potion_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ItemList/StrengthPotionBtn" to="." method="_on_strength_potion_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ItemList/SpeedPotionBtn" to="." method="_on_speed_potion_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ItemList/JumpPotionBtn" to="." method="_on_jump_potion_btn_pressed"]
+[connection signal="timeout" from="FeedbackTimer" to="." method="_on_feedback_timer_timeout"]
