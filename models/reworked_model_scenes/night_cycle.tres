@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://wtnl17a3c12a" path="res://images/particle_textures/PNG (Transparent)/trace_05.png" id="2_lu7sm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dpaha"]
-load_path = "res://.godot/imported/circle_05.png-0fb8239d423a0df59e18a9451537fab8.s3tc.ctex"
 
 [sub_resource type="Curve" id="Curve_vm6l5"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10241, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.74156), 0.0, 0.0, 0, 0]

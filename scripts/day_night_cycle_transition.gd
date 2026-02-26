@@ -5,6 +5,7 @@ const HOLD_DURATION := 1.5
 var player_in_area: bool = false
 
 #region Node connects
+@onready var door = $"../floor/EnemyNavPath/tavern/TavernDoorWorkability"
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var switch_time: Label = $CanvasLayer/HoldPrompt/Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -20,7 +21,20 @@ func _ready() -> void:
 		anim_player.seek(anim_player.current_animation_length, true)
 		anim_player.stop()
 
+func switch_to_day():
+	anim_player.play("cycle_night_to_day")
+	door.unlock()
+	Global.is_day = true
+	Global.start_intermission()
+
+func switch_to_night():
+	anim_player.play("cycle_day_to_night")
+	door.lock()
+	Global.is_day = false
+	Global.start_wave()
+
 func _process(delta: float) -> void:
+	
 	if not player_in_area:
 		return
 
@@ -35,11 +49,9 @@ func _process(delta: float) -> void:
 
 		if hold_time >= HOLD_DURATION:
 			if Global.is_day:
-				anim_player.play("cycle_day_to_night")
-				Global.is_day = false
+				switch_to_night()
 			else:
-				anim_player.play("cycle_night_to_day")
-				Global.is_day = true
+				switch_to_day()
 
 			hold_time = 0.0
 	else:

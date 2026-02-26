@@ -15,11 +15,11 @@ static var waveCounter: int = 1
 static var inWave: bool = false
 #endregion
 
-func startIntermission():
-	$tavern/TavernDoorWorkability.unlock()
+func start_intermission():
+	inWave = false
+	pass
 
-func startWave():
-	$tavern/TavernDoorWorkability.lock()
-	#THE SKY CHANGES AND THERES A TEXT MESSAGE
-	 
+func start_wave():
+	inWave = true
+	Spawners.start_spawning(waveCounter)
 	
