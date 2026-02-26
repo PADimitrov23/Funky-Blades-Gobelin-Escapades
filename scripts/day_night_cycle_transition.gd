@@ -41,23 +41,24 @@ func _process(delta: float) -> void:
 	if anim_player.is_playing():
 		return
 
-	if Input.is_action_pressed("interact"):
-		hold_time += delta
+	if Global.is_day:
+		if Input.is_action_pressed("interact"):
+			hold_time += delta
 
-		if ui_progress_bar:
-			ui_progress_bar.value = clamp((hold_time / HOLD_DURATION) * 100.0, 0.0, 100.0)
+			if ui_progress_bar:
+				ui_progress_bar.value = clamp((hold_time / HOLD_DURATION) * 100.0, 0.0, 100.0)
 
-		if hold_time >= HOLD_DURATION:
-			if Global.is_day:
-				switch_to_night()
-			else:
-				switch_to_day()
+			if hold_time >= HOLD_DURATION:
+				if Global.is_day:
+					switch_to_night()
+				else:
+					switch_to_day()
 
+				hold_time = 0.0
+		else:
 			hold_time = 0.0
-	else:
-		hold_time = 0.0
-		if ui_progress_bar:
-			ui_progress_bar.value = 0.0
+			if ui_progress_bar:
+				ui_progress_bar.value = 0.0
 
 func _on_day_night_buttons_area_body_entered(body: Node3D) -> void:
 	if body is Player:
