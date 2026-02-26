@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://cyuqyqumugoc1"]
 
-[ext_resource type="Script" uid="uid://c1j0kqc6g6rgq" path="res://scripts/tavern_inside.gd" id="1_jb1df"]
 [ext_resource type="PackedScene" uid="uid://bg8hil3lj2w2e" path="res://scenes/player.tscn" id="2_ganqx"]
 [ext_resource type="Texture2D" uid="uid://ce7uuiq2p6bb8" path="res://images/tavern_floor_textures.jpg" id="3_0c8vp"]
 [ext_resource type="PackedScene" uid="uid://bfbqyh5dt21dv" path="res://models/reworked_model_scenes/storage_2.tscn" id="5_gkj7w"]
 [ext_resource type="PackedScene" uid="uid://c6n2a5xm2jxxf" path="res://scenes/tavern_door_workability.tscn" id="5_jb1df"]
-[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="7_gkj7w"]
 [ext_resource type="PackedScene" uid="uid://bttfsmau0to3b" path="res://models/reworked_model_scenes/interior.tscn" id="7_s10cc"]
 [ext_resource type="PackedScene" uid="uid://dsm2soe8xg4e6" path="res://scenes/shop.tscn" id="8_shop"]
 [ext_resource type="PackedScene" uid="uid://d36s2kc2wpf3w" path="res://models/tavernprops/bottleRed.glb" id="9_pena1"]
@@ -77,7 +75,6 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="Tavern-inside" type="Node3D" unique_id=1709625740]
-script = ExtResource("1_jb1df")
 
 [node name="Transition" parent="." unique_id=1619518641 instance=ExtResource("7_gkj7w")]
 
@@ -212,6 +209,7 @@ transform = Transform3D(-0.009564288, 0, 0.9999543, 0, 1, 0, -0.9999543, 0, -0.0
 
 [node name="TavernDoorWorkability" parent="." unique_id=993958669 instance=ExtResource("5_jb1df")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183247, -0.0970824, 4.65128)
+target_level = "uid://dddg2hdyqkbrx"
 
 [node name="interior" parent="." unique_id=612214004 instance=ExtResource("7_s10cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8096361, 0.0049509406, -2.8319674)

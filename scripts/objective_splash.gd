@@ -1,12 +1,13 @@
 extends Control
 
+@onready var transition = $Transition/AnimationPlayer
+
 func _ready() -> void:
-	$Transition/AnimationPlayer.play("fade_out")
-	await $Transition/AnimationPlayer.animation_finished
+	transition.play("fade_out")
+	await transition.animation_finished
 	$Timer.start()
 
-
 func _on_timer_timeout() -> void:
-	$Transition/AnimationPlayer.play("fade_in")
-	await $Transition/AnimationPlayer.animation_finished
-	get_tree().change_scene_to_file("res://scenes/loading_bar.tscn")
+	transition.play("fade_in")
+	await transition.animation_finished
+	LevelLoader.loadLevel("res://scenes/world.tscn")

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://c0ghpgq83xy48"]
 
-[ext_resource type="Script" uid="uid://c0x6l27p3d4p0" path="res://scripts/loading_bar.gd" id="1_10dfd"]
+[ext_resource type="Script" uid="uid://63fc35oxvcu7" path="res://scenes/loading_screen.gd" id="1_5phy8"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="1_er11d"]
-[ext_resource type="PackedScene" uid="uid://cs6ng4najsxad" path="res://scenes/fade_transition.tscn" id="3_nkurm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkurm"]
 bg_color = Color(0.067788735, 0.03571814, 0.011587192, 1)
@@ -10,16 +9,17 @@ bg_color = Color(0.067788735, 0.03571814, 0.011587192, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyqon"]
 bg_color = Color(1.2, 1.0878433, 1.0119555, 1)
 
-[node name="loading_bar" type="Control" unique_id=409611658]
+[node name="LoadingScreen" type="Control" unique_id=409611658]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_10dfd")
+script = ExtResource("1_5phy8")
 
-[node name="background" type="ColorRect" parent="." unique_id=910233925]
+[node name="Background" type="ColorRect" parent="." unique_id=910233925]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="loading_label" type="Label" parent="." unique_id=1157766949]
+[node name="LoadingText" type="Label" parent="." unique_id=1157766949]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,7 +45,7 @@ theme_override_fonts/font = ExtResource("1_er11d")
 theme_override_font_sizes/font_size = 84
 text = "Loading..."
 
-[node name="percentage_label" type="Label" parent="." unique_id=1250492226]
+[node name="Percentage" type="Label" parent="." unique_id=1250492226]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,7 +62,7 @@ theme_override_fonts/font = ExtResource("1_er11d")
 theme_override_font_sizes/font_size = 84
 horizontal_alignment = 1
 
-[node name="progress_bar" type="ProgressBar" parent="." unique_id=40283296]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=40283296]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,12 +82,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_dyqon")
 max_value = 1.0
 step = 0.0
 show_percentage = false
-
-[node name="Transition" parent="." unique_id=656473659 instance=ExtResource("3_nkurm")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-color = Color(0, 0, 0, 0)

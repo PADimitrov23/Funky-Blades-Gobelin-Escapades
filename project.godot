@@ -30,6 +30,7 @@ buses/default_bus_layout="uid://c5426pmhfddjp"
 
 Global="*res://scripts/Global.gd"
 Spawners="*uid://cnxgub4q8s5va"
+LevelLoader="*uid://c0x6l27p3d4p0"
 
 [display]
 

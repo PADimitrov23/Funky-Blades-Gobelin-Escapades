@@ -2,13 +2,14 @@ extends Node3D
 
 #region variables
 var locked: bool = false
+var load_in_progress: bool = false
 var player_in_area: bool = false
 var hold_time := 0.0
 const HOLD_DURATION := 1.5
 #endregion
 
 #region exports
-@export var world_scene_path: String = "res://scenes/world.tscn"
+@export_file() var target_level: String
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var door_is_locked_text: Label = $CanvasLayer/HoldPrompt/Label
 #endregion
@@ -38,7 +39,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 			ui_progress_bar.visible = false
 
 func _process(delta):
-	if not player_in_area or locked:
+	if not player_in_area or locked or load_in_progress:
 		return
 	
 	if Input.is_action_pressed("interact"):
@@ -47,9 +48,8 @@ func _process(delta):
 			ui_progress_bar.value = clamp((hold_time / HOLD_DURATION) * 100.0, 0.0, 100.0)
 
 		if hold_time >= HOLD_DURATION:
-			Global.goToScene = world_scene_path
-			$Transition/AnimationPlayer.play("fade_in")
-			get_tree().change_scene_to_packed(load("res://scenes/loading_bar.tscn"))
+			load_in_progress = true
+			LevelLoader.loadLevel(target_level)
 	else:
 		hold_time = 0.0
 		if ui_progress_bar:
