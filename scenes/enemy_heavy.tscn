@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cplwdk0e5wiso"]
+
+[ext_resource type="Script" uid="uid://cjw1vkfst0nd7" path="res://scripts/enemy.gd" id="1_4q3nq"]
+[ext_resource type="PackedScene" uid="uid://diwtxvf3gnp7v" path="res://scenes/hit_particle.tscn" id="2_seaku"]
+[ext_resource type="PackedScene" uid="uid://dpc0ik10by7as" path="res://models/reworked_model_scenes/gobelin.tscn" id="3_6yut1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nenq2"]
+radius = 0.296482
+height = 1.15249
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c4w8v"]
+height = 0.965698
+radius = 6.46045
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xwavj"]
+height = 1.02344
+radius = 0.916992
+
+[node name="Enemy" type="CharacterBody3D" unique_id=2100326610]
+script = ExtResource("1_4q3nq")
+
+[node name="Gobelin" type="Node3D" parent="." unique_id=698247148]
+
+[node name="hitMarker" parent="Gobelin" unique_id=1188162738 instance=ExtResource("2_seaku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.828212, 0)
+
+[node name="Gobelin_Base" parent="Gobelin" unique_id=222252089 instance=ExtResource("3_6yut1")]
+transform = Transform3D(-0.042103417, 0, 1.7939366, 0, 0.9926924, 0, -0.8520284, 0, -0.08864827, -2.0103388, 0.017238855, -0.33709598)
+
+[node name="GobelinCollision" type="CollisionShape3D" parent="." unique_id=2001324456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00519741, 0.615422, 0.115344)
+shape = SubResource("CapsuleShape3D_nenq2")
+
+[node name="ChaseArea" type="Area3D" parent="." unique_id=1994303773]
+transform = Transform3D(7.199115, 0, 0, 0, 1, 0, 0, 0, 6.616025, 0, 0, 0)
+
+[node name="CylinderChaseZone" type="CollisionShape3D" parent="ChaseArea" unique_id=1102910393]
+transform = Transform3D(1, 0, 0, 0, 2.74584, 0, 0, 0, 1, 0, 1.44965, 0)
+shape = SubResource("CylinderShape3D_c4w8v")
+debug_color = Color(0.774652, 0.440997, 0.0301391, 0.42)
+
+[node name="AttackArea" type="Area3D" parent="." unique_id=995545148]
+
+[node name="CylinderAttackZone" type="CollisionShape3D" parent="AttackArea" unique_id=859230109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526367, 0)
+shape = SubResource("CylinderShape3D_xwavj")
+debug_color = Color(0.807241, 0.00228371, 0.992171, 0.42)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=252772877]
+
+[connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
+[connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
