@@ -303,7 +303,7 @@ shape = SubResource("Resource_l8ah6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9958, 0, -21.0336)
 
 [node name="Respawner2" parent="." unique_id=1008819541 groups=["spawners"] instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3391, 0, -22.2841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.998217, 0, -22.264164)
 
 [node name="Respawner3" parent="." unique_id=345781502 groups=["spawners"] instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)

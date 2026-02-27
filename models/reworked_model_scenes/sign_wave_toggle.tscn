@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dya7iwwnuqplu"]
+
+[ext_resource type="Material" uid="uid://cvi3wirebyyr4" path="res://shaders/custom_materials/door.tres" id="1_cxvbw"]
+[ext_resource type="Material" uid="uid://bje6vgrexux1p" path="res://shaders/custom_materials/door-frames.tres" id="2_or1wt"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="3_o2i0u"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_post"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_board"]
+size = Vector3(2.5, 1.2, 0.2)
+
+[node name="WaveToggleSign" type="Node3D" unique_id=2146972221]
+
+[node name="SignPost" type="MeshInstance3D" parent="." unique_id=1161847405]
+transform = Transform3D(0.080067694, 0, 0, 0, 0.45855448, 0, 0, 0, 0.11014767, 0, 0.47175932, 0.24450119)
+material_override = ExtResource("1_cxvbw")
+mesh = SubResource("CylinderMesh_post")
+
+[node name="SignBoard" type="MeshInstance3D" parent="." unique_id=964352684]
+transform = Transform3D(0.42839146, 0, 0, 0, 0.45855457, 0, 0, 0, 0.6774794, 0, 0.93031394, 0.24450119)
+material_override = ExtResource("2_or1wt")
+mesh = SubResource("BoxMesh_board")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2080248498]
+transform = Transform3D(0.42839146, 0, 0, 0, 0.45855457, 0, 0, 0, 0.6774794, 0, 0.93031394, 0.31902394)
+text = "Hold [E] to Toggle Wave"
+font = ExtResource("3_o2i0u")
+font_size = 49
+outline_size = 6

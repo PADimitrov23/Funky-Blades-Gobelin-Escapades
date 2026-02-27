@@ -2,10 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://bswlksfsbd2lt" path="res://shaders/stilyzed_sky.gdshader" id="1_1t6ka"]
 [ext_resource type="Script" uid="uid://c3g527my3ouux" path="res://scripts/day_night_cycle_transition.gd" id="1_fshqf"]
-[ext_resource type="PackedScene" uid="uid://d36s2kc2wpf3w" path="res://models/tavernprops/bottleRed.glb" id="3_37c28"]
 [ext_resource type="Texture2D" uid="uid://cbhng6cr51d7w" path="res://images/particle_textures/PNG (Transparent)/circle_05.png" id="3_tetbe"]
 [ext_resource type="Texture2D" uid="uid://i2bpbq6c0rvj" path="res://images/hold_e_progress_bar_under.png" id="3_vpd4k"]
 [ext_resource type="Texture2D" uid="uid://c1xkprf13sd4w" path="res://images/hold_e_progress_bar_over.png" id="4_37c28"]
+[ext_resource type="PackedScene" uid="uid://dya7iwwnuqplu" path="res://models/reworked_model_scenes/sign_wave_toggle.tscn" id="4_tetbe"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="5_tetbe"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vpd4k"]
@@ -613,7 +613,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ijgt"]
-size = Vector3(12.2045, 3.41705, 5.883)
+size = Vector3(12.2045, 3.41705, 31.47568)
 
 [node name="day_night_cycle_transition" type="Node3D" unique_id=721477000]
 script = ExtResource("1_fshqf")
@@ -636,12 +636,12 @@ libraries/ = SubResource("AnimationLibrary_k3fpp")
 transform = Transform3D(0.1089, 0, 0, 0, 0.472362, 0, 0, 0, 0.000613002, -19.1053, 1.56278, 20.2616)
 
 [node name="day_night_buttons" type="CollisionShape3D" parent="day_night_buttons_area" unique_id=592002762]
-transform = Transform3D(0.97399, 0, 0, 0, 0.97399, 0, 0, 0, 32.3603, -4.16991, -1.28407, 609.593)
+transform = Transform3D(0.97399, 0, 0, 0, 0.9740019, 0, 0, 0, 32.3603, -4.1699066, -1.2840705, 195.5)
 shape = SubResource("BoxShape3D_2ijgt")
 debug_color = Color(1, 0.441485, 0.577963, 0.42)
 
-[node name="bottleRed" parent="day_night_buttons_area" unique_id=706221435 instance=ExtResource("3_37c28")]
-transform = Transform3D(69.5367, 0, 0, 0, 8.55583, 0, 0, 0, 1, -4.62297, -1.78174, 595.533)
+[node name="WaveToggleSign" parent="day_night_buttons_area" unique_id=2146972221 instance=ExtResource("4_tetbe")]
+transform = Transform3D(-9.181206, 0, 0.16763109, 0, 2.1170206, 0, -29.779715, 0, -1631.0442, -3.642334, -3.3084376, 578.58594)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=15901109]
 

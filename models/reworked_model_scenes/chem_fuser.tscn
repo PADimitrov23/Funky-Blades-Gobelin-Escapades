@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpflgdoh00p55"]
 
 [ext_resource type="PackedScene" uid="uid://cxxqvj0xtwi2i" path="res://models/Cauldron.glb" id="1_oekyd"]
-[ext_resource type="Script" uid="uid://cnp5bruos0hss" path="res://models/reworked_model_scenes/chem_fuser.gd" id="2_8n0gf"]
+[ext_resource type="Script" uid="uid://cnp5bruos0hss" path="res://scripts/chem_fuser.gd" id="2_8n0gf"]
 [ext_resource type="PackedScene" uid="uid://c6e1rq5g2236o" path="res://scenes/chem_menu.tscn" id="3_onk0j"]
 [ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="4_font"]
 

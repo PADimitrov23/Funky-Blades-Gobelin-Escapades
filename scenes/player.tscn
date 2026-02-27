@@ -195,8 +195,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -171.0
-offset_top = -285.0
+offset_left = -219.99994
+offset_top = -261.0
+offset_right = -49.0
+offset_bottom = 24.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.875213, 0.811767)
@@ -207,6 +209,21 @@ fill_mode = 3
 texture_under = ExtResource("3_nmc1l")
 texture_progress = ExtResource("4_f46kd")
 tint_progress = Color(1, 0, 0, 1)
+
+[node name="healthLabel" type="Label" parent="HUD/HealthBar" unique_id=2038544929]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.419933
+offset_top = -0.4356079
+offset_right = 142.41994
+offset_bottom = 166.56439
+grow_vertical = 0
+theme = SubResource("Theme_3rerk")
+theme_override_fonts/font = ExtResource("5_qlg0r")
+theme_override_font_sizes/font_size = 44
+text = "health"
 
 [node name="GoldCounter" type="Label" parent="HUD" unique_id=618015048]
 anchors_preset = 2
@@ -221,6 +238,21 @@ theme = SubResource("Theme_3rerk")
 theme_override_fonts/font = ExtResource("5_qlg0r")
 theme_override_font_sizes/font_size = 166
 text = "0"
+
+[node name="goldLabel" type="Label" parent="HUD/GoldCounter" unique_id=732843832]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 144.0
+grow_vertical = 0
+theme = SubResource("Theme_3rerk")
+theme_override_fonts/font = ExtResource("5_qlg0r")
+theme_override_font_sizes/font_size = 44
+text = "coins"
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD" unique_id=42773142]
 anchors_preset = 7

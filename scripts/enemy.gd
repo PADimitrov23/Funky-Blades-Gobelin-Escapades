@@ -7,7 +7,7 @@ signal died
 
 #region Enemy properties
 var state = States.idle
-var damage = 10
+var damage = 0.1
 var health = 15
 var speed = 5
 var acceleration = 5
@@ -19,7 +19,7 @@ var gold = 1
 #region Node connects
 @onready var hit_particles: Node3D = $Gobelin/hitMarker
 @onready var navAgent: NavigationAgent3D = $NavigationAgent3D
-@export var animationPlayer: AnimationPlayer
+@onready var animationPlayer: AnimationPlayer = $Gobelin/GobelinWeaponHit/AnimationPlayer
 #endregion
 
 func _process(_delta: float) -> void:
@@ -49,7 +49,9 @@ func _physics_process(delta: float) -> void:
 		
 		velocity = Vector3.ZERO
 		look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z), Vector3.UP, true)
-		##animationPlayer.play("Punch")
+		animationPlayer.play("ANIM_HANDWEAPONAction")
+		attack()
+	
 		
 	elif state == States.die:
 		
