@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bpflgdoh00p55"]
+
+[ext_resource type="PackedScene" uid="uid://cxxqvj0xtwi2i" path="res://models/Cauldron.glb" id="1_oekyd"]
+[ext_resource type="Script" uid="uid://cnp5bruos0hss" path="res://models/reworked_model_scenes/chem_fuser.gd" id="2_8n0gf"]
+[ext_resource type="PackedScene" uid="uid://c6e1rq5g2236o" path="res://scenes/chem_menu.tscn" id="3_onk0j"]
+[ext_resource type="FontFile" uid="uid://45f5uqgn2ye8" path="res://fonts/GrapeSoda.ttf" id="4_font"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_collision"]
+size = Vector3(2.1365967, 2, 1.2833008)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8n0gf"]
+size = Vector3(2.6132813, 1.0810547, 2.7624788)
+
+[node name="chemFuser" unique_id=604152383 instance=ExtResource("1_oekyd")]
+transform = Transform3D(0.56747216, 0, 0, 0, 0.45600164, 0, 0, 0, 0.5434741, 0, 0, 0)
+script = ExtResource("2_8n0gf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RootNode" parent_id_path=PackedInt32Array(870600740) index="1" unique_id=999888777]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/StaticBody3D" index="0" unique_id=999888778]
+transform = Transform3D(1.9206847, 0, 0, 0, 2, 0, 0, 0, 2.0133724, -0.27379054, 1, 0.0020803672)
+shape = SubResource("BoxShape3D_collision")
+
+[node name="Area3D" type="Area3D" parent="RootNode" parent_id_path=PackedInt32Array(870600740) index="2" unique_id=1441063471]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Area3D" index="0" unique_id=1816385358]
+transform = Transform3D(1.9206847, 0, 0, 0, 2.613281, 0, 0, 0, 2.0133724, 0.07520103, 1.1428394, -0.5369704)
+shape = SubResource("BoxShape3D_8n0gf")
+
+[node name="chemMenu" type="Control" parent="." index="1" unique_id=2116756587]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChemistryUI" parent="chemMenu" index="0" unique_id=1216419355 instance=ExtResource("3_onk0j")]
+layout_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=777888999]
+
+[node name="LockedPrompt" type="Control" parent="CanvasLayer" index="0" unique_id=777889000]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -200.0
+offset_right = 210.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/LockedPrompt" index="0" unique_id=777889001]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -25.0
+offset_right = 210.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 42
+text = "CHEMISTRY FUSER IS LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="RootNode/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="RootNode/Area3D" to="." method="_on_area_3d_body_exited"]

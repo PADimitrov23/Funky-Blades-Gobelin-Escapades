@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cpm1ojwm6uph7"]
+
+[ext_resource type="Script" uid="uid://cpp4n5btlqt71" path="res://scripts/item_drop_zone.gd" id="1_wr0i0"]
+
+[node name="ItemDropZone" type="Marker2D" groups=["drop_zone"]]
+gizmo_extents = 75.0
+script = ExtResource("1_wr0i0")

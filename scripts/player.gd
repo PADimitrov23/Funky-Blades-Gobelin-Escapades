@@ -71,6 +71,8 @@ func _switch_view():
 			camera = first_person_camera
 
 func attack():
+	if Global.chemistry_ui_active:
+		return
 	if Input.is_action_just_pressed("attack") and attackCooldown.is_stopped():
 		animationPlayer.play("SwordSwing")
 		attackCooldown.start()
@@ -81,6 +83,8 @@ func deal_damage():
 			enemy.take_damage(Global.damage)
 
 func inspect():
+	if Global.chemistry_ui_active:
+		return
 	if Input.is_action_just_pressed("inspect") and inspectCooldown.is_stopped():
 		animationPlayer.play("SwordInspect")
 		inspectCooldown.start()
@@ -195,3 +199,18 @@ func _on_attack_zone_body_entered(body: Node3D) -> void:
 func _on_attack_zone_body_exited(body: Node3D) -> void:
 	if body is Enemy:
 		target.erase(body)
+
+
+# Chemistry spell combinations
+func cast_tempest_burst() -> void:
+	print("Player casting Tempest Burst!")
+	# Summon Tempest Burst spell
+	# Add your tempest burst effect here
+	pass
+
+
+func cast_salt_prison() -> void:
+	print("Player casting Salt Prison!")
+	# Summon Salt Prison spell that stuns enemies
+	# Add your salt prison effect here
+	pass

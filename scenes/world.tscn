@@ -18,10 +18,10 @@
 [ext_resource type="Script" uid="uid://diedhyueo8dsb" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="17_ts3gi"]
 [ext_resource type="Script" uid="uid://drmy8t310a5kc" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="18_0nbtd"]
 [ext_resource type="Script" uid="uid://dr16uelysb2vs" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="19_37qwj"]
-[ext_resource type="PackedScene" uid="uid://cxxqvj0xtwi2i" path="res://models/Cauldron.glb" id="20_kpybi"]
 [ext_resource type="Script" uid="uid://bfrbk2hoerajn" path="res://addons/proton_scatter/src/scatter_item.gd" id="20_navra"]
 [ext_resource type="Material" uid="uid://cjrswus17wxfl" path="res://shaders/custom_materials/material-with-outline.tres" id="21_luhhm"]
 [ext_resource type="Script" uid="uid://cxv7r8sd847t3" path="res://addons/proton_scatter/src/scatter_shape.gd" id="22_fh13f"]
+[ext_resource type="PackedScene" uid="uid://bpflgdoh00p55" path="res://models/reworked_model_scenes/chem_fuser.tscn" id="23_kpybi"]
 [ext_resource type="Script" uid="uid://b1iirjpys07lr" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="23_rup4s"]
 
 [sub_resource type="GDScript" id="GDScript_oo54l"]
@@ -260,11 +260,6 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_4kbfs")
 
-[node name="cauldron" parent="floor" unique_id=1237935618 instance=ExtResource("20_kpybi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.421738, -0.048837125, 21.490688)
-
-[node name="Area3D" type="Area3D" parent="floor/cauldron/RootNode/Mesh" parent_id_path=PackedInt32Array(1237935618, 1690512607) index="0" unique_id=554503984]
-
 [node name="player" parent="." unique_id=897072216 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(0.309033, 0, -0.951051, 0, 1, 0, 0.951051, 0, 0.309033, -20.7755, 1.11027, 19.2756)
 
@@ -313,4 +308,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3391, 0, -22.2841)
 [node name="Respawner3" parent="." unique_id=345781502 groups=["spawners"] instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)
 
-[editable path="floor/cauldron"]
+[node name="chemFuser" parent="." unique_id=604152383 instance=ExtResource("23_kpybi")]
+transform = Transform3D(0.56747216, 0, 0, 0, 0.45600164, 0, 0, 0, 0.5434741, -17.040752, -0.020095468, 21.932896)

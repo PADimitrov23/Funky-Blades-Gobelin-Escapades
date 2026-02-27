@@ -6,6 +6,7 @@ var player_in_area: bool = false
 
 #region Node connects
 @onready var door = $"../floor/EnemyNavPath/tavern/TavernDoorWorkability"
+@onready var chem_fuser = $"../chemFuser"
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var switch_time: Label = $CanvasLayer/HoldPrompt/Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -24,12 +25,16 @@ func _ready() -> void:
 func switch_to_day():
 	anim_player.play("cycle_night_to_day")
 	door.unlock()
+	if chem_fuser:
+		chem_fuser.unlock()
 	Global.is_day = true
 	Global.start_intermission()
 
 func switch_to_night():
 	anim_player.play("cycle_day_to_night")
 	door.lock()
+	if chem_fuser:
+		chem_fuser.lock()
 	Global.is_day = false
 	Global.start_wave()
 

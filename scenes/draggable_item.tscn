@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://blq5k8keb8v3w"]
+
+[ext_resource type="Script" uid="uid://b7yh7gufdyv2w" path="res://scripts/draggable_item.gd" id="2_a4jc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4jc7"]
+size = Vector2(344.25, 322.58)
+
+[node name="Item" type="AnimatedSprite2D" unique_id=479115877]
+script = ExtResource("2_a4jc7")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=466656718]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1672613957]
+shape = SubResource("RectangleShape2D_a4jc7")
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
+[connection signal="mouse_entered" from="ClickArea" to="." method="_on_click_area_mouse_entered"]

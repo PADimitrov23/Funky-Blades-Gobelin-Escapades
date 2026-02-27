@@ -1,10 +1,8 @@
 extends Node
 
-#region World control variables
 var is_day: bool = true
-#endregion
+var chemistry_ui_active: bool = false
 
-#region Player Stats
 var gold = 0
 var health := 100
 var damage := 10
