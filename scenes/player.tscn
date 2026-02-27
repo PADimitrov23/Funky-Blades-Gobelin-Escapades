@@ -23,26 +23,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPerson/SwordPoint:rotation")
+tracks/0/path = NodePath("FirstPerson/SwordHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPerson/SwordPoint:position")
+tracks/1/path = NodePath("FirstPerson/SwordHandle:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nmc1l"]
@@ -51,55 +51,54 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPerson/SwordPoint:rotation")
+tracks/0/path = NodePath("FirstPerson/SwordHandle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.13333, 1.16627, 3),
 "transitions": PackedFloat32Array(1, 1.41421, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.361594, -2.16282, 1.45167), Vector3(-0.360396, -2.15565, 1.44686), Vector3(0, 0, 0)]
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.406003, -0.148362, 0.0925052), Vector3(-0.404862, -0.149439, 0.0922461), Vector3(-0.0619083, -0.473393, 0.0143169)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPerson/SwordPoint:position")
+tracks/1/path = NodePath("FirstPerson/SwordHandle:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.13333, 1.16627, 3),
 "transitions": PackedFloat32Array(1, 1.41421, 1, 1),
 "update": 0,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.406003, -0.148362, 0.0925052), Vector3(-0.404862, -0.149439, 0.0922461), Vector3(-0.0619083, -0.473393, 0.0143169)]
+"values": [Vector3(0, 0, 0), Vector3(-0.361594, -2.16282, 1.45167), Vector3(-0.360396, -2.15565, 1.44686), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ykyjo"]
 resource_name = "SwordSwing"
 length = 0.6
-capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FirstPerson/SwordPoint:rotation")
-tracks/0/interp = 2
+tracks/0/path = NodePath("FirstPerson/SwordHandle:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
+"times": PackedFloat32Array(0, 0.262524, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 2,
-"values": [Vector3(0, 0, 0), Vector3(-0.17732896, 0.12755403, -0.6918385), Vector3(0, 0, 0)]
+"update": 0,
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.163853, -0.018356, -0.218849), Vector3(-0.0619083, -0.473393, 0.0143169)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FirstPerson/SwordPoint:position")
-tracks/1/interp = 2
+tracks/1/path = NodePath("FirstPerson/SwordHandle:rotation")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
+"times": PackedFloat32Array(0, 0.262524, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 2,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.28355852, -0.2844887, 0.065216884), Vector3(-0.0619083, -0.473393, 0.0143169)]
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.71212, -0.318209, 0.293714), Vector3(0, 0, 0)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -162,11 +161,14 @@ debug_color = Color(0.907197, 0.000122252, 0.74084, 0.42)
 [node name="FirstPerson" type="Camera3D" parent="." unique_id=362398842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0619083, 0.473393, -0.0143169)
 
-[node name="SwordPoint" type="Node3D" parent="FirstPerson" unique_id=2053656454]
-transform = Transform3D(0.9999997, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, -0.0619083, -0.473393, 0.0143169)
+[node name="SwordHandle" type="Node3D" parent="FirstPerson" unique_id=2053656454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
 
-[node name="Sword" parent="FirstPerson/SwordPoint" unique_id=450236559 instance=ExtResource("2_ykyjo")]
+[node name="Sword" parent="FirstPerson/SwordHandle" unique_id=450236559 instance=ExtResource("2_ykyjo")]
 transform = Transform3D(0.0551367, -0.034999, -0.156955, -0.120084, -0.11932, -0.0155774, -0.106957, 0.115922, -0.0634218, 0.161644, 0.460788, -0.148501)
+
+[node name="SpellHandle" type="Node3D" parent="FirstPerson" unique_id=603811104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0888562, 0, -0.13290985)
 
 [node name="Head" type="Node3D" parent="." unique_id=470626692]
 
@@ -178,6 +180,10 @@ libraries/ = SubResource("AnimationLibrary_nmc1l")
 
 [node name="AttackCooldown" type="Timer" parent="." unique_id=1468947141]
 wait_time = 0.06
+one_shot = true
+
+[node name="SpellCooldown" type="Timer" parent="." unique_id=1575568994]
+wait_time = 7.0
 one_shot = true
 
 [node name="SlideCooldown" type="Timer" parent="." unique_id=1822822161]
@@ -292,6 +298,7 @@ shape = SubResource("BoxShape3D_dqkch")
 debug_color = Color(0.89997, 1.2514e-06, 0.450303, 0.42)
 
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="SpellCooldown" to="." method="_respawn_spell"]
 [connection signal="timeout" from="InspectCooldown" to="." method="_on_inspect_cooldown_timeout"]
 [connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]
 [connection signal="body_exited" from="AttackZone" to="." method="_on_attack_zone_body_exited"]

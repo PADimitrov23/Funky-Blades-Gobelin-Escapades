@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dvg4sey24vkbm"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nmj45"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_yy1gw"]
+
+[sub_resource type="GDScript" id="GDScript_yy1gw"]
+resource_name = "tempest_burst_spell"
+script/source = "extends Spell
+
+func _affect_enemy(enemy: Enemy):
+	enemy.take_damage(100)
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ptul2"]
+
+[node name="TempestBurst" type="GPUParticles3D" unique_id=361834373]
+process_material = SubResource("ParticleProcessMaterial_nmj45")
+draw_pass_1 = SubResource("SphereMesh_yy1gw")
+script = SubResource("GDScript_yy1gw")
+
+[node name="CollisionArea" type="Area3D" parent="." unique_id=310143884]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea" unique_id=855227250]
+shape = SubResource("SphereShape3D_ptul2")
