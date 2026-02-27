@@ -46,11 +46,11 @@ func _new_loader(level_path: String) -> void:
 func _finish_loading(packed_level: PackedScene) -> void:
 	var tree: SceneTree = get_tree()
 	
-	tree.root.remove_child(loading_screen)
+	if not loading_screen.faded_in:
+		await loading_screen.fade_in_finished
 	tree.change_scene_to_packed(packed_level)
 	await tree.scene_changed
 	
-	tree.root.add_child(loading_screen)
 	if tree.current_scene.has_signal("loaded"):
 		await tree.current_scene.loaded
 	_free_resources()
