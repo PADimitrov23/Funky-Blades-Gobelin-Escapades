@@ -25,7 +25,7 @@ script = ExtResource("1_ie1i7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.828212, 0)
 
 [node name="Gobelin_Base" parent="Gobelin" unique_id=222252089 instance=ExtResource("3_n8jvs")]
-transform = Transform3D(-0.04401791, 0, 0.9541406, 0, 1.4935241, 0, -0.8907712, 0, -0.04714933, -2.0103388, 0.017238855, -0.33709598)
+transform = Transform3D(-0.04401791, 0, 0.9541406, 0, 0.9149703, 0, -0.8907712, 0, -0.04714933, -2.0103388, 0.017238855, -0.33709598)
 
 [node name="GobelinCollision" type="CollisionShape3D" parent="." unique_id=2001324456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00519741, 0.615422, 0.115344)

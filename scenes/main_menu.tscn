@@ -106,6 +106,7 @@ text = "Quit"
 
 [node name="Transition" parent="." unique_id=139235422 instance=ExtResource("4_oa1go")]
 layout_mode = 1
+offset_bottom = 38.0
 
 [connection signal="pressed" from="VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]

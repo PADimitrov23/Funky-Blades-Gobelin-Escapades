@@ -76,8 +76,6 @@ shader_parameter/uv_offset = Vector2(0, 0)
 
 [node name="Tavern-inside" type="Node3D" unique_id=1709625740]
 
-[node name="Transition" parent="." unique_id=1619518641 instance=ExtResource("7_gkj7w")]
-
 [node name="Player" parent="." unique_id=1414413506 instance=ExtResource("2_ganqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979665, 1.21842, 2.01205)
 
@@ -227,7 +225,7 @@ shape = SubResource("BoxShape3D_shop_area")
 [node name="bottleRed" parent="PotionModels" unique_id=859738571 instance=ExtResource("9_pena1")]
 transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -0.04035586, 1.3536375, -2.39676)
 
-[node name="Bottle1" parent="PotionModels/bottleRed" index="0" unique_id=145081953]
+[node name="Bottle1" parent="PotionModels/bottleRed" index="0" unique_id=1016674071]
 surface_material_override/0 = ExtResource("10_7g0ww")
 surface_material_override/1 = ExtResource("11_nvm3n")
 surface_material_override/2 = ExtResource("11_nvm3n")
@@ -235,7 +233,7 @@ surface_material_override/2 = ExtResource("11_nvm3n")
 [node name="bottleRed3" parent="PotionModels" unique_id=1717187019 instance=ExtResource("9_pena1")]
 transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -0.41304177, 1.7171896, -2.39676)
 
-[node name="Bottle1" parent="PotionModels/bottleRed3" index="0" unique_id=145081953]
+[node name="Bottle1" parent="PotionModels/bottleRed3" index="0" unique_id=1016674071]
 surface_material_override/0 = ExtResource("10_7g0ww")
 surface_material_override/1 = ExtResource("12_y73ak")
 surface_material_override/2 = ExtResource("12_y73ak")
@@ -243,7 +241,7 @@ surface_material_override/2 = ExtResource("12_y73ak")
 [node name="bottleRed4" parent="PotionModels" unique_id=2076408132 instance=ExtResource("9_pena1")]
 transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -1.3688116, 1.7044652, -2.39676)
 
-[node name="Bottle1" parent="PotionModels/bottleRed4" index="0" unique_id=145081953]
+[node name="Bottle1" parent="PotionModels/bottleRed4" index="0" unique_id=1016674071]
 surface_material_override/0 = ExtResource("10_7g0ww")
 surface_material_override/1 = ExtResource("13_tjfn8")
 surface_material_override/2 = ExtResource("13_tjfn8")
@@ -251,7 +249,7 @@ surface_material_override/2 = ExtResource("13_tjfn8")
 [node name="bottleRed2" parent="PotionModels" unique_id=633562088 instance=ExtResource("9_pena1")]
 transform = Transform3D(1.4515461, 0, 0, 0, 1.3992684, 0, 0, 0, 1, -1.180271, 1.3536375, -2.39676)
 
-[node name="Bottle1" parent="PotionModels/bottleRed2" index="0" unique_id=145081953]
+[node name="Bottle1" parent="PotionModels/bottleRed2" index="0" unique_id=1016674071]
 surface_material_override/0 = ExtResource("10_7g0ww")
 surface_material_override/1 = SubResource("ShaderMaterial_13r8s")
 surface_material_override/2 = SubResource("ShaderMaterial_qk4m5")

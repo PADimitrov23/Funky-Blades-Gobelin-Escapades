@@ -192,7 +192,7 @@ transform = Transform3D(-0.999704, 0, 0.024345, 0, 1, 0, -0.024345, 0, -0.999704
 
 [node name="TavernDoorWorkability" parent="floor/EnemyNavPath/tavern" unique_id=62194487 instance=ExtResource("6_i7141")]
 transform = Transform3D(-0.0243449, 0, 0.999704, 0, 1, 0, -0.999704, 0, -0.0243449, 1.74865, 0.647465, 1.87856)
-target_level = "uid://d4hutehnmhb0b"
+target_level = "uid://cyuqyqumugoc1"
 
 [node name="surrounding-stones" parent="floor/EnemyNavPath" unique_id=1023404589 instance=ExtResource("10_w7kh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.432044, -0.408859, 0.0426359)
