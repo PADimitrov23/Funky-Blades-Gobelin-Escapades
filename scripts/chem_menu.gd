@@ -12,7 +12,8 @@ var player: Player = null
 var inventory_rest_zones: Dictionary = {}
 
 func _ready() -> void:
-	player = get_tree().root.get_child(0).find_child("Player", true, false)
+	await get_tree().current_scene.ready
+	player = get_tree().current_scene.get_node("Player")
 	
 	await get_tree().process_frame
 	
@@ -119,7 +120,7 @@ func _reset_items_to_inventory() -> void:
 
 func _trigger_tempest_burst() -> void:
 	if player:
-		player.cast_tempest_burst()
+		player.set_spell(preload("res://scenes/spells/tempest_burst.tscn"))
 	_clear_slots()
 
 
@@ -131,7 +132,7 @@ func _trigger_water_fizzle() -> void:
 
 func _trigger_salt_prison() -> void:
 	if player:
-		player.cast_salt_prison()
+		player.set_spell(preload("res://scenes/spells/salt_prison.tscn"))
 	_clear_slots()
 
 

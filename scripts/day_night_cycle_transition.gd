@@ -6,7 +6,7 @@ var player_in_area: bool = false
 
 #region Node connects
 @onready var door = $"../floor/EnemyNavPath/tavern/TavernDoorWorkability"
-@onready var chem_fuser = $"../chemFuser"
+@onready var chem_fuser = $"../ChemFuser"
 @onready var ui_progress_bar: TextureProgressBar = $CanvasLayer/HoldPrompt/ProgressBar
 @onready var switch_time: Label = $CanvasLayer/HoldPrompt/Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer

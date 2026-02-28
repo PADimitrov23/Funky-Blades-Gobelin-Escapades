@@ -15,13 +15,13 @@ size = Vector3(2.6132813, 1.0810547, 2.7624788)
 transform = Transform3D(0.56747216, 0, 0, 0, 0.45600164, 0, 0, 0, 0.5434741, 0, 0, 0)
 script = ExtResource("2_8n0gf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode" parent_id_path=PackedInt32Array(870600740) index="1" unique_id=999888777]
+[node name="StaticBody3D" type="StaticBody3D" parent="RootNode" parent_id_path=PackedInt32Array(1633371922) index="1" unique_id=999888777]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/StaticBody3D" index="0" unique_id=999888778]
 transform = Transform3D(1.9206847, 0, 0, 0, 2, 0, 0, 0, 2.0133724, -0.27379054, 1, 0.0020803672)
 shape = SubResource("BoxShape3D_collision")
 
-[node name="Area3D" type="Area3D" parent="RootNode" parent_id_path=PackedInt32Array(870600740) index="2" unique_id=1441063471]
+[node name="Area3D" type="Area3D" parent="RootNode" parent_id_path=PackedInt32Array(1633371922) index="2" unique_id=1441063471]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Area3D" index="0" unique_id=1816385358]
 transform = Transform3D(1.9206847, 0, 0, 0, 2.613281, 0, 0, 0, 2.0133724, 0.07520103, 1.1428394, -0.5369704)

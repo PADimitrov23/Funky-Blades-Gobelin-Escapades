@@ -260,7 +260,7 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("22_fh13f")
 shape = SubResource("Resource_4kbfs")
 
-[node name="player" parent="." unique_id=897072216 instance=ExtResource("1_nnsk1")]
+[node name="Player" parent="." unique_id=897072216 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(0.309033, 0, -0.951051, 0, 1, 0, 0.951051, 0, 0.309033, -20.7755, 1.11027, 19.2756)
 
 [node name="day_night_cycle_transition" parent="." unique_id=520476501 instance=ExtResource("14_dss4m")]
@@ -308,5 +308,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.998217, 0, -22.264164)
 [node name="Respawner3" parent="." unique_id=345781502 groups=["spawners"] instance=ExtResource("6_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9231, 0, 19.5731)
 
-[node name="chemFuser" parent="." unique_id=604152383 instance=ExtResource("23_kpybi")]
+[node name="ChemFuser" parent="." unique_id=604152383 instance=ExtResource("23_kpybi")]
 transform = Transform3D(0.56747216, 0, 0, 0, 0.45600164, 0, 0, 0, 0.5434741, -17.040752, -0.020095468, 21.932896)

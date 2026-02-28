@@ -2,37 +2,37 @@ extends CharacterBody3D
 class_name Player
 
 #region Movement variables
-@export var move_speed := Global.move_speed 
+@export var move_speed = Global.move_speed
 @export var sprint_speed = Global.sprint_speed
 @export var acceleration = 12.0
-@export var air_control := 0.6
+@export var air_control = 0.6
 @export var jump_force = Global.jump_force
-@export var gravity := 24.0
-@export var sensitivity := 0.001
-@export var slide_speed := 22.0
-@export var slide_decay := 1.0
-@export var camera_tilt := 5.0
+@export var gravity = 24.0
+@export var sensitivity = 0.001
+@export var slide_speed = 22.0
+@export var slide_decay = 1.0
+@export var camera_tilt = 5.0
 #endregion
 
 #region Player stats
 var gold = Global.gold
 var health = Global.health
 var stamina = 100
-var maxHealth := 100
-var maxStamina := 100
+var maxHealth = 100
+var maxStamina = 100
 var damage = Global.damage
-var target := []
+var target = []
 var current_spell: Spell
 var packed_spell: PackedScene
 #endregion
 
 #region Player states
-var velocity_y := 0.0
-var move_dir := Vector3.ZERO
-var input_dir := Vector3.ZERO
-var sliding := false
-var current_speed := 0.0
-var rotation_x := 0.0
+var velocity_y = 0.0
+var move_dir = Vector3.ZERO
+var input_dir = Vector3.ZERO
+var sliding = false
+var current_speed = 0.0
+var rotation_x = 0.0
 #endregion
 
 #region Node connects
@@ -63,9 +63,8 @@ func _respawn_spell() -> void:
 	spell_handle.add_child(current_spell)
 
 func _attack() -> void:
-	if attack_cooldown.is_stopped():
-		animationPlayer.play("SwordSwing")
-		attack_cooldown.start()
+	animationPlayer.play("SwordSwing")
+	attack_cooldown.start()
 
 func _deal_damage() -> void:
 	for enemy in target:
@@ -92,9 +91,6 @@ func _ready() -> void:
 	staminaBar.max_value = maxStamina
 	camera.current = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	push_warning("in the editor the line of code below is for testing")
-	set_spell(preload("res://scenes/spells/tempest_burst.tscn"))
 
 #Input and camera handling
 func _unhandled_input(event) -> void:
@@ -114,7 +110,7 @@ func _switch_view() -> void:
 		camera = first_person_camera
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("attack") and attack_cooldown.is_stopped() and not Global.chemistry_ui_active:
 		_attack()
 	
 	if event.is_action_pressed("inspect"):
