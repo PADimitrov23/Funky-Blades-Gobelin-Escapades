@@ -44,6 +44,7 @@ enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
 [global_group]
 
 spawners=""
+enemies=""
 
 [input]
 

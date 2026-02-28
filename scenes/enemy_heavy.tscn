@@ -467,7 +467,7 @@ radius = 6.46045
 height = 1.02344
 radius = 0.916992
 
-[node name="Enemy" type="CharacterBody3D" unique_id=2100326610]
+[node name="Enemy" type="CharacterBody3D" unique_id=2100326610 groups=["enemies"]]
 script = ExtResource("1_4q3nq")
 
 [node name="Gobelin" type="Node3D" parent="." unique_id=698247148]
@@ -478,177 +478,177 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.828212, 0)
 [node name="GobelinWeaponHit" parent="Gobelin" unique_id=607859653 instance=ExtResource("3_6jit8")]
 transform = Transform3D(-0.0034638885, 0, 1.0975145, 0, 1.1521573, 0, -1.0336767, 0, -0.0036778115, 0.005808711, 0, 0.49759126)
 
-[node name="rope" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="0" unique_id=727049155]
+[node name="rope" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="0" unique_id=942936467]
 material_override = ExtResource("4_d0phc")
 
-[node name="teeth_001" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="1" unique_id=813074905]
+[node name="teeth_001" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="1" unique_id=285918981]
 transform = Transform3D(0.025576033, 0.16559924, -0.05255876, 0.0060244533, 0.08571805, 0.14982878, 0.022515481, -0.21104488, 0.019613542, 0.18092081, 0.89886063, -0.024888277)
 
-[node name="teeth_003" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="2" unique_id=879699244]
+[node name="teeth_003" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="2" unique_id=1963131891]
 transform = Transform3D(-0.001160721, 0.41501814, -0.033266567, 0.0016597977, 0.102794304, 0.15488109, 0.0065954635, 0.047169168, -0.044831492, 0.17686717, 0.8209025, -0.038194418)
 
-[node name="teeth_005" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="3" unique_id=581029739]
+[node name="teeth_005" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="3" unique_id=1892689330]
 transform = Transform3D(-0.005633894, 0.62981904, -0.009519621, 0.001409806, 0.2133201, 0.14604126, 0.0057880343, 0.5610876, -0.04483774, 0.1798808, 0.8453886, -0.046180964)
 
-[node name="teeth_007" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="4" unique_id=1283417003]
+[node name="teeth_007" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="4" unique_id=155266789]
 transform = Transform3D(-0.007406279, 0.21471028, -0.0090748, -0.00073340134, -0.0018054587, 0.13451411, 0.0047747507, 0.33276713, 0.0065851235, 0.19928892, 0.8589069, -0.052050114)
 
-[node name="teeth_008" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="5" unique_id=36968638]
+[node name="teeth_008" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="5" unique_id=1287332011]
 transform = Transform3D(-0.005910751, 0.3696487, -0.022189112, 0.0012484608, -0.046055038, -0.12798338, -0.0052740364, -0.425177, -0.0054280832, 0.17923655, 0.7281618, -0.026770592)
 
-[node name="teeth_009" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="6" unique_id=486976842]
+[node name="teeth_009" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="6" unique_id=639532455]
 transform = Transform3D(-0.02868028, 0.08244676, 0.044867296, -0.010077963, 0.057107758, -0.10005289, -0.020159502, -0.1458432, -0.013813696, 0.19000916, 0.755238, -0.021092176)
 
-[node name="teeth_011" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="7" unique_id=139446647]
+[node name="teeth_011" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="7" unique_id=778171086]
 transform = Transform3D(-0.008084285, 0.12269679, 0.006714118, -0.0008659767, -0.07647248, 0.114498965, 0.0042314995, 0.21876225, 0.03625955, 0.21303599, 0.9757648, -0.056162596)
 
-[node name="teeth_012" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="8" unique_id=875750477]
+[node name="teeth_012" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="8" unique_id=1690210270]
 transform = Transform3D(0.017446332, 0.0701235, 0.05505194, 0.011625204, 0.007369717, -0.098285705, -0.008719384, 0.15013358, -0.020888712, 0.20714402, 0.73080987, -0.056940556)
 
-[node name="Skeleton3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="9" unique_id=141671883]
+[node name="Skeleton3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="9" unique_id=1274373681]
 bones/1/rotation = Quaternion(0.0014474327, 0, 0, 0.999999)
 bones/14/rotation = Quaternion(0, 0, 0.99993557, -0.011354768)
 bones/14/scale = Vector3(0.17299265, 0.28918386, 0.38947573)
 
-[node name="left ear" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="0" unique_id=60324855]
+[node name="left ear" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="0" unique_id=1883247021]
 material_override = ExtResource("5_aj6wg")
 
-[node name="left eye" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="1" unique_id=1393933884]
+[node name="left eye" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="1" unique_id=1733058448]
 material_override = ExtResource("6_57co0")
 
-[node name="right brow" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="3" unique_id=1480603858]
+[node name="right brow" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="3" unique_id=1084014417]
 material_override = ExtResource("7_87lpk")
 
-[node name="right ear" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="4" unique_id=61055533]
+[node name="right ear" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="4" unique_id=2081522103]
 material_override = ExtResource("8_iyq5c")
 
-[node name="right eye" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="5" unique_id=2015527852]
+[node name="right eye" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="5" unique_id=547001610]
 material_override = ExtResource("6_57co0")
 
-[node name="Cube_004" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="7" unique_id=397082595]
+[node name="Cube_004" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="7" unique_id=89394763]
 material_override = ExtResource("8_iyq5c")
 
-[node name="Cube" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="8" unique_id=1385043309]
+[node name="Cube" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="8" unique_id=6645121]
 material_override = ExtResource("5_aj6wg")
 
-[node name="Cube_001" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="9" unique_id=835783223]
+[node name="Cube_001" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="9" unique_id=719794428]
 material_override = ExtResource("9_q5rsy")
 
-[node name="Cube_002" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="10" unique_id=1873869711]
+[node name="Cube_002" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="10" unique_id=2005663109]
 material_override = ExtResource("10_q6d06")
 
-[node name="Cube_003" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="11" unique_id=1787285351]
+[node name="Cube_003" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="11" unique_id=1597532789]
 material_override = ExtResource("11_7234n")
 
-[node name="Cylinder" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="12" unique_id=1952215748]
+[node name="Cylinder" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="12" unique_id=1866074372]
 material_override = ExtResource("5_aj6wg")
 
-[node name="left brow" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="13" unique_id=1929577799]
+[node name="left brow" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="13" unique_id=1907490378]
 material_override = ExtResource("7_87lpk")
 
-[node name="back cloth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="14" unique_id=106926013]
+[node name="back cloth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="14" unique_id=1572827173]
 material_override = ExtResource("9_q5rsy")
 
-[node name="front cloth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="15" unique_id=511813740]
+[node name="front cloth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="15" unique_id=1169328788]
 material_override = ExtResource("9_q5rsy")
 
-[node name="mani body" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="16" unique_id=631420143]
+[node name="mani body" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="16" unique_id=74418800]
 material_override = ExtResource("8_iyq5c")
 
-[node name="teeth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="17" unique_id=458802970]
+[node name="teeth" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="17" unique_id=1776483914]
 transform = Transform3D(-0.06267723, 0, 0, 0, 0.45139495, 0, 0, 0, 0.1408039, 0.3476107, 0, 0)
 
-[node name="teeth_002" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="18" unique_id=1087678629]
+[node name="teeth_002" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="18" unique_id=89887797]
 transform = Transform3D(-0.06267723, 0, 0, 0, 0.45139495, 0, 0, 0, 0.1408039, 0.3476107, 0, 0)
 
-[node name="teeth_004" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="19" unique_id=681854793]
+[node name="teeth_004" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="19" unique_id=53001385]
 transform = Transform3D(-0.06267723, 0, 0, 0, 0.45139495, 0, 0, 0, 0.1408039, 0.3476107, 0, 0)
 
-[node name="teeth_006" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="20" unique_id=1958386755]
+[node name="teeth_006" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="20" unique_id=657350883]
 transform = Transform3D(-0.06267723, 0, 0, 0, 0.45139495, 0, 0, 0, 0.1408039, 0.3476107, 0, 0)
 
-[node name="teeth_010" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="21" unique_id=1476113638]
+[node name="teeth_010" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY/Skeleton3D" index="21" unique_id=437873510]
 transform = Transform3D(-0.06267723, 0, 0, 0, 0.45139495, 0, 0, 0, 0.1408039, 0.3476107, 0, 0)
 
-[node name="teeth" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="10" unique_id=1122734292]
+[node name="teeth" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="10" unique_id=1122734292]
 transform = Transform3D(-0.0016633541, 1.6024678, -0.023013042, 0.0064234324, 0.414962, 0.08887008, 0.04620009, -1.1086785e-07, -0.013184616, 0.109398544, 0.91428643, 0.062208652)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_4obf5")
 skeleton = NodePath("")
 
-[node name="teeth_002" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="11" unique_id=374603792]
+[node name="teeth_002" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="11" unique_id=374603792]
 transform = Transform3D(-0.0016730351, 1.6216023, -0.023545291, -0.006460818, -0.4199169, -0.09092548, -0.04646898, 1.5227933e-07, 0.013489552, 0.08205555, 0.7545214, 0.023694992)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_awrfm")
 skeleton = NodePath("")
 
-[node name="teeth_004" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="12" unique_id=431319391]
+[node name="teeth_004" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="12" unique_id=431319391]
 transform = Transform3D(0.030088376, 1.2405995, -0.02581854, 0.0067761256, 0.4203353, 0.087942086, 0.03838026, -1.0467842, 0.0047141695, 0.1322073, 0.9139517, 0.11952829)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_w2cjv")
 skeleton = NodePath("")
 
-[node name="teeth_006" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="13" unique_id=885197338]
+[node name="teeth_006" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="13" unique_id=885197338]
 transform = Transform3D(-0.0016633541, 1.6024678, -0.023013042, 0.0064234324, 0.414962, 0.08887008, 0.04620009, -1.1086785e-07, -0.013184616, 0.11792928, 0.86182886, -0.032022)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_r3vuc")
 skeleton = NodePath("")
 
-[node name="teeth_010" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="14" unique_id=1031565643]
+[node name="teeth_010" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="14" unique_id=1031565643]
 transform = Transform3D(-0.0015059272, 1.6190614, -0.023495186, 0.00029851613, -0.4148463, -0.091724776, -0.042228654, -0.0606704, 0.00018946265, 0.09384413, 0.73278666, -0.08255148)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_gd7bf")
 skeleton = NodePath("")
 
-[node name="teeth_013" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="15" unique_id=1885447367]
+[node name="teeth_013" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="15" unique_id=1885447367]
 transform = Transform3D(-0.032819178, 1.1050246, -0.008564017, 0.0066030324, 0.3827478, 0.09008426, 0.034370054, 0.981631, -0.02548421, 0.12854417, 0.87820035, -0.122986555)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_kpa5h")
 skeleton = NodePath("")
 
-[node name="teeth_014" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="16" unique_id=1084429575]
+[node name="teeth_014" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="16" unique_id=1084429575]
 transform = Transform3D(0.029219745, 1.2417551, -0.017189648, 0.0003140812, -0.42119274, -0.09126654, -0.03350785, 1.0788964, -0.015845321, 0.13575785, 0.74824727, -0.1721816)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_8wdne")
 skeleton = NodePath("")
 
-[node name="teeth_015" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="17" unique_id=1784046673]
+[node name="teeth_015" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="17" unique_id=1784046673]
 transform = Transform3D(-0.03703827, 0.7068978, -0.0027207467, -0.0014768918, 0.0034814754, 0.09452459, 0.025255846, 1.0368865, 0.0015374939, 0.1969045, 0.8872381, -0.18983531)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_lahdo")
 skeleton = NodePath("")
 
-[node name="teeth_016" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="18" unique_id=411824142]
+[node name="teeth_016" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="18" unique_id=411824142]
 transform = Transform3D(-0.030894438, 0.9820408, -0.011879703, 0.004957571, -0.091990955, -0.09565462, -0.03393315, -0.90753895, -0.0031590953, 0.10598909, 0.740567, 0.09809232)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_y3jdt")
 skeleton = NodePath("")
 
-[node name="teeth_017" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="19" unique_id=1972601906]
+[node name="teeth_017" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="19" unique_id=1972601906]
 transform = Transform3D(-0.032003853, 0.9840467, 0.032814525, -0.011004536, 0.4124491, -0.085429825, -0.0367022, -0.9817426, -0.0029991767, 0.12779212, 0.77986366, 0.16276813)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_5341e")
 skeleton = NodePath("")
 
-[node name="teeth_018" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="20" unique_id=1763749055]
+[node name="teeth_018" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="20" unique_id=1763749055]
 transform = Transform3D(0.045406763, 0.53069335, 0.02121975, -0.009132591, -0.196292, 0.09266833, 0.02092818, -1.2370747, -0.0056010084, 0.15073511, 0.9391261, 0.17832518)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_arun5")
 skeleton = NodePath("")
 
-[node name="teeth_019" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="21" unique_id=498422805]
+[node name="teeth_019" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="21" unique_id=498422805]
 transform = Transform3D(-0.03973753, 0.6426066, 0.004906274, -0.0036558656, -0.3623919, 0.09022152, 0.020738453, 1.1674335, 0.025305716, 0.22503963, 0.91032, -0.23667765)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_qevwm")
 skeleton = NodePath("")
 
-[node name="teeth_020" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 134278388) index="22" unique_id=847401708]
+[node name="teeth_020" type="MeshInstance3D" parent="Gobelin/GobelinWeaponHit/ANIM_MAIN BODY" parent_id_path=PackedInt32Array(607859653, 1941664055) index="22" unique_id=847401708]
 transform = Transform3D(0.02426416, 1.0969965, 0.041074958, 0.02523451, 0.2466942, -0.07586689, -0.033827055, 0.97090685, -0.027132578, 0.2042865, 0.7423822, -0.24553776)
 material_override = ExtResource("12_3uvui")
 mesh = SubResource("ArrayMesh_qwhm2")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" parent="Gobelin/GobelinWeaponHit" index="3" unique_id=1603845688]
+[node name="AnimationPlayer" parent="Gobelin/GobelinWeaponHit" index="3" unique_id=1972101269]
 speed_scale = 0.855
 
 [node name="GobelinCollision" type="CollisionShape3D" parent="." unique_id=2001324456]

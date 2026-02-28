@@ -111,7 +111,7 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"deal_damage"
+"method": &"_deal_damage"
 }]
 }
 

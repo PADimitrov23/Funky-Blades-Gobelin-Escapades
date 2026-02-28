@@ -10,9 +10,21 @@ emission_sphere_radius = 1.0
 resource_name = "tempest_burst_spell"
 script/source = "extends Spell
 
-func _affect_enemy(enemy: Enemy):
-	enemy.take_damage(100)
+@export var area_of_effect: SphereShape3D
+
+func _on_collide(body: Node3D) -> void:
+	if body is Player:
+		return
+	
+	print(get_tree().get_node_count_in_group(\"enemies\"))
+	for enemy: Enemy in get_tree().get_nodes_in_group(\"enemies\"):
+		enemy.take_damage(3 * (7 - int(global_position.distance_squared_to(enemy.global_position))))
+	
+	queue_free()
 "
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nmj45"]
+radius = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ptul2"]
 
@@ -20,6 +32,7 @@ func _affect_enemy(enemy: Enemy):
 process_material = SubResource("ParticleProcessMaterial_nmj45")
 draw_pass_1 = SubResource("SphereMesh_yy1gw")
 script = SubResource("GDScript_yy1gw")
+area_of_effect = SubResource("SphereShape3D_nmj45")
 
 [node name="CollisionArea" type="Area3D" parent="." unique_id=310143884]
 

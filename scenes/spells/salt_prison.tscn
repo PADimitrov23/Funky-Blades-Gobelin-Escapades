@@ -8,8 +8,11 @@
 resource_name = "salt_prison_spell"
 script/source = "extends Spell
 
-func _affect_enemy(enemy: Enemy):
-	pass
+func _on_collide(body: Node3D) -> void:
+	if body is Player:
+		return
+	
+	queue_free()
 "
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oi1sw"]

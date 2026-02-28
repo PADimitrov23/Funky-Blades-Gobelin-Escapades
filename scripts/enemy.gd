@@ -8,7 +8,7 @@ signal died
 #region Enemy properties
 var state = States.idle
 var damage = 0.1
-var health = 15
+var health: int = 15
 var speed = 5
 var acceleration = 5
 var gravity = 5
@@ -70,7 +70,10 @@ func play_hit_particles():
 		if child is GPUParticles3D:
 			child.restart()
 
-func take_damage(amount):
+func take_damage(amount: int) -> void:
+	if amount <= 0:
+		return
+	
 	health -= amount
 	play_hit_particles()
 	

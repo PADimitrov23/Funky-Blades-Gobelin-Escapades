@@ -9,7 +9,6 @@ size = Vector2(344.25, 322.58)
 script = ExtResource("2_a4jc7")
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=466656718]
-input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1672613957]
 shape = SubResource("RectangleShape2D_a4jc7")

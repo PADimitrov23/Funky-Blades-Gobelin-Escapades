@@ -17,15 +17,14 @@ func _ready() -> void:
 func start_spawning(_wave: int) -> void:
 	var tree: SceneTree = get_tree()
 	var spawners: Array = tree.get_nodes_in_group("spawners")
+	currentWaveSample = gobelinsPerWave.sample(Global.waveCounter)
 	var gobelinsLeft = currentWaveSample
 	
-	var gobelin: Enemy = randomGobelinPicker.pick().instantiate()
-	gobelin.transform = spawners.pick_random().transform
-	
 	#WAVE STARTED TEXT
-	await get_tree().create_timer(12).timeout
+	await tree.create_timer(12).timeout
 	#WAVE STARTED TEXT DISSAPEARED
 	
+	var gobelin: Enemy
 	while gobelinsLeft > 0:
 		await tree.create_timer(randf_range(0, 3)).timeout
 		
