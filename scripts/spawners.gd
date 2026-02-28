@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func start_spawning(_wave: int) -> void:
 	var tree: SceneTree = get_tree()
-	var spawners: Array = tree.get_nodes_in_group("spawners")
+	var spawners: Array[Node] = tree.get_nodes_in_group("spawners")
 	currentWaveSample = gobelinsPerWave.sample(Global.waveCounter)
 	var gobelinsLeft = currentWaveSample
 	
@@ -30,7 +30,9 @@ func start_spawning(_wave: int) -> void:
 		
 		gobelin = randomGobelinPicker.pick().instantiate()
 		gobelin.died.connect(on_gobelin_death)
-		gobelin.transform = spawners.pick_random().transform
+		gobelin.transform = spawners.pick_random().transform.translated(
+			Vector3(randf_range(-1.0, 1.0), 1.0, randf_range(-1.0, 1.0))
+		)
 		tree.current_scene.add_child(gobelin)
 		gobelinsLeft -= 1
 
