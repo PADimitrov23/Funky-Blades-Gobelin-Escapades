@@ -168,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143
 transform = Transform3D(0.0551367, -0.034999, -0.156955, -0.120084, -0.11932, -0.0155774, -0.106957, 0.115922, -0.0634218, 0.161644, 0.460788, -0.148501)
 
 [node name="SpellHandle" type="Node3D" parent="FirstPerson" unique_id=603811104]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0888562, 0, -0.13290985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13335776, -0.10599676, -0.14984937)
 
 [node name="Head" type="Node3D" parent="." unique_id=470626692]
 
