@@ -37,9 +37,17 @@ size = Vector2(0.25, 0.25)
 resource_name = "salt_prison_spell"
 script/source = "extends Spell
 
+@onready var duration: Timer = $Duration
+
 func _on_collide(body: Node3D) -> void:
 	if body is Player:
 		return
+	
+	if body is Enemy:
+		body.speed /= 2
+		duration.start()
+		await duration.timeout
+		body.speed *= 2
 	
 	queue_free()
 "
@@ -59,3 +67,7 @@ script = SubResource("GDScript_e2v7r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea" unique_id=946405119]
 shape = SubResource("SphereShape3D_oi1sw")
 debug_fill = false
+
+[node name="Duration" type="Timer" parent="." unique_id=558271128]
+wait_time = 2.0
+one_shot = true
