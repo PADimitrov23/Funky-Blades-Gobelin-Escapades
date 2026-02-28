@@ -48,6 +48,7 @@ var rotation_x = 0.0
 @onready var healthBar = $HUD/HealthBar
 @onready var goldCounter = $HUD/GoldCounter
 @onready var staminaBar = $HUD/StaminaBar
+@onready var perish_screen = $PerishScreen
 #endregion
 
 # available spells?
@@ -85,6 +86,9 @@ func update_HUD() -> void:
 	healthBar.value = health
 	staminaBar.value = stamina
 	goldCounter.text = str(Global.gold)
+	if health <= 0:
+		perish_screen.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _ready() -> void:
 	healthBar.max_value = maxHealth
