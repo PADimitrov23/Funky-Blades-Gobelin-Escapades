@@ -62,6 +62,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
+	drop_loot()
 	died.emit()
 	queue_free()
 
@@ -84,7 +85,7 @@ func attack():
 	target.health -= damage
 
 func drop_loot():
-	target.gold += gold
+	Global.gold += gold
 
 func _on_chase_area_body_entered(body: Node3D) -> void:
 	if body is Player and state != States.die:

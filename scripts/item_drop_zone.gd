@@ -1,5 +1,5 @@
-class_name ItemDropZone
 extends Marker2D
+class_name ItemDropZone
 
 var item: DraggableItem = null
 
