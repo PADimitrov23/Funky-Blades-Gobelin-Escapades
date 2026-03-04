@@ -13,6 +13,7 @@ curve = SubResource("Curve_yy1gw")
 angle_min = 1.0728835e-05
 angle_max = 90.000015
 gravity = Vector3(0, 0, 0)
+color = Color(2.830312, 0, 0.61089504, 1)
 alpha_curve = SubResource("CurveTexture_ptul2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptul2"]
@@ -58,6 +59,9 @@ radius = 1.0
 [node name="TempestBurst" type="GPUParticles3D" unique_id=361834373]
 amount = 4
 lifetime = 1.8
+speed_scale = 1.63
+explosiveness = 0.49
+randomness = 0.4
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_nmj45")
 draw_pass_1 = SubResource("QuadMesh_tqgeb")

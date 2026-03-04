@@ -80,25 +80,25 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("FirstPerson/SwordHandle:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.262524, 0.6),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.163853, -0.018356, -0.218849), Vector3(-0.0619083, -0.473393, 0.0143169)]
+"values": [Vector3(-0.0619083, -0.473393, 0.0143169), Vector3(-0.293894, -0.2977418, 0.14849888), Vector3(-0.0619083, -0.473393, 0.0143169)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("FirstPerson/SwordHandle:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.262524, 0.6),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.71212, -0.318209, 0.293714), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.13424581, 0.3994186, -0.7120264), Vector3(0, 0, 0)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -200,7 +200,7 @@ debug_color = Color(0.907197, 0.000122252, 0.74084, 0.42)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0619083, 0.473393, -0.0143169)
 
 [node name="SwordHandle" type="Node3D" parent="FirstPerson" unique_id=2053656454]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 1, -0.0619083, -0.473393, 0.0143169)
 
 [node name="Sword" parent="FirstPerson/SwordHandle" unique_id=450236559 instance=ExtResource("2_ykyjo")]
 transform = Transform3D(0.0551367, -0.034999, -0.156955, -0.120084, -0.11932, -0.0155774, -0.106957, 0.115922, -0.0634218, 0.161644, 0.460788, -0.148501)
