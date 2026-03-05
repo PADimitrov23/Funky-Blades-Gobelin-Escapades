@@ -88,7 +88,7 @@ func _on_feedback_timer_timeout():
 
 func _on_health_potion_btn_pressed():
 	if Global.gold >= shopItems.health_potion.cost:
-		_show_feedback("Purchased Health Potion! HP: " + str(Global.health) + "/" + str(maxHealth))
+		_show_feedback("Purchased Health Potion! HP: " + str(Global.health) + "/" + str(Global.health))
 		Global.health += 30
 		Global.gold -= shopItems.health_potion.cost
 	else:
